@@ -6,23 +6,31 @@
     <title>Rui Casaca | Analista e Desenvolvedor de Software</title>
     <meta name="description" content="Portfólio e CV de Rui Casaca, Analista e Desenvolvedor de Software com experiência em .NET, Kotlin, Python e Sistemas de Informação Geográfica.">
     
+    <!-- Fonte Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
     <!-- Script do Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Script do Lucide Icons (para ícones) -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <!-- Configuração do Tailwind (para o dark mode e fontes) -->
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Configuração do Tailwind (para o dark mode e cores personalizadas) -->
     <script>
         tailwind.config = {
-            darkMode: 'class', // Ativa o dark mode (embora aqui estejamos a usá-lo como default)
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'], // Fonte moderna e limpa
+                        sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        'brand-blue': '#00bfff', // Um azul elétrico como cor de destaque
+                        'brand-blue': '#00bfff',
                         'brand-gray': {
                             100: '#f0f4f8',
                             300: '#cbd5e1',
@@ -37,42 +45,12 @@
             }
         }
     </script>
-    
-    <!-- Estilos CSS personalizados -->
-    <style type="text/tailwindcss">
-        body {
-            @apply bg-brand-gray-950 text-brand-gray-300 font-sans antialiased;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            @apply text-brand-gray-100 font-bold;
-        }
-        h2 {
-            @apply text-3xl mb-8 border-b-2 border-brand-blue/30 pb-3;
-        }
-        section {
-            @apply mb-20;
-        }
-        /* Efeito de destaque para os cartões de projeto */
-        .project-card {
-            @apply bg-brand-gray-900 p-6 rounded-lg shadow-lg transition-all duration-300 ease-in-out;
-            @apply hover:shadow-2xl hover:shadow-brand-blue/20 hover:-translate-y-1;
-        }
-        /* Estilo para os "pills" de tecnologia */
-        .tech-pill {
-            @apply inline-block bg-brand-gray-800 text-brand-blue px-3 py-1 rounded-full text-xs font-semibold;
-        }
-        /* Botão flutuante para Download */
-        .fab-download {
-            @apply fixed bottom-6 right-6 z-50 bg-brand-blue text-white p-4 rounded-full shadow-lg transition-transform duration-300;
-            @apply hover:bg-blue-400 hover:scale-110;
-        }
-    </style>
 </head>
 <body class="dark">
 
     <!-- ===== BOTÃO FLUTUANTE PARA DOWNLOAD DO CV ===== -->
    
-    <a href="CV_RuiCasaca.pdf" 
+    <a href="res/CV_RuiCasaca.pdf" 
        download="CV_RuiCasaca.pdf" 
        aria-label="Download do meu CV em PDF"
        title="Download CV (PDF)"
@@ -125,37 +103,63 @@
             
             <!-- Coluna da Imagem -->
             <div class="md:w-1/3 flex justify-center">
-                <!-- 
-                  Instrução:
-                  Substitua o 'src' abaixo pelo nome da sua foto (ex: "foto_perfil.jpg").
-                  Recomendo uma foto com 400x400 pixels.
-                  Por enquanto, usei um placeholder.
-                -->
-                <img src="CV_photo.jpg" 
+                
+                <img src="res/CV_photo.jpg" 
                      alt="Foto de perfil de Rui Casaca"
                      class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover shadow-2xl shadow-brand-blue/30 border-4 border-brand-gray-800">
             </div>
         </header>
 
+        <!-- ===== MENU DE NAVEGAÇÃO POR ABAS ===== -->
+        <nav class="nav-tabs" role="tablist">
+            <button class="nav-tab active" onclick="showTab('cv')" role="tab" aria-selected="true">
+                <span class="flex items-center gap-2">
+                    <i data-lucide="file-text" class="w-5 h-5"></i>
+                    Currículo
+                </span>
+            </button>
+            <button class="nav-tab" onclick="showTab('sobre-mim')" role="tab" aria-selected="false">
+                <span class="flex items-center gap-2">
+                    <i data-lucide="user" class="w-5 h-5"></i>
+                    Sobre Mim
+                </span>
+            </button>
+            <button class="nav-tab" onclick="showTab('distincoes')" role="tab" aria-selected="false">
+                <span class="flex items-center gap-2">
+                    <i data-lucide="award" class="w-5 h-5"></i>
+                    Distinções Profissionais
+                </span>
+            </button>
+        </nav>
+
         <main>
+            <!-- ===== ABA: CURRÍCULO (CV PRINCIPAL) ===== -->
+            <div id="tab-cv" class="tab-content active">
+
             <!-- ===== SECÇÃO DE COMPETÊNCIAS ===== -->
             <section id="competencias">
                 <h2>Competências Técnicas</h2>
                 <div class="flex flex-wrap gap-3">
-                    <span class="tech-pill">C#</span>
+                    
                     <span class="tech-pill">C/C++</span>
+                    <span class="tech-pill">C#</span>
                     <span class="tech-pill">.NET</span>
-                    <span class="tech-pill">SQL Server</span>
                     <span class="tech-pill">Kotlin</span>
-                    <span class="tech-pill">SQLite</span>
+                    <span class="tech-pill">Java</span>
                     <span class="tech-pill">Python</span>
                     <span class="tech-pill">Integração LLMs</span>
+                    <span class="tech-pill">HTML/CSS</span>
+                    <span class="tech-pill">JavaScript/React</span>
+                    <span class="tech-pill">PostgreSQL</span>
+                    <span class="tech-pill">SQLite</span>
+                    <span class="tech-pill">SQL Server</span>
+                    <span class="tech-pill">GitHub / GitLab</span>
+                    <span class="tech-pill">Automatização de Processos</span>
                     <span class="tech-pill">Firebase</span>
                     <span class="tech-pill">ArcGIS Pro</span>
                     <span class="tech-pill">QGIS</span>
-                    <span class="tech-pill">Automatização de Processos</span>
-                    <span class="tech-pill">Java</span>
-                    <span class="tech-pill">PostgreSQL</span>
+                    <span class="tech-pill">Blender</span>
+                
                 </div>
             </section>
 
@@ -262,6 +266,79 @@
                 </div>
             </section>
 
+            </div> <!-- FIM DA ABA CV -->
+
+            <!-- ===== ABA: SOBRE MIM ===== -->
+            <div id="tab-sobre-mim" class="tab-content">
+                <section>
+                    <h2>Sobre Mim</h2>
+                    <div class="bg-brand-gray-900 p-8 rounded-lg shadow-lg">
+                        <p class="text-lg text-brand-gray-300 leading-relaxed">
+                            Profissional com experiência sólida em sistemas de informação geográfica e um percurso crescente em desenvolvimento de software. Valorizo a inovação prática, a resolução de problemas e a aprendizagem contínua em ambientes exigentes e colaborativos.
+                        </p>
+                    </div>
+                </section>
+            </div> <!-- FIM DA ABA SOBRE MIM -->
+
+            <!-- ===== ABA: DISTINÇÕES PROFISSIONAIS ===== -->
+            <div id="tab-distincoes" class="tab-content">
+            <section id="distincoes">
+                <h2>Distinções Profissionais</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <!-- Distinção 1 -->
+                    <div class="project-card flex flex-col">
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="award" class="w-8 h-8 text-brand-blue mr-3"></i>
+                            <h3 class="text-lg font-semibold text-brand-blue">
+                                <a href="https://pt.wikipedia.org/wiki/Medalha_de_D._Nuno_%C3%81lvares_Pereira_-_M%C3%A9rito_da_Guarda_Nacional_Republicana" class="hover:underline transition-colors" title="Saiba mais sobre a Medalha de D. Nuno Álvares Pereira">
+                                    Medalha de D. Nuno Álvares Pereira - Mérito
+                                </a>
+                            </h3>
+                        </div>
+                        <p class="text-sm text-brand-gray-400 mb-2 font-medium">Guarda Nacional Republicana</p>
+                        <p class="text-brand-gray-300 text-sm leading-relaxed flex-grow">
+                            A mais alta distinção da GNR, atribuída por atos de bravura, dedicação e mérito excecional.
+                        </p>
+                    </div>
+
+                    <!-- Distinção 2 -->
+                    <div class="project-card flex flex-col">
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="award" class="w-8 h-8 text-brand-blue mr-3"></i>
+                            <h3 class="text-lg font-semibold text-brand-blue">
+                                <a href="res\Medalha de Comportamento Exemplar, Grau Cobre.pdf" class="hover:underline transition-colors" title="Saiba mais sobre a Medalha Militar de Comportamento Exemplar">
+                                    Medalha Militar de Comportamento Exemplar
+                                </a>
+                            </h3>
+                        </div>
+                        <p class="text-sm text-brand-gray-400 mb-2 font-medium">Guarda Nacional Republicana</p>
+                        <p class="text-brand-gray-300 text-sm leading-relaxed flex-grow">
+                            Reconhecimento pela conduta irrepreensível ao longo da carreira.
+                        </p>
+                    </div>
+
+                    <!-- Distinção 3 -->
+                    <div class="project-card flex flex-col">
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="award" class="w-8 h-8 text-brand-blue mr-3"></i>
+                            <h3 class="text-lg font-semibold text-brand-blue">
+                                <a href="res\Medalha assiduidade.pdf" class="hover:underline transition-colors" title="Saiba mais sobre a Medalha de Assiduidade">
+                                    Medalha de Assiduidade
+                                </a>
+                            </h3>
+                        </div>
+                        <p class="text-sm text-brand-gray-400 mb-2 font-medium">Guarda Nacional Republicana</p>
+                        <p class="text-brand-gray-300 text-sm leading-relaxed flex-grow">
+                            Atribuída pela dedicação constante e presença exemplar no desempenho de funções.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            </div> <!-- FIM DA ABA DISTINÇÕES -->
+
         </main>
 
         <!-- ===== RODAPÉ ===== -->
@@ -288,9 +365,7 @@
 
     </div>
 
-    <!-- Script para inicializar os ícones Lucide -->
-    <script>
-        lucide.createIcons();
-    </script>
+    <!-- Script Externo -->
+    <script src="script.js"></script>
 </body>
 </html>
