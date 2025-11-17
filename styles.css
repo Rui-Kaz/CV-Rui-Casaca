@@ -1,3 +1,34 @@
+/* ===== COMPETÊNCIAS TÉCNICAS SEPARADAS ===== */
+.competencias-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+.competencias-bloco {
+    flex: 1 1 260px;
+    background: #1e293b;
+    border-radius: 0.75rem;
+    padding: 1.5rem 1.25rem 1.25rem 1.25rem;
+    box-shadow: 0 4px 24px 0 rgba(0,191,255,0.07);
+    min-width: 240px;
+    margin-bottom: 1rem;
+}
+.competencias-titulo {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #00bfff;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.5rem;
+}
+@media (max-width: 900px) {
+    .competencias-grid {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
 /* ===== ESTILOS BASE ===== */
 body {
     background-color: #020617;
@@ -42,10 +73,21 @@ section {
     display: inline-block;
     background-color: #1e293b;
     color: #00bfff;
-    padding: 0.25rem 0.75rem;
+    padding: 0.2rem 0.5rem;
     border-radius: 9999px;
     font-size: 0.75rem;
     font-weight: 600;
+}
+
+.tech-pill i {
+    vertical-align: middle;
+    margin-right: 0.35rem;
+    opacity: 0.95;
+}
+
+/* Reduce gap for containers that used tailwind gap-2 to make badges more compact */
+.flex.flex-wrap.gap-2 {
+    gap: 0.35rem !important;
 }
 
 /* ===== BOTÃO FLUTUANTE DE DOWNLOAD ===== */
@@ -66,6 +108,85 @@ section {
     background-color: #60a5fa;
     transform: scale(1.1);
 }
+
+/* ===== BOTÕES DE CONTROLO ===== */
+.control-group {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 5.5rem; /* acima do botão de download */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 60;
+}
+.control-btn {
+    background: rgba(14, 23, 40, 0.9);
+    color: #cbd5e1;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+.control-btn:hover {
+    transform: translateY(-3px);
+    background: #0b1220;
+}
+.control-btn:focus {
+    outline: 3px solid rgba(0,191,255,0.2);
+    outline-offset: 2px;
+}
+
+/* ===== MODO CLARO ===== */
+body.light {
+    background-color: #f7fafc;
+    color: #0f172a;
+}
+body.light h1, body.light h2, body.light h3 {
+    color: #0f172a;
+}
+body.light .project-card {
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+}
+body.light .tech-pill {
+    background-color: #e6eef9;
+    color: #0366d6;
+}
+body.light .nav-tab {
+    background-color: #f1f5f9;
+    color: #0f172a;
+}
+body.light .nav-tab.active {
+    background-color: #0366d6;
+    color: white;
+}
+/* Improve content contrast in light mode */
+body.light p,
+body.light li,
+body.light .tab-content,
+body.light .project-card,
+body.light .competencias-bloco,
+body.light .frameworks-bloco,
+body.light .timeline-item,
+body.light .timeline-dot,
+body.light .competencias-titulo {
+    color: #0f172a !important;
+}
+
+/* Override utility-like classes used in markup to ensure readable contrast */
+body.light .text-brand-gray-300 { color: #0f172a !important; }
+body.light .text-brand-gray-400 { color: #334155 !important; }
+body.light .text-brand-gray-500 { color: #475569 !important; }
+
+/* Links in light mode should remain visible */
+body.light a { color: #0366d6; }
 
 /* ===== SISTEMA DE NAVEGAÇÃO POR ABAS ===== */
 .nav-tabs {
@@ -162,4 +283,63 @@ section {
         width: 100%;
         text-align: center;
     }
+}
+
+/* ===== MENU DE DOWNLOAD CV (PT/EN) ===== */
+.cv-download-menu {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 5.25rem; /* sits above the fab button */
+    z-index: 70;
+    background: #0b1220;
+    color: #cbd5e1;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    min-width: 200px;
+    /* start hidden but keep in flow for transitions */
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;
+}
+.cv-download-menu[aria-hidden="false"] {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    visibility: visible;
+    pointer-events: auto;
+}
+.cv-download-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #00bfff;
+    margin-bottom: 0.25rem;
+}
+.cv-download-actions {
+    display: flex;
+    gap: 0.4rem;
+    justify-content: space-between;
+}
+.cv-download-option {
+    background: transparent;
+    border: 1px solid rgba(99,102,241,0.08);
+    color: #e6eef9;
+    padding: 0.45rem 0.7rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 140ms, color 140ms, transform 140ms;
+}
+.cv-download-option:hover, .cv-download-option:focus {
+    background: rgba(0,191,255,0.08);
+    color: #00bfff;
+    outline: none;
+    transform: translateY(-2px);
+}
+/* Light mode adjustments */
+body.light .cv-download-menu {
+    background: #ffffff;
+    color: #0f172a;
+    box-shadow: 0 8px 20px rgba(2,6,23,0.06);
 }
