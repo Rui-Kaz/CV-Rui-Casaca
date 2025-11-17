@@ -106,6 +106,7 @@ const translations = {
     'tech.dotnet': { pt: '.NET', en: '.NET' },
     'tech.reactjs': { pt: 'JavaScript/React', en: 'JavaScript/React' },
     'tech.htmlcss': { pt: 'HTML/CSS', en: 'HTML/CSS' },
+    'tech.javascript': { pt: 'JavaScript', en: 'JavaScript' },
     'tech.node': { pt: 'Node.js', en: 'Node.js' },
     'tech.postgres': { pt: 'PostgreSQL', en: 'PostgreSQL' },
     'tech.restapi': { pt: 'RESTful API', en: 'RESTful API' },
@@ -123,6 +124,8 @@ const translations = {
     'tech.openmeteo': { pt: 'Open-Meteo', en: 'Open-Meteo' },
     'tech.geolocation': { pt: 'Geolocation', en: 'Geolocation' },
     'tech.notifications': { pt: 'Notifications', en: 'Notifications' },
+    'tech.sockets': { pt: 'Sockets', en: 'Sockets' },
+    'tech.jwt': { pt: 'JWT', en: 'JWT' },
         // Traduções para Projetos Académicos
         'nav.acad': { pt: 'Projetos Académicos', en: 'Academic Projects' },
         'acad.title': { pt: 'Projetos Académicos', en: 'Academic Projects' },

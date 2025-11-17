@@ -90,6 +90,16 @@ section {
     gap: 0.35rem !important;
 }
 
+/* Logo inside pill (use local SVGs in res/logos/) 
+.pill-logo {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    margin-right: 0.35rem;
+    vertical-align: middle;
+    display: inline-block;
+}*/
+
 /* ===== BOTÃO FLUTUANTE DE DOWNLOAD ===== */
 .fab-download {
     position: fixed;
