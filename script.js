@@ -162,7 +162,11 @@ const translations = {
 
             'acad.store.title': { pt: 'Aplicação de Gestão de Loja', en: 'Store Management Application' },
             'acad.store.period': { pt: '2º semestre de 2025 • C#, ASP.NET, Blazor, MAUI, SQL, REST', en: '2nd semester 2025 • C#, ASP.NET, Blazor, MAUI, SQL, REST' },
-            'acad.store.desc': { pt: 'Aplicação multi-plataforma com autenticação, perfis de utilizador, gestão de produtos e API REST para integração com frontends.', en: 'Multi-platform application with authentication, user profiles, product management and REST API for frontend integration.' }
+            'acad.store.desc': { pt: 'Aplicação multi-plataforma com autenticação encriptada, perfis de utilizador para admin, fornecedores e clientes, gestão e venda de produtos e API REST para integração com frontends.', en: 'Multi-platform application with encrypted authentication, user profiles for admin, suppliers and customers, product management and sales, and REST API for frontend integration.' },
+
+            'acad.guide.title': { pt: 'Guia Turístico', en: 'Tourist Guide' },
+            'acad.guide.period': { pt: '2º semestre de 2025 • Flutter (Android, Dart) • API IPMA', en: '2nd semester 2025 • Flutter (Android, Dart) • IPMA API' },
+            'acad.guide.desc': { pt: 'Aplicação multiplataforma com API meteorológico (IPMA) para informação do tempo atual para a localidade de interesse, fornecendo de forma intuitiva informação organizada e detalhada de Monumentos, Restaurantes e Eventos numa determinada cidade, permitindo gerir os seus favoritos, mesmo offline.', en: 'Multi-platform application with weather API (IPMA) for current weather information for the location of interest, intuitively providing organized and detailed information about Monuments, Restaurants and Events in a given city, allowing users to manage their favorites, even offline.' }
     };
 // Traduções para a nova aba SIG
 translations['nav.sig'] = { pt: 'Projetos SIG (ArcGIS)', en: 'GIS Projects (ArcGIS)' };
