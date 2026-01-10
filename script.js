@@ -50,7 +50,7 @@ const translations = {
     'heading.experience': { pt: 'Experiência Profissional', en: 'Professional Experience' },
     'heading.education': { pt: 'Formação Académica', en: 'Education' },
     'hero.subtitle': { pt: 'Analista e Desenvolvedor de Software', en: 'Analyst and Software Developer' },
-    'hero.lead': { pt: 'Profissional com experiência em sistemas de informação geográfica ArcGIS e QGIS e em desenvolvimento de software (Java, C/C++, C#, .NET, Kotlin, Flutter, Python). Valorizo a inovação, a resolução de problemas e a aprendizagem contínua.', en: 'Professional experienced in geographic information systems (ArcGIS, QGIS) and software development (Java, C/C++, C#, .NET, Kotlin, Flutter, Python). I value practical innovation, problem solving and continuous learning.' },
+    'hero.lead': { pt: 'Profissional com experiência em sistemas de informação geográfica ArcGIS e QGIS e em desenvolvimento de software (Java, C/C++, C#, ASP.NET, Kotlin, Flutter, JavaScript/TypeScript, Python). Valorizo a inovação, a resolução de problemas e a aprendizagem contínua.', en: 'Professional experienced in geographic information systems (ArcGIS, QGIS) and software development (Java, C/C++, C#, ASP.NET, Kotlin, Flutter, JavaScript/TypeScript, Python). I value practical innovation, problem solving and continuous learning.' },
     'skills.languages': { pt: 'Linguagens de Programação', en: 'Programming Languages' },
     'skills.others': { pt: 'Outras Competências Técnicas', en: 'Other Technical Skills' },
     'skills.frameworks': { pt: 'Frameworks', en: 'Frameworks' },
@@ -58,14 +58,19 @@ const translations = {
     'framework.maui': { pt: 'MAUI', en: 'MAUI' },
     'framework.blazor': { pt: 'Blazor', en: 'Blazor' },
     'framework.react': { pt: 'React', en: 'React' },
+    'framework.typescript': { pt: 'TypeScript', en: 'TypeScript' },
     'framework.jetpack': { pt: 'Jetpack Compose', en: 'Jetpack Compose' },
     'framework.javafx': { pt: 'JavaFX', en: 'JavaFX' },
     'projects.p1.title': { pt: 'Aplicação de Busca de Pessoas desaparecidas', en: 'Missing Persons Search Application' },
     'projects.p1.desc': { pt: 'Aplicação full-stack mission-critical para automatização de processos de emergência. Sistema processa dados estruturados de pessoas desaparecidas, com geração de prompts dinâmicos através da integração de dados contextuais, integra APIs de IA (LLMs) para análise e previsão, e produz relatórios operacionais automatizados com geração de PDF e distribuição por email. Interface multi-etapas, algoritmos de avaliação de risco, dashboard em tempo real, sistema de análise comportamental baseado em dados históricos.', en: 'Full-stack mission-critical application to automate emergency processes. Processes structured missing-person data, generates dynamic prompts from contextual data, integrates AI (LLMs) APIs for analysis and prediction, and produces automated operational reports (PDF/email). Multi-step interface, risk assessment algorithms, real-time dashboard and behavior analysis based on historical data.' },
-    'projects.p2.title': { pt: 'Aplicação Registo Fotográfico Georreferenciado', en: 'Georeferenced Photo Capture App' },
-    'projects.p2.desc': { pt: 'Aplicação mobile para captação de fotos com marca de água automática (GPS, direção, data/hora, logótipo), ideal para documentação de campo com partilha imediata.', en: 'Mobile app for capturing photos with automatic watermark (GPS, heading, timestamp, logo), ideal for field documentation with immediate sharing.' },
-    'projects.p3.title': { pt: 'Aplicação Tracking e Gestão de Utilizadores', en: 'Tracking and User Management App' },
-    'projects.p3.desc': { pt: 'Aplicação com login, registo de percursos, estatísticas e exportação (CSV, JSON). Sincronização em tempo real com base de dados Firebase.', en: 'App with login, route recording, statistics and export (CSV, JSON). Real-time sync with Firebase backend.' },
+    'projects.p2.title': { pt: 'Plataforma Distribuída de Avaliação para Professores e Alunos', en: 'Distributed Assessment Platform for Teachers and Students' },
+    'projects.p2.desc': { pt: 'Plataforma com gestão de sessões para dois tipos de perfis: professores e alunos, permitindo criar perguntas e submeter respostas para avaliação em ambiente académico. Utiliza arquitetura distribuída com RMI para comunicação entre cliente e servidor, garantindo escalabilidade e robustez. Inclui persistência de dados com SQLite e interface gráfica intuitiva com JavaFX.', en: 'Platform with session management for two types of profiles: teachers and students, allowing question creation and response submission for academic assessment. Uses distributed architecture with RMI for client-server communication, ensuring scalability and robustness. Includes data persistence with SQLite and intuitive graphical interface with JavaFX.' },
+    'projects.p2b.title': { pt: 'Registo Fotográfico Georreferenciado', en: 'Georeferenced Photo Capture' },
+    'projects.p2b.desc': { pt: 'Aplicação mobile para captação de fotos com marca de água automática (GPS, direção, data/hora, logótipo), ideal para documentação de campo com partilha imediata.', en: 'Mobile app for capturing photos with automatic watermark (GPS, heading, timestamp, logo), ideal for field documentation with immediate sharing.' },
+    'projects.p3.title': { pt: 'Sugestão de Prendas Personalizadas com IA', en: 'AI-Powered Personalized Gift Suggestions' },
+    'projects.p3.desc': { pt: 'Aplicação com sistema de criação e gestão de utilizadores, dispondo de um dashboard com navegação intuitiva, para registo de Enjoyers (pessoas a presentear) e, com base nas suas informações, gostos e parâmetros, a IA aprende e sugere prendas personalizadas de qualquer tipo, com maior probabilidade de agradar, tendo em consideração a ocasião, complementando com uma mensagem digna para acompanhar o presente.', en: 'Application with user creation and management system, featuring an intuitive dashboard for registering Enjoyers (people to gift) and, based on their information, preferences and parameters, AI learns and suggests personalized gifts of any kind, with higher likelihood of pleasing, considering the occasion, complemented with a worthy message to accompany the gift.' },
+    'projects.p3b.title': { pt: 'Tracking e Gestão de Utilizadores', en: 'Tracking and User Management' },
+    'projects.p3b.desc': { pt: 'Aplicação com login, registo de percursos, estatísticas e exportação (CSV, JSON). Sincronização em tempo real com base de dados Firebase.', en: 'App with login, route recording, statistics and export (CSV, JSON). Real-time sync with Firebase backend.' },
     'projects.p4.title': { pt: 'Jogo Educativo Escolar', en: 'Educational School Game' },
     'projects.p4.desc': { pt: 'Jogo para incentivar ao estudo crianças do 1º ao 4º ciclo, com interface simples e bloqueio do dispositivo até cumprimento de desafios. Configurável via painel de Admin.', en: 'Game to encourage studying for children in primary school, with a simple interface and device lock until challenges are completed. Configurable via an Admin panel.' },
     'about.title': { pt: 'Sobre Mim', en: 'About Me' },
@@ -105,8 +110,9 @@ const translations = {
     'tech.flutter': { pt: 'Flutter', en: 'Flutter' },
     'tech.dart': { pt: 'Dart', en: 'Dart' },
     'tech.python': { pt: 'Python', en: 'Python' },
-    'tech.dotnet': { pt: '.NET', en: '.NET' },
-    'tech.reactjs': { pt: 'JavaScript/React', en: 'JavaScript/React' },
+    'tech.matlab': { pt: 'MATLAB', en: 'MATLAB' },
+    'tech.dotnet': { pt: 'ASP.NET', en: 'ASP.NET' },
+    'tech.reactjs': { pt: 'JavaScript', en: 'JavaScript' },
     'tech.htmlcss': { pt: 'HTML/CSS', en: 'HTML/CSS' },
     'tech.javascript': { pt: 'JavaScript', en: 'JavaScript' },
     'tech.node': { pt: 'Node.js', en: 'Node.js' },
@@ -128,6 +134,7 @@ const translations = {
     'tech.notifications': { pt: 'Notifications', en: 'Notifications' },
     'tech.sockets': { pt: 'Sockets', en: 'Sockets' },
     'tech.jwt': { pt: 'JWT', en: 'JWT' },
+    'tech.rmi': { pt: 'RMI', en: 'RMI' },
     'tech.springboot': { pt: 'SpringBoot', en: 'SpringBoot' },
         // Traduções para Projetos Académicos
         'nav.acad': { pt: 'Projetos Académicos', en: 'Academic Projects' },
@@ -179,18 +186,26 @@ translations['sig.quickcapture.desc'] = {
     pt: `
         <p><strong>Desenvolvimento e liderança de soluções QuickCapture, com aplicação para:</strong></p>
         <ul class="list-disc ml-5 mt-2">
-            <li>Registos diários e monitorização de patrulhamento;</li>
+            <li>Registos diários e monitorização de equipas no terreno;</li>
             <li>Coordenação de operações e equipas de resgate;</li>
             <li>Busca e salvamento de pessoas;</li>
+            <li>Gestão de recursos e logística;</li>
+            <li>Gestão de operações de fiscalização a nível nacional (Operação Floresta Segura);</li>
+            <li>Gestão de operações de validação dos pontos de água a nível nacional;</li>
+            <li>Gestão de operações e equipas helitransportadas e terrestres de combate a incêndios;</li>
             <li>Operações locais em Fátima – Santarém (Operação Peregrino, Dia da Criança, Benção dos Capacetes, etc.).</li>
         </ul>
     `,
     en: `
         <p><strong>Led development and deployment of QuickCapture solutions for:</strong></p>
         <ul class="list-disc ml-5 mt-2">
-            <li>Daily records and patrol monitoring;</li>
+            <li>Daily records and field team monitoring;</li>
             <li>Coordination of rescue operations and teams;</li>
             <li>Search and rescue of missing persons;</li>
+            <li>Resource and logistics management;</li>
+            <li>Management of national inspection operations (Forest Safe Operation);</li>
+            <li>Management of nationwide water point validation operations;</li>
+            <li>Management of helicopter-transported and ground firefighting teams and operations;</li>
             <li>Local operations in Fátima – Santarém (Pilgrim Operation, Children’s Day, Helmet Blessing, etc.).</li>
         </ul>
     `
@@ -202,8 +217,8 @@ translations['sig.fieldmaps.desc'] = {
         <ul class="list-disc ml-5 mt-2">
             <li>Operações de fiscalização (Operação Floresta Segura);</li>
             <li>Fiscalização da Rede Nacional de Postos de Vigia;</li>
-            <li>Verificação da Rede de Pontos de Água em articulação com Municípios;</li>
-            <li>Mapas operacionais para equipas de campo.</li>
+            <li>Verificação da Rede de Pontos de Água em articulação com GTFs dos Municípios;</li>
+            <li>Mapas operacionais para apoio às equipas no terreno.</li>
         </ul>
     `,
     en: `
@@ -211,8 +226,8 @@ translations['sig.fieldmaps.desc'] = {
         <ul class="list-disc ml-5 mt-2">
             <li>Inspection operations (Forest Safe Operation);</li>
             <li>Oversight of the National Network of Watch Posts;</li>
-            <li>Verification of the Network of Water Points in coordination with municipalities;</li>
-            <li>Operational maps for field teams.</li>
+            <li>Verification of the Network of Water Points in coordination with municipalities' GTFs;</li>
+            <li>Operational maps to support field teams.</li>
         </ul>
     `
 };
@@ -223,7 +238,7 @@ translations['sig.dashboards.desc'] = {
         <ul class="list-disc ml-5 mt-2">
             <li>Monitorização diária em Salas de Situação da atividade em território nacional;</li>
             <li>Acompanhamento de equipas de drones para busca de pessoas desaparecidas;</li>
-            <li>Suporte a operações internacionais e exercícios (ex.: Modex) com várias entidades;</li>
+            <li>Suporte a operações internacionais e exercícios nos módulos de segurança, incêndio, matérias perigosas, estruturas colapsadas, busca e resgate de pessoas, entre outros, com várias entidades;</li>
             <li>Monitorização e coordenação institucional no âmbito da Operação Floresta Segura.</li>
         </ul>
     `,
@@ -232,7 +247,7 @@ translations['sig.dashboards.desc'] = {
         <ul class="list-disc ml-5 mt-2">
             <li>Daily situation room monitoring of national activity;</li>
             <li>Monitoring of drone teams for missing persons searches;</li>
-            <li>Support to international operations and exercises (e.g., Modex) with multiple entities;</li>
+            <li>Support for international operations and exercises in security, fire, hazardous materials, collapsed structures, search and rescue, and other modules, with multiple entities;</li>
             <li>Institutional monitoring and coordination within the Forest Safe Operation.</li>
         </ul>
     `

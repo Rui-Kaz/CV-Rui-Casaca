@@ -54,6 +54,19 @@ section {
     margin-bottom: 5rem;
 }
 
+/* ===== GRID DE PROJETOS ===== */
+#projetos .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    #projetos .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ===== CARTÕES DE PROJETO ===== */
 .project-card {
     background-color: #0f172a;
@@ -61,6 +74,20 @@ section {
     border-radius: 0.5rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-card h3 {
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.project-card p {
+    color: #cbd5e1;
+    line-height: 1.6;
+    flex-grow: 1;
 }
 
 .project-card:hover {
@@ -77,6 +104,7 @@ section {
     border-radius: 9999px;
     font-size: 0.75rem;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 .tech-pill i {
@@ -98,6 +126,19 @@ section {
     margin-right: 0.35rem;
     vertical-align: middle;
     display: inline-block;
+}
+
+/* ===== DESCRIÇÕES DE PROJETOS ===== */
+.project-card p[data-i18n] {
+    font-size: 0.9rem;
+    text-align: justify;
+    hyphens: auto;
+}
+
+@media (max-width: 768px) {
+    .project-card p[data-i18n] {
+        text-align: left;
+    }
 }
 
 /* ===== BOTÃO FLUTUANTE DE DOWNLOAD ===== */
@@ -165,9 +206,28 @@ body.light .project-card {
     background-color: #ffffff;
     box-shadow: 0 10px 30px rgba(2,6,23,0.06);
 }
+body.light .project-card:hover {
+    box-shadow: 0 25px 50px -12px rgba(3, 102, 214, 0.15);
+}
+body.light .project-card h3 {
+    color: #0366d6;
+}
+body.light .project-card p {
+    color: #334155;
+}
+body.light .competencias-bloco {
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+}
+body.light .competencias-titulo {
+    color: #0366d6;
+}
 body.light .tech-pill {
     background-color: #e6eef9;
     color: #0366d6;
+}
+body.light .tech-pill:hover {
+    background-color: #d0e2f7;
 }
 body.light .nav-tab {
     background-color: #f1f5f9;
@@ -194,6 +254,12 @@ body.light .competencias-titulo {
 body.light .text-brand-gray-300 { color: #0f172a !important; }
 body.light .text-brand-gray-400 { color: #334155 !important; }
 body.light .text-brand-gray-500 { color: #475569 !important; }
+
+/* Card de Sobre Mim no modo light */
+body.light .bg-brand-gray-900 {
+    background-color: #ffffff !important;
+    box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+}
 
 /* Links in light mode should remain visible */
 body.light a { color: #0366d6; }
