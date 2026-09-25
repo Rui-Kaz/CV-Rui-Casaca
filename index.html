@@ -92,7 +92,7 @@
             <div class="hero-content">
                 <div class="eyebrow">
                     <i data-lucide="map-pin" class="w-4 h-4"></i>
-                    <span data-i18n="hero.eyebrow">Coimbra, Portugal - Critical Software, ASD / SpaceForce</span>
+                    <span data-i18n="hero.eyebrow">Santa Maria da Feira, Portugal • Remoto / Híbrido / Presencial</span>
                 </div>
                 <h1 class="hero-name" aria-label="Rui Casaca">
                     <span class="hl" style="--i:0">R</span><span class="hl" style="--i:1">u</span><span class="hl" style="--i:2">i</span><span class="hs">&nbsp;</span><span class="hl" style="--i:3">C</span><span class="hl" style="--i:4">a</span><span class="hl" style="--i:5">s</span><span class="hl" style="--i:6">a</span><span class="hl" style="--i:7">c</span><span class="hl" style="--i:8">a</span>
@@ -106,31 +106,43 @@
 
                 <div class="hero-actions" aria-label="Primary actions">
                     <a class="primary-action" href="mailto:rui.casaca@gmail.com">
-                        <i data-lucide="send" class="w-5 h-5"></i>
-                        <span data-i18n="hero.cta.contact">Contact</span>
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        <span data-i18n="hero.cta.contact">Contactar</span>
                     </a>
-                    <a class="secondary-action" href="https://github.com/Rui-Kaz" target="_blank" rel="noopener noreferrer">
+                    <a class="secondary-action" href="https://github.com/Rui-Casaca" target="_blank" rel="noopener noreferrer" title="GitHub Principal (Portfólio)">
                         <i data-lucide="github" class="w-5 h-5"></i>
-                        <span data-i18n="hero.cta.github">View GitHub</span>
+                        <span>GitHub (Rui-Casaca)</span>
                     </a>
-                    <a class="secondary-action" href="https://www.linkedin.com/in/rui-casaca/" target="_blank" rel="noopener noreferrer">
+                    <a class="secondary-action" href="https://github.com/Rui-Kaz" target="_blank" rel="noopener noreferrer" title="GitHub de Projetos">
+                        <i data-lucide="code" class="w-5 h-5"></i>
+                        <span>GitHub (Rui-Kaz)</span>
+                    </a>
+                    <a class="secondary-action" href="https://www.linkedin.com/in/rui-casaca/" target="_blank" rel="noopener noreferrer" title="Perfil LinkedIn">
                         <i data-lucide="linkedin" class="w-5 h-5"></i>
                         <span>LinkedIn</span>
+                    </a>
+                    <a class="secondary-action" href="https://en.fiverr.com/kazzillion?public_mode=true" target="_blank" rel="noopener noreferrer" title="Perfil Fiverr">
+                        <i data-lucide="briefcase" class="w-5 h-5"></i>
+                        <span>Fiverr</span>
                     </a>
                 </div>
 
                 <div class="hero-proof" aria-label="Professional highlights">
                     <div>
-                        <strong data-i18n="hero.proof.critical.value">ASD / SpaceForce</strong>
-                        <span data-i18n="hero.proof.critical.label">satellite mission software</span>
+                        <strong>GNR · 15+ Anos</strong>
+                        <span>disciplina &amp; liderança</span>
+                    </div>
+                    <div>
+                        <strong data-i18n="hero.proof.critical.value">Critical Software</strong>
+                        <span data-i18n="hero.proof.critical.label">Lighthouse • Space Ground Segment</span>
                     </div>
                     <div>
                         <strong data-i18n="hero.proof.gis.value">ArcGIS / QGIS</strong>
-                        <span data-i18n="hero.proof.gis.label">georeferenced operations</span>
+                        <span data-i18n="hero.proof.gis.label">operações georreferenciadas</span>
                     </div>
                     <div>
-                        <strong data-i18n="hero.proof.ai.value">AI agents + automation</strong>
-                        <span data-i18n="hero.proof.ai.label">modern productivity</span>
+                        <strong data-i18n="hero.proof.ai.value">AI agents + automação</strong>
+                        <span data-i18n="hero.proof.ai.label">produtividade moderna</span>
                     </div>
                 </div>
             </div>
@@ -394,10 +406,84 @@
                 <h2 data-i18n="heading.projects">Project Archive</h2>
                 <p class="archive-note" data-i18n="projects.archive.note">Complete repository of professional, operational and technical projects. The most representative work is highlighted above, while this section keeps the broader track record visible.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Projeto 0: HomeVault -->
+                    <div class="project-card">
+                        <div class="flex items-start justify-between">
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.homevault.title">HomeVault - Gestão de Inventário Offline-First</h3>
+                            <a href="https://github.com/Rui-Casaca/HomeVault" target="_blank" rel="noopener noreferrer" class="text-brand-gray-400 hover:text-brand-blue transition-colors p-1" title="Ver código no GitHub">
+                                <i data-lucide="github" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-pill"><span data-i18n="tech.flutter">Flutter</span></span>
+                            <span class="tech-pill"><span data-i18n="tech.dart">Dart</span></span>
+                            <span class="tech-pill"><span data-i18n="tech.sqlite">Drift / SQLite</span></span>
+                            <span class="tech-pill">Google Drive API</span>
+                            <span class="tech-pill">Biometria</span>
+                        </div>
+                        <p data-i18n="projects.homevault.desc">Aplicação Android offline-first para catalogar bens, documentos e fotos em segurança. Gestão de dados locais com Drift (SQLite), backups encriptados e sincronização com Google Drive, autenticação biométrica e scanner QR/barras.</p>
+                        <div class="mt-4 pt-3 border-t border-brand-gray-800 flex items-center justify-between">
+                            <a href="https://github.com/Rui-Casaca/HomeVault" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-brand-blue hover:underline font-medium">
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Ver no GitHub
+                            </a>
+                            <span class="text-xs text-brand-gray-500">Android • Flutter</span>
+                        </div>
+                    </div>
+
+                    <!-- Projeto: GIS Tools -->
+                    <div class="project-card">
+                        <div class="flex items-start justify-between">
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.gistools.title">GIS Tools & Automação Python</h3>
+                            <a href="https://github.com/Rui-Casaca/GIS_tools" target="_blank" rel="noopener noreferrer" class="text-brand-gray-400 hover:text-brand-blue transition-colors p-1" title="Ver código no GitHub">
+                                <i data-lucide="github" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-pill"><span data-i18n="tech.python">Python</span></span>
+                            <span class="tech-pill">GIS</span>
+                            <span class="tech-pill"><span data-i18n="tech.automation">Automatização</span></span>
+                            <span class="tech-pill">GUI</span>
+                        </div>
+                        <p data-i18n="projects.gistools.desc">Suite de ferramentas em Python com interface gráfica para processamento ágil de dados espaciais, conversão de formatos e apoio a fluxos de informação geográfica.</p>
+                        <div class="mt-4 pt-3 border-t border-brand-gray-800 flex items-center justify-between">
+                            <a href="https://github.com/Rui-Casaca/GIS_tools" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-brand-blue hover:underline font-medium">
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Ver no GitHub
+                            </a>
+                            <span class="text-xs text-brand-gray-500">Python • Desktop</span>
+                        </div>
+                    </div>
+
+                    <!-- Projeto: MarkDown Converter -->
+                    <div class="project-card">
+                        <div class="flex items-start justify-between">
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.mdconv.title">MarkDown Converter (Otimizador de Tokens IA)</h3>
+                            <a href="https://github.com/Rui-Casaca/MarkDown_converter" target="_blank" rel="noopener noreferrer" class="text-brand-gray-400 hover:text-brand-blue transition-colors p-1" title="Ver código no GitHub">
+                                <i data-lucide="github" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-pill"><span data-i18n="tech.python">Python</span></span>
+                            <span class="tech-pill"><span data-i18n="tech.llm">IA / LLMs</span></span>
+                            <span class="tech-pill">Document Parsing</span>
+                        </div>
+                        <p data-i18n="projects.mdconv.desc">Aplicação em Python para converter documentos Word, PDF e PowerPoint em formato MarkDown limpo, reduzindo expressivamente o consumo de tokens em modelos de IA.</p>
+                        <div class="mt-4 pt-3 border-t border-brand-gray-800 flex items-center justify-between">
+                            <a href="https://github.com/Rui-Casaca/MarkDown_converter" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-brand-blue hover:underline font-medium">
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Ver no GitHub
+                            </a>
+                            <span class="text-xs text-brand-gray-500">Python • AI Tooling</span>
+                        </div>
+                    </div>
+
                     
                     <!-- Projeto 1 -->
                     <div class="project-card">
-                        <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p1.title">Aplicação de Busca de Pessoas desaparecidas com IA</h3>
+                        <div class="flex items-start justify-between">
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p1.title">Aplicação de Busca de Pessoas desaparecidas com IA</h3>
+                            <a href="https://github.com/Rui-Casaca/Missing-Peron-Prediction-App" target="_blank" rel="noopener noreferrer" class="text-brand-gray-400 hover:text-brand-blue transition-colors p-1" title="Ver código no GitHub">
+                                <i data-lucide="github" class="w-5 h-5"></i>
+                            </a>
+                        </div>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="tech-pill"><span data-i18n="tech.reactjs">React</span></span>
                             <span class="tech-pill"><span data-i18n="tech.node">Node.js</span></span>
@@ -472,13 +558,25 @@
                 <!-- Usamos uma "timeline" visual -->
                 <div class="relative border-l-4 border-brand-gray-800 space-y-10">
 
-                    <!-- Item 0 -->
+                    <!-- Item 0: Critical Software -->
                     <div class="relative pl-8">
                         <div class="absolute -left-2.5 top-1 w-5 h-5 bg-brand-blue rounded-full border-4 border-brand-gray-950"></div>
-                        <span class="text-sm text-brand-gray-500" data-i18n="exp.critical.period">Atual</span>
-                        <h3 class="text-xl font-semibold mt-1" data-i18n="exp.critical.title">Full-stack Developer Intern</h3>
-                        <p class="text-brand-blue font-medium" data-i18n="exp.critical.org">Critical Software - ASD / SpaceForce, Coimbra</p>
-                        <p class="mt-2" data-i18n="exp.critical.desc">Full-stack Developer Intern in the ASD / SpaceForce team, contributing to software for satellite mission communications, including telecommand dispatch and telemetry reading, within a quality-focused engineering environment.</p>
+                        <span class="text-sm text-brand-gray-500" data-i18n="exp.critical.period">Fev 2026 - Jul 2026</span>
+                        <h3 class="text-xl font-semibold mt-1" data-i18n="exp.critical.title">Estagiário de Engenharia de Software (ASD / SpaceForce)</h3>
+                        <p class="text-brand-blue font-medium" data-i18n="exp.critical.org">Critical Software, Coimbra</p>
+                        <p class="mt-2 text-brand-gray-300 text-sm leading-relaxed" data-i18n="exp.critical.desc">Contribuição para o desenvolvimento da plataforma de Ground Segment para missões espaciais (projeto Lighthouse). Trabalho em funcionalidades de visualização e processamento de telemetria em tempo real, integração de REST APIs e WebSockets, e contacto com normas aeroespaciais ECSS e pacotes CCSDS.</p>
+                    </div>
+
+                    <!-- Item 0.5: Freelance GIS & 3D -->
+                    <div class="relative pl-8">
+                        <div class="absolute -left-2.5 top-1 w-5 h-5 bg-brand-gray-800 rounded-full border-4 border-brand-gray-950"></div>
+                        <span class="text-sm text-brand-gray-500" data-i18n="exp.freelance.period">Nov 2022 - Presente</span>
+                        <h3 class="text-xl font-semibold mt-1" data-i18n="exp.freelance.title">Especialista SIG & Modelação 3D Freelance</h3>
+                        <p class="text-brand-blue font-medium">
+                            <span data-i18n="exp.freelance.org">Fiverr & Upwork</span> • 
+                            <a href="https://en.fiverr.com/kazzillion?public_mode=true" target="_blank" rel="noopener noreferrer" class="underline hover:text-brand-gray-100">Perfil Fiverr</a>
+                        </p>
+                        <p class="mt-2 text-brand-gray-300 text-sm leading-relaxed" data-i18n="exp.freelance.desc">Desenvolvimento e entrega de soluções de geoprocessamento em Python, cartografia digital e modelação 3D para clientes internacionais em contextos de missão crítica.</p>
                     </div>
 
                     <!-- Item 1 -->
@@ -579,7 +677,12 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Minesweeper -->
                         <div class="project-card">
-                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.minesweeper.title">Minesweeper</h3>
+                            <div class="flex items-start justify-between">
+                                <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.minesweeper.title">Minesweeper</h3>
+                                <a href="https://github.com/Rui-Kaz/Minesweeper_LS" target="_blank" rel="noopener noreferrer" class="text-brand-gray-400 hover:text-brand-blue transition-colors p-1" title="Ver código no GitHub">
+                                    <i data-lucide="github" class="w-5 h-5"></i>
+                                </a>
+                            </div>
                             <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.minesweeper.period">2º semestre de 2024 • React / JavaScript</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="tech-pill">React</span>
@@ -622,7 +725,12 @@
 
                         <!-- SurpriseMe -->
                         <div class="project-card">
-                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.surprisme.title">SurpriseMe</h3>
+                            <div class="flex items-start justify-between">
+                                <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.surprisme.title">SurpriseMe</h3>
+                                <a href="https://github.com/Rui-Casaca/SurpriseMe" target="_blank" rel="noopener noreferrer" class="text-brand-gray-400 hover:text-brand-blue transition-colors p-1" title="Ver código no GitHub">
+                                    <i data-lucide="github" class="w-5 h-5"></i>
+                                </a>
+                            </div>
                             <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.surprisme.period">2º semestre de 2025 • Java (JavaFX) • Integração LLM • Scrum</p>
                              <div class="flex flex-wrap gap-2 mb-4">
                                     <span class="tech-pill"><span data-i18n="tech.java">Java</span></span>
@@ -718,7 +826,7 @@
                             <div class="about-fact-card">
                                 <i data-lucide="shield" class="w-5 h-5"></i>
                                 <div>
-                                    <strong data-i18n="about.fact1.label">GNR · 12+ years</strong>
+                                    <strong data-i18n="about.fact1.label">GNR · 15+ anos</strong>
                                     <span data-i18n="about.fact1.desc">Public service, discipline and leadership</span>
                                 </div>
                             </div>
@@ -739,8 +847,8 @@
                             <div class="about-fact-card">
                                 <i data-lucide="map-pin" class="w-5 h-5"></i>
                                 <div>
-                                    <strong data-i18n="about.fact4.label">Coimbra, Portugal</strong>
-                                    <span data-i18n="about.fact4.desc">Open to remote and on-site</span>
+                                    <strong data-i18n="about.fact4.label">Santa Maria da Feira, Portugal</strong>
+                                    <span data-i18n="about.fact4.desc">Disponível para Remoto, Híbrido ou Presencial</span>
                                 </div>
                             </div>
                         </div>
@@ -822,22 +930,32 @@
 
         <!-- ===== RODAPÉ ===== -->
         <footer class="text-center text-brand-gray-500 mt-20 border-t border-brand-gray-800 pt-10">
-            <div class="flex justify-center space-x-4 mb-4">
+            <div class="flex justify-center items-center space-x-6 mb-4">
                  <a href="https://www.linkedin.com/in/rui-casaca/" target="_blank" rel="noopener noreferrer" 
-                       class="text-brand-gray-500 hover:text-brand-blue transition-colors"
-                       aria-label="LinkedIn de Rui Casaca">
-                        <i data-lucide="linkedin" class="w-6 h-6"></i>
-                    </a>
-                    <a href="https://github.com/Rui-Kaz" target="_blank" rel="noopener noreferrer" 
-                       class="text-brand-gray-500 hover:text-brand-blue transition-colors"
-                       aria-label="GitHub de Rui Casaca">
-                        <i data-lucide="github" class="w-6 h-6"></i>
-                    </a>
-                    <a href="mailto:rui.casaca@gmail.com" 
-                       class="text-brand-gray-500 hover:text-brand-blue transition-colors"
-                       aria-label="Enviar email para Rui Casaca">
-                        <i data-lucide="mail" class="w-6 h-6"></i>
-                    </a>
+                    class="text-brand-gray-500 hover:text-brand-blue transition-colors"
+                    aria-label="LinkedIn de Rui Casaca" title="LinkedIn">
+                     <i data-lucide="linkedin" class="w-6 h-6"></i>
+                 </a>
+                 <a href="https://github.com/Rui-Casaca" target="_blank" rel="noopener noreferrer" 
+                    class="text-brand-gray-500 hover:text-brand-blue transition-colors"
+                    aria-label="GitHub Rui-Casaca (Principal)" title="GitHub (Rui-Casaca)">
+                     <i data-lucide="github" class="w-6 h-6"></i>
+                 </a>
+                 <a href="https://github.com/Rui-Kaz" target="_blank" rel="noopener noreferrer" 
+                    class="text-brand-gray-500 hover:text-brand-blue transition-colors"
+                    aria-label="GitHub Rui-Kaz (Projetos)" title="GitHub (Rui-Kaz)">
+                     <i data-lucide="code" class="w-6 h-6"></i>
+                 </a>
+                 <a href="https://en.fiverr.com/kazzillion?public_mode=true" target="_blank" rel="noopener noreferrer" 
+                    class="text-brand-gray-500 hover:text-brand-blue transition-colors"
+                    aria-label="Perfil Fiverr de Rui Casaca" title="Fiverr">
+                     <i data-lucide="briefcase" class="w-6 h-6"></i>
+                 </a>
+                 <a href="mailto:rui.casaca@gmail.com" 
+                    class="text-brand-gray-500 hover:text-brand-blue transition-colors"
+                    aria-label="Enviar email para Rui Casaca" title="Email">
+                     <i data-lucide="mail" class="w-6 h-6"></i>
+                 </a>
             </div>
             <p data-i18n="footer.copy">&copy; 2026 Rui Casaca. Portfólio profissional construído com HTML, Tailwind CSS e JavaScript.</p>
         </footer>
