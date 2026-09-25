@@ -475,7 +475,11 @@ function toggleLanguage() {
 function refreshLangToggle() {
     const current = localStorage.getItem('site_lang') || 'en';
     const langCodeEl = document.getElementById('lang-code');
-    if (langCodeEl) langCodeEl.textContent = (current === 'pt') ? 'EN' : 'PT';
+    if (langCodeEl) langCodeEl.textContent = current.toUpperCase();
+    const langBtn = document.getElementById('lang-toggle');
+    if (langBtn) {
+        langBtn.title = (current === 'en') ? 'Switch to Portuguese (PT)' : 'Mudar para Inglês (EN)';
+    }
 }
 
 function setTheme(theme) {
@@ -850,9 +854,10 @@ function initMagneticButtons() {
     buttons.forEach(function(btn) {
         btn.addEventListener('mousemove', function(e) {
             var rect = btn.getBoundingClientRect();
-            var mx = e.clientX - rect.left - rect.width / 2;
-            var my = e.clientY - rect.top - rect.height / 2;
-            btn.style.transform = 'translate(' + (mx * 0.25).toFixed(2) + 'px,' + (my * 0.35).toFixed(2) + 'px)';
+            // Micro-movimento muito suave e limitado para evitar efeito exagerado
+            var mx = Math.max(-2, Math.min(2, (e.clientX - rect.left - rect.width / 2) * 0.04));
+            var my = Math.max(-2, Math.min(2, (e.clientY - rect.top - rect.height / 2) * 0.04));
+            btn.style.transform = 'translate(' + mx.toFixed(1) + 'px,' + my.toFixed(1) + 'px)';
         }, { passive: true });
         btn.addEventListener('mouseleave', function() {
             btn.style.transform = '';
