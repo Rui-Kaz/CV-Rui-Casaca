@@ -1,5 +1,5 @@
 // Inicializar ícones Lucide
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     lucide.createIcons();
 });
 
@@ -65,14 +65,14 @@ function showTab(tabName, ev) {
     allContents.forEach(content => {
         content.classList.remove('active');
     });
-    
+
     // Remover active de todos os botões
     const allTabs = document.querySelectorAll('.nav-tab');
     allTabs.forEach(tab => {
         tab.classList.remove('active');
         tab.setAttribute('aria-selected', 'false');
     });
-    
+
     // Mostrar o conteúdo selecionado com fade
     const selectedContent = document.getElementById('tab-' + tabName);
     if (selectedContent) {
@@ -82,7 +82,7 @@ function showTab(tabName, ev) {
         selectedContent.style.animation = '';
         selectedContent.classList.add('active');
     }
-    
+
     // Ativar o botão selecionado (se o event estiver disponível)
     try {
         const target = ev && ev.target ? ev.target : window.event && window.event.target;
@@ -94,7 +94,7 @@ function showTab(tabName, ev) {
     } catch (e) {
         // ignore
     }
-    
+
     // Mantem a posição atual do utilizador ao trocar de aba.
     requestAnimationFrame(() => revealVisibleItems(selectedContent));
 }
@@ -192,13 +192,13 @@ const translations = {
     'projects.p4.desc': { pt: 'Jogo para incentivar ao estudo crianças do 1º ao 4º ciclo, com interface simples e bloqueio do dispositivo até cumprimento de desafios. Configurável via painel de Admin.', en: 'Game to encourage studying for children in primary school, with a simple interface and device lock until challenges are completed. Configurable via an Admin panel.' },
     'about.title': { pt: 'Sobre Mim', en: 'About Me' },
     'about.kicker': { pt: 'A minha história', en: 'My story' },
-    'about.lead': { pt: 'O meu percurso para a engenharia de software começou num contexto operacional altamente exigente. Dediquei mais de 15 anos à GNR — primeiro no patrulhamento, depois em operações na Unidade de Emergência de Proteção e Socorro (UEPS). Lidar com cenários críticos moldou a minha abordagem à disciplina, fiabilidade e entrega de resultados.', en: 'My path into software engineering began in demanding, high-stakes environments. I dedicated over 15 years to the GNR — first in patrol, then in emergency protection and rescue operations (UEPS). Handling mission-critical scenarios deeply shaped my focus on discipline, reliability, and delivering results.' },
-    'about.mid': { pt: 'Em 2020, ainda no ativo, transitei para um novo papel: construir as ferramentas digitais que faltavam às nossas equipas de terreno. Dashboards SIG, aplicações mobile, workflows de emergência com IA — ferramentas com consequências operacionais reais e utilizadores reais que dependiam delas todos os dias.', en: 'In 2020, while still in service, I transitioned to a new role: building the digital tools our field teams were missing. GIS dashboards, mobile apps, AI-powered emergency workflows — tools with real operational consequences and real users depending on them every day.' },
-    'about.close': { pt: 'Em 2023 matriculei-me no ISEC para formalizar a minha formação em Engenharia Informática. Realizei com sucesso o meu estágio curricular na Critical Software (divisão ASD / SpaceForce, concluído em Julho de 2026), focado em software de comunicações para missões de satélite. Elevado rigor e qualidade técnica continuam a ser o meu padrão.', en: 'In 2023 I enrolled at ISEC to formalize my practice in Computer Engineering. I completed my Software Engineering Internship at Critical Software (ASD / SpaceForce division, finished in July 2026), contributing to satellite mission communication software. High rigor and technical standards remain my foundation.' },
+    'about.lead': { pt: 'O meu percurso para a engenharia de software começou num contexto operacional altamente exigente. Dediquei mais de 15 anos à GNR — primeiro no patrulhamento de rua no âmbito criminal, depois em operações na especialidade da Unidade de Emergência de Proteção e Socorro (UEPS). Lidar com cenários críticos moldou a minha abordagem à disciplina, fiabilidade e entrega de resultados.', en: 'My path into software engineering began in demanding, high-stakes environments. I dedicated over 15 years to the GNR — first in criminal patrol, then as specialist in emergency protection and rescue operations (UEPS). Handling mission-critical scenarios deeply shaped my focus on discipline, reliability, and delivering results.' },
+    'about.mid': { pt: 'Em 2020, ainda no ativo, transitei para um novo papel especializado: construir as ferramentas digitais que faltavam às nossas equipas de terreno, inovar e melhorar operações a nível nacional para proteção das pessoas e do ambiente, fazendo parte dos responsáveis por gerir e inovar a Operação Floresta Segura que decorre todos os anos, assim como comunicação e articulação constante com todos os Municipios para preparação da época de incêndios, cheias, entre outros desastres ou catástrofes. Impulsionador principal do projeto SARIA para predição na busca por pessoas desaparecidas com drones, definindo protocolos, modalidades de ação para qualquer equipa interveniente, análise, georreferênciação, e estatistica com probabilidade para direcionar as buscas de forma mais eficiente e reduzir o tempo exposição da vitima ao perigo. Para isso, foram criados e geridos vários Dashboards com métricas e monitorização de todos os operacionais em tempo real, aplicações mobile para uso operacional no terreno em vários cenários, workflows de processos com IA — ferramentas com consequências operacionais reais e utilizadores reais que dependiam delas todos os dias.', en: 'In 2020, while still in service, I transitioned to a new role: designing mission-critical digital tools for GNR emergency operations. I led the development of real-time GIS dashboards, mobile response applications, and AI-powered workflows that improved operational efficiency and decision-making in high-stakes scenarios. A highlight was spearheading the SARIA project, which pioneered predictive drone search and rescue analytics for missing persons, creating protocols that optimised response strategies and reduced exposure time for vulnerable individuals.' },
+    'about.close': { pt: 'Em 2023 matriculei-me no ISEC para formalizar a minha formação em Engenharia Informática. Realizei com sucesso o meu estágio curricular na Critical Software (divisão ASD / SpaceForce), no projeto Lighthouse (Karvel) focado em processamento e transmissão de telemetrias e envio de telecomandos para missões de satélites. O elevado rigor e qualidade técnica são o meu padrão.', en: 'In 2023 I enrolled at ISEC to formalize my practice in Computer Engineering. I successfully completed my Software Engineering Internship at Critical Software (ASD / SpaceForce division), on the Lighthouse (Karvel) project, focused on telemetry processing and transmission and command uplinks for satellite missions. High rigor and technical quality remain my standard.' },
     'about.fact1.label': { pt: 'GNR · 15+ anos', en: 'GNR · 15+ years' },
     'about.fact1.desc': { pt: 'Serviço público, disciplina e liderança operacional', en: 'Public service, discipline and operational leadership' },
     'about.fact2.label': { pt: 'Autodidata → ISEC', en: 'Self-taught → ISEC' },
-    'about.fact2.desc': { pt: 'Licenciatura formal em Eng. Informática', en: 'Formal Computer Engineering degree' },
+    'about.fact2.desc': { pt: 'Licenciatura formal em Engenharia Informática', en: 'Formal Computer Engineering degree' },
     'about.fact3.label': { pt: 'Critical Software', en: 'Critical Software' },
     'about.fact3.desc': { pt: 'Lighthouse Ground Segment • Missões satélite', en: 'Lighthouse Ground Segment • Satellite missions' },
     'about.fact4.label': { pt: 'Santa Maria da Feira, Portugal', en: 'Santa Maria da Feira, Portugal' },
@@ -218,14 +218,14 @@ const translations = {
     'distinctions.m3.title': { pt: 'Medalha de Assiduidade', en: 'Assiduity Medal' },
     'distinctions.m3.desc': { pt: 'Atribuída pela dedicação constante e presença exemplar no desempenho de funções.', en: 'Awarded for constant dedication and exemplary attendance in the performance of duties.' },
     'education.period': { pt: '2023 - Presente', en: '2023 - Present' },
-    'education.degree': { pt: 'Licenciatura em Eng. Informática - Ramo de Dev', en: "Bachelor's in Computer Engineering - Development track" },
+    'education.degree': { pt: 'Licenciatura em Engenharia Informática - Ramo de Dev', en: "Bachelor's in Computer Engineering - Development track" },
     'education.institution': { pt: 'Instituto Superior de Engenharia de Coimbra (ISEC)', en: 'Instituto Superior de Engenharia de Coimbra (ISEC)' },
     'exp.critical.period': { pt: 'Fev 2026 - Jul 2026', en: 'Feb 2026 - Jul 2026' },
     'exp.critical.title': { pt: 'Estagiário de Engenharia de Software (ASD / SpaceForce)', en: 'Software Engineering Intern (ASD / SpaceForce)' },
     'exp.critical.org': { pt: 'Critical Software, Coimbra', en: 'Critical Software, Coimbra' },
-    
+
     'exp.freelance.period': { pt: 'Nov 2022 - Presente', en: 'Nov 2022 - Present' },
-    'exp.freelance.title': { pt: 'Especialista SIG & Modelação 3D Freelance', en: 'Freelance GIS Specialist & 3D Modeling' },
+    'exp.freelance.title': { pt: 'Especialista SIG & Modelação 3D Freelancer', en: 'Freelance GIS Specialist & 3D Modeling' },
     'exp.freelance.org': { pt: 'Fiverr & Upwork', en: 'Fiverr & Upwork' },
     'exp.freelance.desc': { pt: 'Desenvolvimento e entrega de soluções de geoprocessamento em Python, cartografia digital e modelação 3D para clientes internacionais em contextos de missão crítica.', en: 'Delivered GIS solutions, Python geoprocessing, digital mapping, and 3D modeling for international clients in mission-critical contexts.' },
     'projects.homevault.title': { pt: 'HomeVault - Gestão de Inventário Offline-First', en: 'HomeVault - Offline-First Inventory Management' },
@@ -240,12 +240,12 @@ const translations = {
     'exp.p1.org': { pt: 'GNR - Unidade de Emergência de Proteção e Socorro (UEPS)', en: 'GNR - Emergency Protection and Rescue Unit (UEPS)' },
     'exp.p1.desc': { pt: 'Desenvolvimento de software mobile/desktop, integração de LLMs, automatização de processos e gestão de plataformas georreferenciadas (ArcGIS Pro/QGIS). Criação de mais de 8 dashboards, apoio a mais de 10 operações nacionais e a uma operação internacional em Leão, Espanha, com acompanhamento diário de mais de 48 equipas a nível nacional durante todo o ano.', en: 'Mobile and desktop software development, LLM integration, process automation and georeferenced platform management (ArcGIS Pro/QGIS). Delivered 8+ dashboards, supported 10+ national operations and one international operation in Leon, Spain, and helped monitor 48+ field teams nationwide every day of the year.' },
     'exp.p2.period': { pt: 'Mai 2019 - Jul 2020', en: 'May 2019 - Jul 2020' },
-    'exp.p2.title': { pt: 'Operacional de combate a incêndios', en: 'Firefighting Operator' },
+    'exp.p2.title': { pt: 'Operacional de combate a incêndios - Helicóptero e Solo', en: 'Helicopter and Ground Firefighting Operational' },
     'exp.p2.org': { pt: 'GNR - UEPS', en: 'GNR - UEPS' },
     'exp.p3.period': { pt: 'Out 2011 - Mar 2019', en: 'Oct 2011 - Mar 2019' },
-    'exp.p3.title': { pt: 'Patrulheiro', en: 'Patrolman' },
+    'exp.p3.title': { pt: 'Patrulheiro', en: 'Military Patrolman' },
     'exp.p3.org': { pt: 'Guarda Nacional Republicana (GNR)', en: 'National Republican Guard (GNR)' },
-    'footer.copy': { pt: '© 2026 Rui Casaca. Portfólio profissional construído com HTML, Tailwind CSS e JavaScript.', en: '© 2026 Rui Casaca. Professional portfolio built with HTML, Tailwind CSS and JavaScript.' },
+    'footer.copy': { pt: '© 2026 Rui Casaca.', en: '© 2026 Rui Casaca.' },
     'control.theme': { pt: 'Alternar tema (Dark/Light)', en: 'Toggle theme (Dark/Light)' },
     'control.lang': { pt: 'Alternar idioma (PT/EN)', en: 'Toggle language (PT/EN)' },
     'download.title': { pt: 'Download do meu CV em PDF', en: 'Download my CV (PDF)' },
@@ -287,48 +287,48 @@ const translations = {
     'tech.jwt': { pt: 'JWT', en: 'JWT' },
     'tech.rmi': { pt: 'RMI', en: 'RMI' },
     'tech.springboot': { pt: 'SpringBoot', en: 'SpringBoot' },
-        // Traduções para Projetos Académicos
-        'nav.acad': { pt: 'Projetos Académicos', en: 'Academic Projects' },
-        'acad.title': { pt: 'Projetos Académicos', en: 'Academic Projects' },
-        'acad.minesweeper.title': { pt: 'Minesweeper', en: 'Minesweeper' },
-        'acad.minesweeper.period': { pt: '2º semestre de 2024 • React / JavaScript', en: '2nd semester 2024 • React / JavaScript' },
-        'acad.minesweeper.desc': { pt: 'Implementação de um jogo Minesweeper com interface reativa, gestão de estado e lógica de jogo, priorizando performance e UX.', en: 'Implementation of a Minesweeper game with reactive UI, state management and game logic, prioritizing performance and UX.' },
+    // Traduções para Projetos Académicos
+    'nav.acad': { pt: 'Projetos Académicos', en: 'Academic Projects' },
+    'acad.title': { pt: 'Projetos Académicos', en: 'Academic Projects' },
+    'acad.minesweeper.title': { pt: 'Minesweeper', en: 'Minesweeper' },
+    'acad.minesweeper.period': { pt: '2º semestre de 2024 • React / JavaScript', en: '2nd semester 2024 • React / JavaScript' },
+    'acad.minesweeper.desc': { pt: 'Implementação de um jogo Minesweeper com interface reativa, gestão de estado e lógica de jogo, priorizando performance e UX.', en: 'Implementation of a Minesweeper game with reactive UI, state management and game logic, prioritizing performance and UX.' },
 
-        'acad.chess.title': { pt: 'Jogo Xadrez', en: 'Chess Game' },
-        'acad.chess.period': { pt: '2º semestre de 2025 • Java (JavaFX) • MVC', en: '2nd semester 2025 • Java (JavaFX) • MVC' },
-        'acad.chess.desc': { pt: 'Desenvolvido em Java com JavaFX e arquitetura MVC — motor de regras, representação do tabuleiro, e interface responsiva.', en: 'Developed in Java with JavaFX and MVC architecture — rules engine, board representation and responsive UI.' },
+    'acad.chess.title': { pt: 'Jogo Xadrez', en: 'Chess Game' },
+    'acad.chess.period': { pt: '2º semestre de 2025 • Java (JavaFX) • MVC', en: '2nd semester 2025 • Java (JavaFX) • MVC' },
+    'acad.chess.desc': { pt: 'Desenvolvido em Java com JavaFX e arquitetura MVC — motor de regras, representação do tabuleiro, e interface responsiva.', en: 'Developed in Java with JavaFX and MVC architecture — rules engine, board representation and responsive UI.' },
 
-        'acad.caravanas.title': { pt: 'Jogo de Caravanas', en: 'Caravans Game' },
-        'acad.caravanas.period': { pt: '1º semestre de 2025 • C++ (POO)', en: '1st semester 2025 • C++ (OOP)' },
-        'acad.caravanas.desc': { pt: 'Jogo escrito em C++ aplicando princípios de programação orientada a objetos: classes, herança e gestão de recursos.', en: 'Game written in C++ applying OOP principles: classes, inheritance and resource management.' },
+    'acad.caravanas.title': { pt: 'Jogo de Caravanas', en: 'Caravans Game' },
+    'acad.caravanas.period': { pt: '1º semestre de 2025 • C++ (POO)', en: '1st semester 2025 • C++ (OOP)' },
+    'acad.caravanas.desc': { pt: 'Jogo escrito em C++ aplicando princípios de programação orientada a objetos: classes, herança e gestão de recursos.', en: 'Game written in C++ applying OOP principles: classes, inheritance and resource management.' },
 
-        'acad.chat.title': { pt: 'Aplicação Cliente/Servidor (Fórum / Chat)', en: 'Client/Server Application (Forum / Chat)' },
-        'acad.chat.period': { pt: '1º semestre de 2025 • C (Sockets) • Concorrência', en: '1st semester 2025 • C (Sockets) • Concurrency' },
-        'acad.chat.desc': { pt: 'Implementação em C usando sockets para comunicação, com gestão de concorrência para múltiplos clientes e persistência simples.', en: 'Implemented in C using sockets for communication, with concurrency handling for multiple clients and simple persistence.' },
+    'acad.chat.title': { pt: 'Aplicação Cliente/Servidor (Fórum / Chat)', en: 'Client/Server Application (Forum / Chat)' },
+    'acad.chat.period': { pt: '1º semestre de 2025 • C (Sockets) • Concorrência', en: '1st semester 2025 • C (Sockets) • Concurrency' },
+    'acad.chat.desc': { pt: 'Implementação em C usando sockets para comunicação, com gestão de concorrência para múltiplos clientes e persistência simples.', en: 'Implemented in C using sockets for communication, with concurrency handling for multiple clients and simple persistence.' },
 
-        'acad.surprisme.title': { pt: 'SurpriseMe', en: 'SurpriseMe' },
-        'acad.surprisme.period': { pt: '2º semestre de 2025 • Java (JavaFX) • Integração LLM • Scrum', en: '2nd semester 2025 • Java (JavaFX) • LLM integration • Scrum' },
-        'acad.surprisme.desc': { pt: 'Aplicação desenvolvida em contexto de Gestão de Projetos com metodologia Scrum, UI em JavaFX e integração com LLM para funcionalidades inteligentes.', en: 'Application developed within Project Management course using Scrum, UI in JavaFX and integrated LLM features.' },
+    'acad.surprisme.title': { pt: 'SurpriseMe', en: 'SurpriseMe' },
+    'acad.surprisme.period': { pt: '2º semestre de 2025 • Java (JavaFX) • Integração LLM • Scrum', en: '2nd semester 2025 • Java (JavaFX) • LLM integration • Scrum' },
+    'acad.surprisme.desc': { pt: 'Aplicação desenvolvida em contexto de Gestão de Projetos com metodologia Scrum, UI em JavaFX e integração com LLM para funcionalidades inteligentes.', en: 'Application developed within Project Management course using Scrum, UI in JavaFX and integrated LLM features.' },
 
-        'acad.safetys.title': { pt: 'SafetYSec', en: 'SafetYSec' },
-        'acad.safetys.period': { pt: '2º semestre de 2025 • Kotlin (Android, Jetpack Compose) • Firebase', en: '2nd semester 2025 • Kotlin (Android, Jetpack Compose) • Firebase' },
-        'acad.safetys.desc': { pt: 'Aplicação Android com geofencing e leitura de sensores para monitorização de pessoas vulneráveis, perfis diferenciados (monitores/protegidos) e backend em Firebase.', en: 'Android app with geofencing and sensor readings for monitoring vulnerable people, differentiated profiles (monitors/protected) and Firebase backend.' },
+    'acad.safetys.title': { pt: 'SafetYSec', en: 'SafetYSec' },
+    'acad.safetys.period': { pt: '2º semestre de 2025 • Kotlin (Android, Jetpack Compose) • Firebase', en: '2nd semester 2025 • Kotlin (Android, Jetpack Compose) • Firebase' },
+    'acad.safetys.desc': { pt: 'Aplicação Android com geofencing e leitura de sensores para monitorização de pessoas vulneráveis, perfis diferenciados (monitores/protegidos) e backend em Firebase.', en: 'Android app with geofencing and sensor readings for monitoring vulnerable people, differentiated profiles (monitors/protected) and Firebase backend.' },
 
-        'acad.qna.title': { pt: 'Aplicação de Perguntas e Respostas', en: 'Questions & Answers App' },
-        'acad.qna.period': { pt: '2º semestre de 2025 • Java (JavaFX), Sockets, JWT, REST, SQLite', en: '2nd semester 2025 • Java (JavaFX), Sockets, JWT, REST, SQLite' },
-        'acad.qna.desc': { pt: 'Plataforma para criação de perguntas pelo professor e respostas pelos alunos (estilo Kahoot); inclui autenticação JWT, comunicação via sockets e persistência com SQLite.', en: 'Platform for teacher-created questions and student responses (Kahoot-like); includes JWT authentication, sockets communication and SQLite persistence.' },
-            'acad.weather.title': { pt: 'Alerta Meteorológico Android', en: 'Android Weather Alert' },
-            'acad.weather.period': { pt: '2025 • Kotlin (Android, Jetpack Compose) • Open-Meteo API', en: '2025 • Kotlin (Android, Jetpack Compose) • Open-Meteo API' },
-            'acad.weather.desc': { pt: 'Aplicação Android para apoio a operacionais em terreno — monitorização contínua das condições meteorológicas com base na localização do utilizador (Open-Meteo). Detecta alterações relevantes em velocidade e direção do vento, temperatura, precipitação e neve; notifica o utilizador com um resumo sintetizado tanto com antecedência configurável como no momento da mudança. O utilizador pode escolher parâmetros a monitorizar e definir limiares de alerta (ex.: +2 km/h, +5 km/h). Otimizada para eficiência energética e notificações push.', en: 'Android app to support operatives in the field — continuous monitoring of weather conditions based on the user\'s location (Open-Meteo). Detects relevant changes in wind speed and direction, temperature, precipitation and snow; notifies the user with a concise summary both with configurable lead time and at the moment of change. Users can choose which parameters to monitor and set alert thresholds (e.g., +2 km/h, +5 km/h). Optimized for battery-efficient operation and push notifications.' },
+    'acad.qna.title': { pt: 'Aplicação de Perguntas e Respostas', en: 'Questions & Answers App' },
+    'acad.qna.period': { pt: '2º semestre de 2025 • Java (JavaFX), Sockets, JWT, REST, SQLite', en: '2nd semester 2025 • Java (JavaFX), Sockets, JWT, REST, SQLite' },
+    'acad.qna.desc': { pt: 'Plataforma para criação de perguntas pelo professor e respostas pelos alunos (estilo Kahoot); inclui autenticação JWT, comunicação via sockets e persistência com SQLite.', en: 'Platform for teacher-created questions and student responses (Kahoot-like); includes JWT authentication, sockets communication and SQLite persistence.' },
+    'acad.weather.title': { pt: 'Alerta Meteorológico Android', en: 'Android Weather Alert' },
+    'acad.weather.period': { pt: '2025 • Kotlin (Android, Jetpack Compose) • Open-Meteo API', en: '2025 • Kotlin (Android, Jetpack Compose) • Open-Meteo API' },
+    'acad.weather.desc': { pt: 'Aplicação Android para apoio a operacionais em terreno — monitorização contínua das condições meteorológicas com base na localização do utilizador (Open-Meteo). Detecta alterações relevantes em velocidade e direção do vento, temperatura, precipitação e neve; notifica o utilizador com um resumo sintetizado tanto com antecedência configurável como no momento da mudança. O utilizador pode escolher parâmetros a monitorizar e definir limiares de alerta (ex.: +2 km/h, +5 km/h). Otimizada para eficiência energética e notificações push.', en: 'Android app to support operatives in the field — continuous monitoring of weather conditions based on the user\'s location (Open-Meteo). Detects relevant changes in wind speed and direction, temperature, precipitation and snow; notifies the user with a concise summary both with configurable lead time and at the moment of change. Users can choose which parameters to monitor and set alert thresholds (e.g., +2 km/h, +5 km/h). Optimized for battery-efficient operation and push notifications.' },
 
-            'acad.store.title': { pt: 'Aplicação de Gestão de Loja', en: 'Store Management Application' },
-            'acad.store.period': { pt: '2º semestre de 2025 • C#, ASP.NET, Blazor, MAUI, SQL, REST', en: '2nd semester 2025 • C#, ASP.NET, Blazor, MAUI, SQL, REST' },
-            'acad.store.desc': { pt: 'Aplicação multi-plataforma com autenticação encriptada, perfis de utilizador para admin, fornecedores e clientes, gestão e venda de produtos e API REST para integração com frontends.', en: 'Multi-platform application with encrypted authentication, user profiles for admin, suppliers and customers, product management and sales, and REST API for frontend integration.' },
+    'acad.store.title': { pt: 'Aplicação de Gestão de Loja', en: 'Store Management Application' },
+    'acad.store.period': { pt: '2º semestre de 2025 • C#, ASP.NET, Blazor, MAUI, SQL, REST', en: '2nd semester 2025 • C#, ASP.NET, Blazor, MAUI, SQL, REST' },
+    'acad.store.desc': { pt: 'Aplicação multi-plataforma com autenticação encriptada, perfis de utilizador para admin, fornecedores e clientes, gestão e venda de produtos e API REST para integração com frontends.', en: 'Multi-platform application with encrypted authentication, user profiles for admin, suppliers and customers, product management and sales, and REST API for frontend integration.' },
 
-            'acad.guide.title': { pt: 'Guia Turístico', en: 'Tourist Guide' },
-            'acad.guide.period': { pt: '2º semestre de 2025 • Flutter (Android, Dart) • API IPMA', en: '2nd semester 2025 • Flutter (Android, Dart) • IPMA API' },
-            'acad.guide.desc': { pt: 'Aplicação multiplataforma com API meteorológico (IPMA) para informação do tempo atual para a localidade de interesse, fornecendo de forma intuitiva informação organizada e detalhada de Monumentos, Restaurantes e Eventos numa determinada cidade, permitindo gerir os seus favoritos, mesmo offline.', en: 'Multi-platform application with weather API (IPMA) for current weather information for the location of interest, intuitively providing organized and detailed information about Monuments, Restaurants and Events in a given city, allowing users to manage their favorites, even offline.' }
-    };
+    'acad.guide.title': { pt: 'Guia Turístico', en: 'Tourist Guide' },
+    'acad.guide.period': { pt: '2º semestre de 2025 • Flutter (Android, Dart) • API IPMA', en: '2nd semester 2025 • Flutter (Android, Dart) • IPMA API' },
+    'acad.guide.desc': { pt: 'Aplicação multiplataforma com API meteorológico (IPMA) para informação do tempo atual para a localidade de interesse, fornecendo de forma intuitiva informação organizada e detalhada de Monumentos, Restaurantes e Eventos numa determinada cidade, permitindo gerir os seus favoritos, mesmo offline.', en: 'Multi-platform application with weather API (IPMA) for current weather information for the location of interest, intuitively providing organized and detailed information about Monuments, Restaurants and Events in a given city, allowing users to manage their favorites, even offline.' }
+};
 // Traduções para a nova aba SIG
 translations['nav.sig'] = { pt: 'Projetos SIG (ArcGIS)', en: 'GIS Projects (ArcGIS)' };
 translations['sig.title'] = { pt: 'Projetos SIG (ArcGIS)', en: 'GIS Projects (ArcGIS)' };
@@ -554,7 +554,7 @@ function downloadCv(lang) {
     hideCvMenu();
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // initialize icons
     lucide.createIcons();
 
@@ -568,7 +568,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const fab = document.getElementById('fab-download');
     const cvMenu = document.getElementById('cv-download-menu');
     if (fab) {
-        fab.addEventListener('click', function(e) {
+        fab.addEventListener('click', function (e) {
             e.stopPropagation();
             toggleCvMenu();
         });
@@ -576,7 +576,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (cvMenu) {
         // delegation for option buttons
-        cvMenu.addEventListener('click', function(e) {
+        cvMenu.addEventListener('click', function (e) {
             const opt = e.target.closest && e.target.closest('.cv-download-option');
             if (opt) {
                 const lang = opt.getAttribute('data-lang') || 'pt';
@@ -586,7 +586,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Click outside closes menu
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         if (!cvMenu) return;
         const isOpen = cvMenu.getAttribute('aria-hidden') === 'false';
         if (!isOpen) return;
@@ -596,7 +596,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Escape key closes menu
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') hideCvMenu();
     });
 
@@ -636,7 +636,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function initScrollProgress() {
     const bar = document.getElementById('scroll-progress');
     if (!bar) return;
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const scrollTop = window.scrollY;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
@@ -650,11 +650,11 @@ function initHeroLetters() {
     if (!letters.length) return;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
-        letters.forEach(function(l) { l.style.opacity = '1'; });
+        letters.forEach(function (l) { l.style.opacity = '1'; });
         return;
     }
-    requestAnimationFrame(function() {
-        letters.forEach(function(l) { l.classList.add('in'); });
+    requestAnimationFrame(function () {
+        letters.forEach(function (l) { l.classList.add('in'); });
     });
 }
 
@@ -732,12 +732,12 @@ function initBackgroundCanvas() {
     resize();
     window.addEventListener('resize', resize, { passive: true });
 
-    window.addEventListener('mousemove', function(e) {
+    window.addEventListener('mousemove', function (e) {
         mouse.x = e.clientX;
         mouse.y = e.clientY;
         mouse.active = true;
     }, { passive: true });
-    window.addEventListener('mouseout', function() { mouse.active = false; });
+    window.addEventListener('mouseout', function () { mouse.active = false; });
 
     function isDark() { return document.body.classList.contains('dark'); }
 
@@ -828,12 +828,12 @@ function initCursorGlow() {
     var tx = window.innerWidth / 2, ty = window.innerHeight / 2;
     var cx = tx, cy = ty;
 
-    window.addEventListener('mousemove', function(e) {
+    window.addEventListener('mousemove', function (e) {
         tx = e.clientX;
         ty = e.clientY;
         glow.style.opacity = '1';
     }, { passive: true });
-    window.addEventListener('mouseout', function() { glow.style.opacity = '0'; });
+    window.addEventListener('mouseout', function () { glow.style.opacity = '0'; });
 
     function loop() {
         cx += (tx - cx) * 0.12;
@@ -851,15 +851,15 @@ function initMagneticButtons() {
     if (window.matchMedia('(hover: none)').matches) return;
 
     var buttons = document.querySelectorAll('.primary-action, .secondary-action, .control-btn');
-    buttons.forEach(function(btn) {
-        btn.addEventListener('mousemove', function(e) {
+    buttons.forEach(function (btn) {
+        btn.addEventListener('mousemove', function (e) {
             var rect = btn.getBoundingClientRect();
             // Micro-movimento muito suave e limitado para evitar efeito exagerado
             var mx = Math.max(-2, Math.min(2, (e.clientX - rect.left - rect.width / 2) * 0.04));
             var my = Math.max(-2, Math.min(2, (e.clientY - rect.top - rect.height / 2) * 0.04));
             btn.style.transform = 'translate(' + mx.toFixed(1) + 'px,' + my.toFixed(1) + 'px)';
         }, { passive: true });
-        btn.addEventListener('mouseleave', function() {
+        btn.addEventListener('mouseleave', function () {
             btn.style.transform = '';
         });
     });
@@ -874,13 +874,13 @@ function initHeroParallax() {
     if (prefersReducedMotion) return;
     if (window.matchMedia('(hover: none)').matches) return;
 
-    heroCard.addEventListener('mousemove', function(e) {
+    heroCard.addEventListener('mousemove', function (e) {
         var rect = heroCard.getBoundingClientRect();
         var x = (e.clientX - rect.left) / rect.width - 0.5;
         var y = (e.clientY - rect.top) / rect.height - 0.5;
         frame.style.transform = 'perspective(900px) rotateX(' + (-y * 9).toFixed(2) + 'deg) rotateY(' + (x * 9).toFixed(2) + 'deg) translateZ(12px)';
     }, { passive: true });
-    heroCard.addEventListener('mouseleave', function() {
+    heroCard.addEventListener('mouseleave', function () {
         frame.style.transform = '';
     });
 }
@@ -894,7 +894,7 @@ function initBackToTop() {
         else btn.classList.remove('is-visible');
     }
     window.addEventListener('scroll', toggle, { passive: true });
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
     toggle();
@@ -907,12 +907,12 @@ function initCounters() {
     if (!counters.length) return;
     var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
-        counters.forEach(function(c) { c.textContent = c.getAttribute('data-target'); });
+        counters.forEach(function (c) { c.textContent = c.getAttribute('data-target'); });
         return;
     }
 
-    var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
             if (!entry.isIntersecting) return;
             var el = entry.target;
             var target = parseInt(el.getAttribute('data-target'), 10);
@@ -934,7 +934,7 @@ function initCounters() {
         });
     }, { threshold: 0.6 });
 
-    counters.forEach(function(c) { observer.observe(c); });
+    counters.forEach(function (c) { observer.observe(c); });
 }
 
 /* ===== 3D CARD TILT ===== */
@@ -944,14 +944,14 @@ function init3DTilt() {
     var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
 
-    cards.forEach(function(card) {
-        card.addEventListener('mousemove', function(e) {
+    cards.forEach(function (card) {
+        card.addEventListener('mousemove', function (e) {
             var rect = card.getBoundingClientRect();
             var x = (e.clientX - rect.left) / rect.width - 0.5;
             var y = (e.clientY - rect.top) / rect.height - 0.5;
             card.style.transform = 'perspective(800px) rotateX(' + (-y * 5).toFixed(2) + 'deg) rotateY(' + (x * 5).toFixed(2) + 'deg) translateY(-4px)';
         }, { passive: true });
-        card.addEventListener('mouseleave', function() {
+        card.addEventListener('mouseleave', function () {
             card.style.transform = '';
         });
     });
