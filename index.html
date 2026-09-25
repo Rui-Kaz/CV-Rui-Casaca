@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-PT" class="scroll-smooth">
+<html lang="en-US" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rui Casaca | Analista e Desenvolvedor de Software</title>
-    <meta name="description" content="Portfólio e CV de Rui Casaca, Analista e Desenvolvedor de Software com experiência em .NET, Kotlin, Python e Sistemas de Informação Geográfica.">
+    <title>Rui Casaca | Full-stack Developer</title>
+    <meta name="description" content="Portfolio and resume of Rui Casaca, Full-stack Developer focused on AI-assisted engineering, automation, GIS and operational software.">
     
-    <!-- Fonte Inter -->
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,750&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Script do Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -27,7 +27,8 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Manrope', 'sans-serif'],
+                        display: ['Fraunces', 'serif'],
                     },
                     colors: {
                         'brand-blue': '#00bfff',
@@ -46,86 +47,248 @@
         }
     </script>
 </head>
-<body class="dark">
+<body class="light">
+
+    <!-- ===== FUNDO IMERSIVO DE PÁGINA INTEIRA ===== -->
+    <div class="bg-layer" aria-hidden="true">
+        <canvas id="bg-canvas"></canvas>
+        <div id="cursor-glow"></div>
+    </div>
+
+    <!-- ===== BARRA DE PROGRESSO DE SCROLL ===== -->
+    <div id="scroll-progress" class="scroll-progress-bar" aria-hidden="true"></div>
 
     <!-- ===== BOTÃO FLUTUANTE PARA DOWNLOAD DO CV ===== -->
    
-    <button id="fab-download" aria-label="Download do meu CV em PDF" title="Download CV (PDF)" class="fab-download" type="button">
+    <button id="fab-download" aria-label="Download my CV (PDF)" title="Download CV (PDF)" class="fab-download" type="button">
         <i data-lucide="download" class="w-6 h-6"></i>
     </button>
 
     <!-- Menu pequeno para escolher idioma ao descarregar CV -->
     <div id="cv-download-menu" class="cv-download-menu" role="menu" aria-hidden="true" aria-labelledby="cv-download-title">
-        <div id="cv-download-title" class="cv-download-title" data-i18n="cv.download.choose">Escolha o idioma</div>
+        <div id="cv-download-title" class="cv-download-title" data-i18n="cv.download.choose">Choose CV language</div>
         <div class="cv-download-actions">
-            <button class="cv-download-option" role="menuitem" data-lang="pt" data-i18n="cv.download.pt">CV (PT)</button>
-            <button class="cv-download-option" role="menuitem" data-lang="en" data-i18n="cv.download.en">CV (EN)</button>
+            <button class="cv-download-option" role="menuitem" data-lang="pt" data-i18n="cv.download.pt">Download CV - Portuguese</button>
+            <button class="cv-download-option" role="menuitem" data-lang="en" data-i18n="cv.download.en">Download CV - English</button>
         </div>
     </div>
 
     <!-- ===== BOTÕES DE CONTROLO: TEMA E IDIOMA ===== -->
     <div class="control-group" aria-hidden="false">
-        <button id="theme-toggle" class="control-btn" aria-label="Alternar tema" title="Alternar tema (Dark/Light)">
+        <button id="theme-toggle" class="control-btn" aria-label="Toggle theme" title="Toggle theme (Dark/Light)">
             <i data-lucide="sun" class="w-5 h-5"></i>
         </button>
-        <button id="lang-toggle" class="control-btn" aria-label="Alternar idioma" title="Alternar idioma (PT/EN)">
+        <button id="lang-toggle" class="control-btn" aria-label="Toggle language" title="Toggle language (PT/EN)">
             <i data-lucide="globe" class="w-5 h-5"></i>
-            <span id="lang-code" style="margin-left:0.4rem;font-weight:700;font-size:0.85rem;">EN</span>
+            <span id="lang-code" style="margin-left:0.4rem;font-weight:700;font-size:0.85rem;">PT</span>
         </button>
     </div>
 
     <!-- ===== CONTEÚDO PRINCIPAL ===== -->
-    <div class="max-w-5xl mx-auto p-6 md:p-12">
+    <div class="max-w-6xl mx-auto p-6 md:p-12 site-shell">
         
         <!-- ===== SECÇÃO DE CABEÇALHO (HERO) ===== -->
-        <header class="flex flex-col-reverse md:flex-row items-center justify-between gap-10 mb-24">
-            <!-- Coluna de Texto -->
-            <div class="md:w-2/3 text-center md:text-left">
-                <h1 class="text-4xl md:text-5xl font-extrabold mb-3">Rui Casaca</h1>
-                <h2 class="text-2xl md:text-3xl font-light text-brand-blue mb-6 border-none p-0">
-                    <span data-i18n="hero.subtitle">Analista e Desenvolvedor de Software</span>
+        <header class="hero-shell">
+            <div class="hero-content">
+                <div class="eyebrow">
+                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                    <span data-i18n="hero.eyebrow">Coimbra, Portugal - Critical Software, ASD / SpaceForce</span>
+                </div>
+                <h1 class="hero-name" aria-label="Rui Casaca">
+                    <span class="hl" style="--i:0">R</span><span class="hl" style="--i:1">u</span><span class="hl" style="--i:2">i</span><span class="hs">&nbsp;</span><span class="hl" style="--i:3">C</span><span class="hl" style="--i:4">a</span><span class="hl" style="--i:5">s</span><span class="hl" style="--i:6">a</span><span class="hl" style="--i:7">c</span><span class="hl" style="--i:8">a</span>
+                </h1>
+                <h2 class="hero-subtitle-line">
+                    <span id="hero-typed" data-i18n="hero.subtitle">Full-stack Developer | AI, Automation &amp; GIS</span><span class="typed-cursor" aria-hidden="true">|</span>
                 </h2>
-                
-                <p class="text-lg text-brand-gray-300 mb-8 max-w-lg mx-auto md:mx-0" data-i18n="hero.lead">
-                    Profissional com experiência em sistemas de informação geográfica ArcGIS e QGIS e em desenvolvimento de software (Java, C/C++, C#, .NET, Kotlin, Flutter, JavaScript/TypeScript, Python). Valorizo a inovação, a resolução de problemas e a aprendizagem contínua.
+                <p class="hero-lead" data-i18n="hero.lead">
+                    I build web, mobile and desktop applications that automate processes, integrate geographic data and support operational decisions in demanding environments.
                 </p>
-                
-                <!-- Links Sociais/Contacto -->
-                <div class="flex justify-center md:justify-start space-x-4">
-                    <a href="https://www.linkedin.com/in/rui-casaca/" target="_blank" rel="noopener noreferrer" 
-                       class="text-brand-gray-500 hover:text-brand-blue transition-colors"
-                       aria-label="LinkedIn de Rui Casaca">
-                        <i data-lucide="linkedin" class="w-7 h-7"></i>
+
+                <div class="hero-actions" aria-label="Primary actions">
+                    <a class="primary-action" href="mailto:rui.casaca@gmail.com">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                        <span data-i18n="hero.cta.contact">Contact</span>
                     </a>
-                    
-                    
-                    <a href="https://github.com/Rui-Kaz" target="_blank" rel="noopener noreferrer" 
-                       class="text-brand-gray-500 hover:text-brand-blue transition-colors"
-                       aria-label="GitHub de Rui Casaca">
-                        <i data-lucide="github" class="w-7 h-7"></i>
+                    <a class="secondary-action" href="https://github.com/Rui-Kaz" target="_blank" rel="noopener noreferrer">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                        <span data-i18n="hero.cta.github">View GitHub</span>
                     </a>
-                    <a href="https://github.com/Rui-Casaca" target="_blank" rel="noopener noreferrer" class="text-brand-gray-500 hover:text-brand-blue transition-colors" aria-label="GitHub 2 de Rui Casaca"><i data-lucide="github" class="w-7 h-7"></i></a>
-                    <a href="mailto:rui.casaca@gmail.com" 
-                       class="text-brand-gray-500 hover:text-brand-blue transition-colors"
-                       aria-label="Enviar email para Rui Casaca">
-                        <i data-lucide="mail" class="w-7 h-7"></i>
+                    <a class="secondary-action" href="https://www.linkedin.com/in/rui-casaca/" target="_blank" rel="noopener noreferrer">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        <span>LinkedIn</span>
                     </a>
-                    <a href="tel:+351934994598" 
-                       class="text-brand-gray-500 hover:text-brand-blue transition-colors"
-                       aria-label="Ligar para Rui Casaca">
-                        <i data-lucide="phone" class="w-7 h-7"></i>
-                    </a>
+                </div>
+
+                <div class="hero-proof" aria-label="Professional highlights">
+                    <div>
+                        <strong data-i18n="hero.proof.critical.value">ASD / SpaceForce</strong>
+                        <span data-i18n="hero.proof.critical.label">satellite mission software</span>
+                    </div>
+                    <div>
+                        <strong data-i18n="hero.proof.gis.value">ArcGIS / QGIS</strong>
+                        <span data-i18n="hero.proof.gis.label">georeferenced operations</span>
+                    </div>
+                    <div>
+                        <strong data-i18n="hero.proof.ai.value">AI agents + automation</strong>
+                        <span data-i18n="hero.proof.ai.label">modern productivity</span>
+                    </div>
                 </div>
             </div>
             
-            <!-- Coluna da Imagem -->
-            <div class="md:w-1/3 flex justify-center">
-                
-                <img src="res/CV_photo.jpg" 
-                     alt="Foto de perfil de Rui Casaca"
-                     class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover shadow-2xl shadow-brand-blue/30 border-4 border-brand-gray-800">
-            </div>
+            <aside class="hero-card" aria-label="Professional summary of Rui Casaca">
+                <div class="profile-frame">
+                    <img src="res/CV_photo.jpg" alt="Foto de perfil de Rui Casaca" class="profile-photo">
+                    <span class="profile-status" title="Available"><span class="status-dot"></span></span>
+                </div>
+                <div class="availability-card">
+                    <span data-i18n="hero.card.label">Professional focus</span>
+                    <strong data-i18n="hero.card.title">Software for real-world context</strong>
+                    <p data-i18n="hero.card.desc">Experience with operational systems, GIS, automation, LLMs and interfaces for field users.</p>
+                </div>
+            </aside>
         </header>
+
+        <section class="impact-strip" aria-label="Professional impact summary">
+            <div class="impact-item">
+                <div class="impact-num-wrap">
+                    <span class="impact-counter" data-target="8">0</span><span class="impact-sfx">+</span>
+                </div>
+                <strong data-i18n="impact.one.value">operational dashboards</strong>
+                <span data-i18n="impact.one.label">delivered</span>
+            </div>
+            <div class="impact-item">
+                <div class="impact-num-wrap">
+                    <span class="impact-counter" data-target="10">0</span><span class="impact-sfx">+</span>
+                </div>
+                <strong data-i18n="impact.two.value">operations supported</strong>
+                <span data-i18n="impact.two.label">national · 1 international</span>
+            </div>
+            <div class="impact-item">
+                <div class="impact-num-wrap">
+                    <span class="impact-counter" data-target="48">0</span><span class="impact-sfx">+</span>
+                </div>
+                <strong data-i18n="impact.three.value">field teams</strong>
+                <span data-i18n="impact.three.label">monitored nationwide, daily</span>
+            </div>
+            <div class="impact-item">
+                <div class="impact-num-wrap before-after">
+                    <span class="ba-before">4d</span>
+                    <span class="ba-arrow">→</span>
+                    <span class="ba-after">30m</span>
+                </div>
+                <strong data-i18n="impact.four.value">automation impact</strong>
+                <span data-i18n="impact.four.label">months of work saved</span>
+            </div>
+        </section>
+
+        <section class="expertise-section" aria-labelledby="expertise-title">
+            <div class="section-kicker" data-i18n="expertise.kicker">Especializacao</div>
+            <h2 id="expertise-title" data-i18n="expertise.title">O que levo para uma equipa moderna de software</h2>
+            <div class="expertise-grid">
+                <article class="expertise-card">
+                    <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+                    <h3 data-i18n="expertise.software.title">Aplicacoes completas</h3>
+                    <p data-i18n="expertise.software.desc">Desenvolvimento web, mobile e desktop com foco em interfaces claras, dados persistentes, APIs e utilizadores reais.</p>
+                </article>
+                <article class="expertise-card">
+                    <i data-lucide="map" class="w-6 h-6"></i>
+                    <h3 data-i18n="expertise.gis.title">GIS & operational intelligence</h3>
+                    <p data-i18n="expertise.gis.desc">Experiencia aplicada em ArcGIS, QGIS, QuickCapture, Field Maps e dashboards para acompanhamento operacional.</p>
+                </article>
+                <article class="expertise-card">
+                    <i data-lucide="workflow" class="w-6 h-6"></i>
+                    <h3 data-i18n="expertise.automation.title">Automacao e IA</h3>
+                    <p data-i18n="expertise.automation.desc">Automatizacao de processos, geracao de relatorios, integracao com LLMs e reducao de trabalho manual repetitivo.</p>
+                </article>
+                <article class="expertise-card">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                    <h3 data-i18n="expertise.aiagents.title">AI-assisted engineering</h3>
+                    <p data-i18n="expertise.aiagents.desc">Uso avançado de agentes de IA, workflows assistidos e ferramentas modernas para acelerar análise, prototipagem e entrega de software.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="selected-work-section" aria-labelledby="selected-work-title">
+            <div class="section-kicker" data-i18n="selected.kicker">Selected work</div>
+            <div class="section-heading-row">
+                <h2 id="selected-work-title" data-i18n="selected.title">Featured case studies</h2>
+                <p data-i18n="selected.lead">A curated view of the strongest work first. The complete project archive remains available below.</p>
+            </div>
+
+            <div class="selected-work-grid">
+                <article class="case-study-card featured-case">
+                    <div class="media-placeholder placeholder-gis" role="img" aria-label="GIS Operational Dashboard">
+                        <div class="placeholder-vis">
+                            <div class="placeholder-icon-wrap"><i data-lucide="map" class="w-8 h-8"></i></div>
+                            <div class="placeholder-tag" data-i18n="selected.gis.label">Operational GIS</div>
+                        </div>
+                    </div>
+                    <div class="case-study-content">
+                        <span class="case-study-label" data-i18n="selected.gis.label">Operational GIS</span>
+                        <h3 data-i18n="selected.gis.title">GIS dashboards for field operations</h3>
+                        <p data-i18n="selected.gis.desc">Designed and supported ArcGIS/QGIS workflows, dashboards and field data collection for national operations, daily monitoring and decision support.</p>
+                        <dl class="case-study-impact">
+                            <div>
+                                <dt data-i18n="selected.gis.metric1.label">Dashboards</dt>
+                                <dd data-i18n="selected.gis.metric1.value">8+</dd>
+                            </div>
+                            <div>
+                                <dt data-i18n="selected.gis.metric2.label">Teams</dt>
+                                <dd data-i18n="selected.gis.metric2.value">48+ daily</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </article>
+
+                <article class="case-study-card">
+                    <div class="media-placeholder placeholder-ai" role="img" aria-label="AI Missing-Person Application">
+                        <div class="placeholder-vis">
+                            <div class="placeholder-icon-wrap"><i data-lucide="brain" class="w-8 h-8"></i></div>
+                            <div class="placeholder-tag" data-i18n="selected.ai.label">AI automation</div>
+                        </div>
+                    </div>
+                    <div class="case-study-content">
+                        <span class="case-study-label" data-i18n="selected.ai.label">AI automation</span>
+                        <h3 data-i18n="selected.ai.title">Missing-person search application with AI</h3>
+                        <p data-i18n="selected.ai.desc">Full-stack application for emergency workflows, structured data processing, dynamic prompt generation, LLM analysis and automated operational reports.</p>
+                        <dl class="case-study-impact">
+                            <div>
+                                <dt data-i18n="selected.ai.metric1.label">Focus</dt>
+                                <dd data-i18n="selected.ai.metric1.value">Decision support</dd>
+                            </div>
+                            <div>
+                                <dt data-i18n="selected.ai.metric2.label">Stack</dt>
+                                <dd data-i18n="selected.ai.metric2.value">React + Node</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </article>
+
+                <article class="case-study-card">
+                    <div class="media-placeholder placeholder-automation" role="img" aria-label="Operational Reporting Automation">
+                        <div class="placeholder-vis">
+                            <div class="placeholder-icon-wrap"><i data-lucide="zap" class="w-8 h-8"></i></div>
+                            <div class="placeholder-tag" data-i18n="selected.automation.label">Process automation</div>
+                        </div>
+                    </div>
+                    <div class="case-study-content">
+                        <span class="case-study-label" data-i18n="selected.automation.label">Process automation</span>
+                        <h3 data-i18n="selected.automation.title">Operational reporting automation</h3>
+                        <p data-i18n="selected.automation.desc">Automation of repetitive operational workflows and reporting tasks, turning multi-day manual work into a short, repeatable process.</p>
+                        <dl class="case-study-impact">
+                            <div>
+                                <dt data-i18n="selected.automation.metric1.label">Before</dt>
+                                <dd data-i18n="selected.automation.metric1.value">4 days</dd>
+                            </div>
+                            <div>
+                                <dt data-i18n="selected.automation.metric2.label">After</dt>
+                                <dd data-i18n="selected.automation.metric2.value">30 min</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </article>
+            </div>
+        </section>
 
         <!-- ===== MENU DE NAVEGAÇÃO POR ABAS ===== -->
         <nav class="nav-tabs" role="tablist">
@@ -184,7 +347,7 @@
                             <span class="tech-pill"><span data-i18n="tech.python">Python</span></span>
                             <span class="tech-pill"><span data-i18n="tech.matlab">MATLAB</span></span>
                             <span class="tech-pill"><span data-i18n="tech.dotnet">.NET</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.reactjs">JavaScript/TypeScript/React</span></span>
+                            <span class="tech-pill"><span data-i18n="tech.javascript">JavaScript</span></span>
                             <span class="tech-pill"><span data-i18n="tech.htmlcss">HTML/CSS</span></span>
                         </div>
                     </div>
@@ -228,51 +391,78 @@
 
             <!-- ===== SECÇÃO DE PROJETOS ===== -->
             <section id="projetos">
-                <h2 data-i18n="heading.projects">Projetos Destacados</h2>
+                <h2 data-i18n="heading.projects">Project Archive</h2>
+                <p class="archive-note" data-i18n="projects.archive.note">Complete repository of professional, operational and technical projects. The most representative work is highlighted above, while this section keeps the broader track record visible.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     
-                    <!-- Projeto 1: HomeVault -->
+                    <!-- Projeto 1 -->
                     <div class="project-card">
-                        <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p1.title"></h3>
+                        <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p1.title">Aplicação de Busca de Pessoas desaparecidas com IA</h3>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-pill"><span data-i18n="tech.flutter">Flutter</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.sqlite">SQLite</span></span>
-                        </div>
-                        <p data-i18n="projects.p1.desc"></p>
-                    </div>
-
-                    <!-- Projeto 2: Missing Persons -->
-                    <div class="project-card">
-                        <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p2.title"></h3>
-                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="tech-pill"><span data-i18n="tech.reactjs">React</span></span>
-                            <span class="tech-pill"><span data-i18n="framework.typescript">TypeScript</span></span>
                             <span class="tech-pill"><span data-i18n="tech.node">Node.js</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.llm">LLM</span></span>
+                            <span class="tech-pill"><span data-i18n="tech.htmlcss">HTML/CSS</span></span>
+                            <span class="tech-pill"><span data-i18n="tech.postgres">PostgreSQL</span></span>
+                            <span class="tech-pill"><span data-i18n="tech.restapi">RESTful API</span></span>
                         </div>
-                        <p data-i18n="projects.p2.desc"></p>
+                        <p data-i18n="projects.p1.desc">Aplicação full-stack mission-critical para automatização de processos de emergência. Sistema processa dados estruturados de pessoas desaparecidas, com geração de prompts dinâmicos através da integração de dados contextuais, integra APIs de IA (LLMs) para análise e previsão, e produz relatórios operacionais automatizados com geração de PDF e distribuição por email.
+                        Interface multi-etapas, algoritmos de avaliação de risco, dashboard em tempo real, sistema de análise comportamental baseado em
+                        dados históricos.</p>
                     </div>
 
-                    <!-- Projeto 3: Teacher Evaluation -->
+                    <!-- Projeto 2 -->
                     <div class="project-card">
-                        <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p3.title"></h3>
+                        <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p3.title">Sugestão de Prendas Personalizadas com IA</h3>
                          <div class="flex flex-wrap gap-2 mb-4">
                             <span class="tech-pill"><span data-i18n="tech.java">Java</span></span>
+                            <span class="tech-pill"><span data-i18n="framework.javafx">JavaFX</span></span>
+                            <span class="tech-pill"><span data-i18n="tech.llm">LLM</span></span>
+                        </div>
+                        <p data-i18n="projects.p3.desc">Aplicação com sistema de criação e gestão de utilizadores, disponde de um dashboard com navegação intuitiva, para registo de Enjoyers (pessoas a presentiar), e com base nas suas informações, gostos e parametros, a IA aprende e sugere prendas personalizadas, de qualquer tipo, com maior probabilidade de agradar, tendo em consideração a ocasião, complementando com uma mensagem digna para acompanhar o presente.</p>
+                    </div>
+
+                    <!-- Projeto 3 -->
+                    <div class="project-card">
+                        <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p2.title">Plataforma Distribuida de Avaliação para Professores e Alunos</h3>
+                         <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-pill"><span data-i18n="tech.java">Java</span></span>
+                            <span class="tech-pill"><span data-i18n="framework.javafx">JavaFX</span></span>
                             <span class="tech-pill"><span data-i18n="tech.rmi">RMI</span></span>
                             <span class="tech-pill"><span data-i18n="tech.sqlite">SQLite</span></span>
                         </div>
-                        <p data-i18n="projects.p3.desc"></p>
+                        <p data-i18n="projects.p2.desc">Plataforma com gestão de sessões para dois tipos de perfis: professores e alunos, permitindo criar perguntas e submeter respostas para avaliação em ambiente académico. Utiliza arquitetura distribuída com RMI para comunicação entre cliente e servidor, garantindo escalabilidade e robustez. Inclui persistência de dados com SQLite e interface gráfica intuitiva com JavaFX.
+                        </p>
                     </div>
 
-                    <!-- Projeto 4: Educational Game -->
+                    <!-- Projeto 4 -->
                     <div class="project-card">
-                        <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p4.title"></h3>
+                        <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p2b.title">Registo Fotográfico Georreferenciado</h3>
                          <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-pill"><span data-i18n="tech.python">Python</span></span>
+                            <span class="tech-pill"><span data-i18n="tech.kotlin">Kotlin</span></span>
+                            <span class="tech-pill"><span data-i18n="tech.android">Android</span></span>
                         </div>
-                        <p data-i18n="projects.p4.desc"></p>
+                        <p data-i18n="projects.p2b.desc">Aplicação mobile para captação de fotos com marca de água automática (GPS, direção, data/hora, logótipo), ideal para documentação de campo com partilha imediata.</p>
                     </div>
 
+                    <!-- Projeto 5 -->
+                    <div class="project-card">
+                        <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p3b.title">Tracking e Gestão de Utilizadores</h3>
+                         <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-pill"><span data-i18n="tech.kotlin">Kotlin</span></span>
+                            <span class="tech-pill"><span data-i18n="tech.sqlite">SQLite</span></span>
+                            <span class="tech-pill"><span data-i18n="tech.firebase">Firebase</span></span>
+                        </div>
+                        <p data-i18n="projects.p3b.desc">Aplicação com login, registo de percursos, estatísticas e exportação (CSV, JSON). Sincronização em tempo real com base de dados Firebase.</p>
+                    </div>
+
+                    <!-- Projeto 6 -->
+                    <div class="project-card">
+                        <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p4.title">Jogo Educativo Escolar</h3>
+                         <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-pill">Python</span>
+                        </div>
+                        <p data-i18n="projects.p4.desc">Jogo para incentivar ao estudo crianças do 1º ao 4º ciclo, com interface simples e bloqueio do dispositivo até cumprimento de desafios. Configurável via painel de Admin.</p>
+                    </div>
                 </div>
             </section>
 
@@ -281,14 +471,23 @@
                 <h2 data-i18n="heading.experience">Experiência Profissional</h2>
                 <!-- Usamos uma "timeline" visual -->
                 <div class="relative border-l-4 border-brand-gray-800 space-y-10">
-                    
-                    <!-- Item 1 -->
+
+                    <!-- Item 0 -->
                     <div class="relative pl-8">
                         <div class="absolute -left-2.5 top-1 w-5 h-5 bg-brand-blue rounded-full border-4 border-brand-gray-950"></div>
+                        <span class="text-sm text-brand-gray-500" data-i18n="exp.critical.period">Atual</span>
+                        <h3 class="text-xl font-semibold mt-1" data-i18n="exp.critical.title">Full-stack Developer Intern</h3>
+                        <p class="text-brand-blue font-medium" data-i18n="exp.critical.org">Critical Software - ASD / SpaceForce, Coimbra</p>
+                        <p class="mt-2" data-i18n="exp.critical.desc">Full-stack Developer Intern in the ASD / SpaceForce team, contributing to software for satellite mission communications, including telecommand dispatch and telemetry reading, within a quality-focused engineering environment.</p>
+                    </div>
+
+                    <!-- Item 1 -->
+                    <div class="relative pl-8">
+                        <div class="absolute -left-2.5 top-1 w-5 h-5 bg-brand-gray-800 rounded-full border-4 border-brand-gray-950"></div>
                         <span class="text-sm text-brand-gray-500" data-i18n="exp.p1.period">Jul 2020 - Presente</span>
                         <h3 class="text-xl font-semibold mt-1" data-i18n="exp.p1.title">Analista, Desenvolvedor de Software e Inovação</h3>
                         <p class="text-brand-blue font-medium" data-i18n="exp.p1.org">GNR - Unidade de Emergência de Proteção e Socorro (UEPS)</p>
-                        <p class="mt-2" data-i18n="exp.p1.desc">Desenvolvimento de software mobile/desktop, integração de LLMs, automatização de processos e gestão de plataformas georreferenciadas (ArcGIS Pro/QGIS). Apoio à tomada de decisão em situações críticas.</p>
+                        <p class="mt-2" data-i18n="exp.p1.desc">Mobile and desktop software development, LLM integration, process automation and georeferenced platform management (ArcGIS Pro/QGIS). Delivered 8+ dashboards, supported 10+ national operations and one international operation in Leon, Spain, and helped monitor 48+ field teams nationwide every day of the year.</p>
                     </div>
 
                     <!-- Item 2 -->
@@ -297,7 +496,6 @@
                         <span class="text-sm text-brand-gray-500" data-i18n="exp.p2.period">Mai 2019 - Jul 2020</span>
                         <h3 class="text-xl font-semibold mt-1" data-i18n="exp.p2.title">Operacional de combate a incêndios</h3>
                         <p class="text-brand-blue font-medium" data-i18n="exp.p2.org">GNR - UEPS</p>
-                        <p class="mt-2" data-i18n="exp.p2.desc"></p>
                     </div>
                     
                     <!-- Item 3 -->
@@ -306,7 +504,6 @@
                         <span class="text-sm text-brand-gray-500" data-i18n="exp.p3.period">Out 2011 - Mar 2019</span>
                         <h3 class="text-xl font-semibold mt-1" data-i18n="exp.p3.title">Patrulheiro</h3>
                         <p class="text-brand-blue font-medium" data-i18n="exp.p3.org">Guarda Nacional Republicana (GNR)</p>
-                        <p class="mt-2" data-i18n="exp.p3.desc"></p>
                     </div>
 
                 </div>
@@ -501,18 +698,63 @@
                                 <span class="tech-pill"><span data-i18n="tech.notifications">Notifications</span></span>
                             </div>
                             <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.weather.desc">Aplicação Android para apoio a operacionais em terreno — monitorização contínua das condições meteorológicas com base na localização do utilizador (Open-Meteo). Detecta alterações relevantes em velocidade e direção do vento, temperatura, precipitação e neve; notifica o utilizador com um resumo sintetizado tanto com antecedência configurável como no momento da mudança. O utilizador pode escolher parâmetros a monitorizar e definir limiares de alerta (ex.: +2 km/h, +5 km/h). Otimizada para eficiência energética e notificações push.</p>
+                        </div>
                     </div>
                 </section>
             </div> <!-- FIM DA ABA ACADÉMICOS -->
 
             <!-- ===== ABA: SOBRE MIM ===== -->
             <div id="tab-sobre-mim" class="tab-content">
-                <section>
-                    <h2 data-i18n="about.title">Sobre Mim</h2>
-                    <div class="bg-brand-gray-900 p-8 rounded-lg shadow-lg">
-                        <p class="text-lg text-brand-gray-300 leading-relaxed" data-i18n="about.desc">
-                            Profissional com experiência sólida em sistemas de informação geográfica e um percurso crescente em desenvolvimento de software. Valorizo a inovação prática, a resolução de problemas e a aprendizagem contínua em ambientes exigentes e colaborativos.
-                        </p>
+                <section class="about-section">
+                    <div class="section-kicker" data-i18n="about.kicker">My story</div>
+                    <h2 class="about-title" data-i18n="about.title">Sobre Mim</h2>
+                    <div class="about-grid">
+                        <div class="about-story">
+                            <p data-i18n="about.lead">My path into software wasn't traditional. I spent over a decade in the GNR — first as a patrol officer, then in firefighting operations. Working in demanding, high-stakes environments shaped how I think about reliability, discipline, and results.</p>
+                            <p data-i18n="about.mid">In 2020, while still in service, I transitioned to a new role: building the digital tools our field teams were missing. GIS dashboards, mobile apps, AI-powered emergency workflows — tools with real operational consequences and real users depending on them every day.</p>
+                            <p data-i18n="about.close">In 2023 I enrolled at ISEC to formalize my engineering practice. I'm now a Full-stack Developer Intern at Critical Software's ASD/SpaceForce division, working on satellite mission communications software. The standards are exacting, and I intend to meet every one of them.</p>
+                        </div>
+                        <div class="about-facts">
+                            <div class="about-fact-card">
+                                <i data-lucide="shield" class="w-5 h-5"></i>
+                                <div>
+                                    <strong data-i18n="about.fact1.label">GNR · 12+ years</strong>
+                                    <span data-i18n="about.fact1.desc">Public service, discipline and leadership</span>
+                                </div>
+                            </div>
+                            <div class="about-fact-card">
+                                <i data-lucide="code-2" class="w-5 h-5"></i>
+                                <div>
+                                    <strong data-i18n="about.fact2.label">Self-taught → ISEC</strong>
+                                    <span data-i18n="about.fact2.desc">Formal Computer Engineering degree</span>
+                                </div>
+                            </div>
+                            <div class="about-fact-card">
+                                <i data-lucide="satellite-dish" class="w-5 h-5"></i>
+                                <div>
+                                    <strong data-i18n="about.fact3.label">Critical Software</strong>
+                                    <span data-i18n="about.fact3.desc">ASD / SpaceForce — satellite missions</span>
+                                </div>
+                            </div>
+                            <div class="about-fact-card">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                <div>
+                                    <strong data-i18n="about.fact4.label">Coimbra, Portugal</strong>
+                                    <span data-i18n="about.fact4.desc">Open to remote and on-site</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-values">
+                        <div class="section-kicker" data-i18n="about.values.kicker">What I value</div>
+                        <div class="values-grid">
+                            <div class="value-item"><i data-lucide="target" class="w-4 h-4"></i><span data-i18n="about.val1">Real-world impact</span></div>
+                            <div class="value-item"><i data-lucide="layers" class="w-4 h-4"></i><span data-i18n="about.val2">Technical depth</span></div>
+                            <div class="value-item"><i data-lucide="zap" class="w-4 h-4"></i><span data-i18n="about.val3">Fast delivery</span></div>
+                            <div class="value-item"><i data-lucide="users" class="w-4 h-4"></i><span data-i18n="about.val4">Team-first mindset</span></div>
+                            <div class="value-item"><i data-lucide="book-open" class="w-4 h-4"></i><span data-i18n="about.val5">Continuous learning</span></div>
+                            <div class="value-item"><i data-lucide="cpu" class="w-4 h-4"></i><span data-i18n="about.val6">AI with purpose</span></div>
+                        </div>
                     </div>
                 </section>
             </div> <!-- FIM DA ABA SOBRE MIM -->
@@ -591,17 +833,21 @@
                        aria-label="GitHub de Rui Casaca">
                         <i data-lucide="github" class="w-6 h-6"></i>
                     </a>
-                    <a href="https://github.com/Rui-Casaca" target="_blank" rel="noopener noreferrer" class="text-brand-gray-500 hover:text-brand-blue transition-colors" aria-label="GitHub 2 de Rui Casaca"><i data-lucide="github" class="w-6 h-6"></i></a>
                     <a href="mailto:rui.casaca@gmail.com" 
                        class="text-brand-gray-500 hover:text-brand-blue transition-colors"
                        aria-label="Enviar email para Rui Casaca">
                         <i data-lucide="mail" class="w-6 h-6"></i>
                     </a>
             </div>
-            <p data-i18n="footer.copy">&copy; 2024 Rui Casaca. Construído com Tailwind CSS e Lucide Icons.</p>
+            <p data-i18n="footer.copy">&copy; 2026 Rui Casaca. Portfólio profissional construído com HTML, Tailwind CSS e JavaScript.</p>
         </footer>
 
     </div>
+
+    <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top" type="button">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
 
     <!-- Script Externo -->
     <script src="script.js"></script>

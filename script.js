@@ -3,6 +3,61 @@ document.addEventListener('DOMContentLoaded', function() {
     lucide.createIcons();
 });
 
+const scrollRevealSelector = [
+    '.impact-item',
+    '.expertise-card',
+    '.case-study-card',
+    '.competencias-bloco',
+    '.project-card',
+    '#experiencia .relative.pl-8',
+    '#formacao .bg-brand-gray-900'
+].join(',');
+
+function revealVisibleItems(root) {
+    const scope = root || document;
+    const targets = scope.querySelectorAll('.reveal-on-scroll:not(.is-visible)');
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    targets.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top < viewportHeight * 0.92 && rect.bottom > 0) {
+            item.classList.add('is-visible');
+        }
+    });
+}
+
+function initScrollAnimations() {
+    const targets = document.querySelectorAll(scrollRevealSelector);
+    if (!targets.length) return;
+
+    targets.forEach((item, index) => {
+        item.classList.add('reveal-on-scroll');
+        item.style.setProperty('--reveal-delay', `${(index % 4) * 70}ms`);
+    });
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        targets.forEach(item => item.classList.add('is-visible'));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, activeObserver) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                activeObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '0px 0px -12% 0px',
+        threshold: 0.12
+    });
+
+    targets.forEach(item => observer.observe(item));
+    revealVisibleItems(document);
+}
+
 // Função para controlar a navegação por abas
 function showTab(tabName, ev) {
     // Esconder todos os conteúdos
@@ -18,9 +73,13 @@ function showTab(tabName, ev) {
         tab.setAttribute('aria-selected', 'false');
     });
     
-    // Mostrar o conteúdo selecionado
+    // Mostrar o conteúdo selecionado com fade
     const selectedContent = document.getElementById('tab-' + tabName);
     if (selectedContent) {
+        // Reset animation so it replays even when switching back
+        selectedContent.style.animation = 'none';
+        selectedContent.offsetHeight; // force reflow
+        selectedContent.style.animation = '';
         selectedContent.classList.add('active');
     }
     
@@ -36,8 +95,8 @@ function showTab(tabName, ev) {
         // ignore
     }
     
-    // Scroll suave para o topo do conteúdo
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Mantem a posição atual do utilizador ao trocar de aba.
+    requestAnimationFrame(() => revealVisibleItems(selectedContent));
 }
 
 /* ===== THEME & I18N ===== */
@@ -46,11 +105,69 @@ const translations = {
     'nav.about': { pt: 'Sobre Mim', en: 'About Me' },
     'nav.distinctions': { pt: 'Distinções Profissionais', en: 'Professional Distinctions' },
     'heading.skills': { pt: 'Competências Técnicas', en: 'Technical Skills' },
-    'heading.projects': { pt: 'Projetos Destacados', en: 'Featured Projects' },
+    'heading.projects': { pt: 'Arquivo de Projetos', en: 'Project Archive' },
     'heading.experience': { pt: 'Experiência Profissional', en: 'Professional Experience' },
     'heading.education': { pt: 'Formação Académica', en: 'Education' },
-    'hero.subtitle': { pt: 'Analista e Desenvolvedor de Software', en: 'Analyst and Software Developer' },
-    'hero.lead': { pt: 'Profissional com experiência em sistemas de informação geográfica ArcGIS e QGIS e em desenvolvimento de software (Java, C/C++, C#, ASP.NET, Kotlin, Flutter, JavaScript/TypeScript, Python). Valorizo a inovação, a resolução de problemas e a aprendizagem contínua.', en: 'Professional experienced in geographic information systems (ArcGIS, QGIS) and software development (Java, C/C++, C#, ASP.NET, Kotlin, Flutter, JavaScript/TypeScript, Python). I value practical innovation, problem solving and continuous learning.' },
+    'hero.eyebrow': { pt: 'Coimbra, Portugal - Critical Software, ASD / SpaceForce', en: 'Coimbra, Portugal - Critical Software, ASD / SpaceForce' },
+    'hero.subtitle': { pt: 'Full-stack Developer | IA, Automação e SIG', en: 'Full-stack Developer | AI, Automation & GIS' },
+    'hero.lead': { pt: 'Construo aplicações web, mobile e desktop para automatizar processos, integrar dados geográficos e apoiar decisões operacionais em ambientes exigentes.', en: 'I build web, mobile and desktop applications that automate processes, integrate geographic data and support operational decisions in demanding environments.' },
+    'hero.cta.contact': { pt: 'Contactar', en: 'Contact' },
+    'hero.cta.github': { pt: 'Ver GitHub', en: 'View GitHub' },
+    'hero.proof.critical.value': { pt: 'ASD / SpaceForce', en: 'ASD / SpaceForce' },
+    'hero.proof.critical.label': { pt: 'software para missão satélite', en: 'satellite mission software' },
+    'hero.proof.gis.value': { pt: 'ArcGIS / QGIS', en: 'ArcGIS / QGIS' },
+    'hero.proof.gis.label': { pt: 'operações georreferenciadas', en: 'georeferenced operations' },
+    'hero.proof.ai.value': { pt: 'AI agents + automação', en: 'AI agents + automation' },
+    'hero.proof.ai.label': { pt: 'produtividade moderna', en: 'modern productivity' },
+    'hero.card.label': { pt: 'Foco profissional', en: 'Professional focus' },
+    'hero.card.title': { pt: 'Software para contexto real', en: 'Software for real-world context' },
+    'hero.card.desc': { pt: 'Experiência em sistemas operacionais, SIG, automação, LLMs e interfaces para utilizadores no terreno.', en: 'Experience with operational systems, GIS, automation, LLMs and interfaces for field users.' },
+    'impact.one.label': { pt: 'entregues', en: 'delivered' },
+    'impact.one.value': { pt: 'dashboards operacionais', en: 'operational dashboards' },
+    'impact.two.label': { pt: 'nacional · 1 internacional', en: 'national · 1 international' },
+    'impact.two.value': { pt: 'operações apoiadas', en: 'operations supported' },
+    'impact.three.label': { pt: 'monitorizadas a nível nacional', en: 'monitored nationwide, daily' },
+    'impact.three.value': { pt: 'equipas de campo', en: 'field teams' },
+    'impact.four.label': { pt: 'meses de trabalho poupados', en: 'months of work saved' },
+    'impact.four.value': { pt: 'impacto da automação', en: 'automation impact' },
+    'expertise.kicker': { pt: 'Especialização', en: 'Specialization' },
+    'expertise.title': { pt: 'O que levo para uma equipa moderna de software', en: 'What I bring to a modern software team' },
+    'expertise.software.title': { pt: 'Aplicações completas', en: 'Complete applications' },
+    'expertise.software.desc': { pt: 'Desenvolvimento web, mobile e desktop com foco em interfaces claras, dados persistentes, APIs e utilizadores reais.', en: 'Web, mobile and desktop development focused on clear interfaces, persistent data, APIs and real users.' },
+    'expertise.gis.title': { pt: 'GIS & operational intelligence', en: 'GIS & operational intelligence' },
+    'expertise.gis.desc': { pt: 'Experiência aplicada em ArcGIS, QGIS, QuickCapture, Field Maps e dashboards para acompanhamento operacional.', en: 'Applied experience with ArcGIS, QGIS, QuickCapture, Field Maps and dashboards for operational monitoring.' },
+    'expertise.automation.title': { pt: 'Automação e IA', en: 'Automation and AI' },
+    'expertise.automation.desc': { pt: 'Automatização de processos, geração de relatórios, integração com LLMs e redução de trabalho manual repetitivo.', en: 'Process automation, report generation, LLM integration and reduction of repetitive manual work.' },
+    'expertise.aiagents.title': { pt: 'AI-assisted engineering', en: 'AI-assisted engineering' },
+    'expertise.aiagents.desc': { pt: 'Uso avançado de agentes de IA, workflows assistidos e ferramentas modernas para acelerar análise, prototipagem e entrega de software.', en: 'Advanced use of AI agents, assisted workflows and modern tools to accelerate analysis, prototyping and software delivery.' },
+    'selected.kicker': { pt: 'Trabalhos selecionados', en: 'Selected work' },
+    'selected.title': { pt: 'Case studies em destaque', en: 'Featured case studies' },
+    'selected.lead': { pt: 'Uma seleção dos trabalhos mais fortes primeiro. O arquivo completo de projetos continua disponível abaixo.', en: 'A curated view of the strongest work first. The complete project archive remains available below.' },
+    'selected.gis.image': { pt: 'TODO imagem: dashboard ArcGIS anonimizado ou mockup recriado com contexto de mapa, KPIs e monitorização de equipas. Remover nomes, coordenadas e camadas sensíveis.', en: 'TODO image: anonymized ArcGIS dashboard or recreated mockup with map context, KPIs and team monitoring. Remove names, coordinates and sensitive layers.' },
+    'selected.gis.label': { pt: 'SIG operacional', en: 'Operational GIS' },
+    'selected.gis.title': { pt: 'Dashboards SIG para operações em terreno', en: 'GIS dashboards for field operations' },
+    'selected.gis.desc': { pt: 'Conceção e apoio a workflows ArcGIS/QGIS, dashboards e recolha de dados em terreno para operações nacionais, monitorização diária e apoio à decisão.', en: 'Designed and supported ArcGIS/QGIS workflows, dashboards and field data collection for national operations, daily monitoring and decision support.' },
+    'selected.gis.metric1.label': { pt: 'Dashboards', en: 'Dashboards' },
+    'selected.gis.metric1.value': { pt: '8+', en: '8+' },
+    'selected.gis.metric2.label': { pt: 'Equipas', en: 'Teams' },
+    'selected.gis.metric2.value': { pt: '48+ por dia', en: '48+ daily' },
+    'selected.ai.image': { pt: 'TODO imagem: mockup UI anonimizado com fluxo multi-etapas, avaliação de risco, análise com IA e relatório gerado.', en: 'TODO image: anonymized UI mockup showing the multi-step workflow, risk assessment, AI analysis and generated report.' },
+    'selected.ai.label': { pt: 'Automação com IA', en: 'AI automation' },
+    'selected.ai.title': { pt: 'Aplicação de busca de pessoas desaparecidas com IA', en: 'Missing-person search application with AI' },
+    'selected.ai.desc': { pt: 'Aplicação full-stack para fluxos de emergência, processamento de dados estruturados, geração dinâmica de prompts, análise com LLMs e relatórios operacionais automatizados.', en: 'Full-stack application for emergency workflows, structured data processing, dynamic prompt generation, LLM analysis and automated operational reports.' },
+    'selected.ai.metric1.label': { pt: 'Foco', en: 'Focus' },
+    'selected.ai.metric1.value': { pt: 'Apoio à decisão', en: 'Decision support' },
+    'selected.ai.metric2.label': { pt: 'Stack', en: 'Stack' },
+    'selected.ai.metric2.value': { pt: 'React + Node', en: 'React + Node' },
+    'selected.automation.image': { pt: 'TODO imagem: fluxo antes/depois, relatório anonimizado ou diagrama de processo mostrando a tarefa de 4 dias reduzida para 30 minutos.', en: 'TODO image: before/after workflow, redacted report sample or process diagram showing the 4-day task reduced to 30 minutes.' },
+    'selected.automation.label': { pt: 'Automação de processos', en: 'Process automation' },
+    'selected.automation.title': { pt: 'Automação de reporting operacional', en: 'Operational reporting automation' },
+    'selected.automation.desc': { pt: 'Automatização de workflows operacionais repetitivos e tarefas de reporting, transformando trabalho manual de vários dias num processo curto e repetível.', en: 'Automation of repetitive operational workflows and reporting tasks, turning multi-day manual work into a short, repeatable process.' },
+    'selected.automation.metric1.label': { pt: 'Antes', en: 'Before' },
+    'selected.automation.metric1.value': { pt: '4 dias', en: '4 days' },
+    'selected.automation.metric2.label': { pt: 'Depois', en: 'After' },
+    'selected.automation.metric2.value': { pt: '30 min', en: '30 min' },
+    'projects.archive.note': { pt: 'Repositório completo de projetos profissionais, operacionais e técnicos. Os trabalhos mais representativos estão destacados acima, enquanto esta secção mantém visível o percurso mais amplo.', en: 'Complete repository of professional, operational and technical projects. The most representative work is highlighted above, while this section keeps the broader track record visible.' },
     'skills.languages': { pt: 'Linguagens de Programação', en: 'Programming Languages' },
     'skills.others': { pt: 'Outras Competências Técnicas', en: 'Other Technical Skills' },
     'skills.frameworks': { pt: 'Frameworks', en: 'Frameworks' },
@@ -61,20 +178,38 @@ const translations = {
     'framework.typescript': { pt: 'TypeScript', en: 'TypeScript' },
     'framework.jetpack': { pt: 'Jetpack Compose', en: 'Jetpack Compose' },
     'framework.javafx': { pt: 'JavaFX', en: 'JavaFX' },
-    'projects.p1.title': { pt: 'HomeVault', en: 'HomeVault' },
-    'projects.p1.desc': { pt: 'Aplicação Android offline-first para gestão de inventário. Dados locais via Drift (SQLite), backups encriptados, sincronização com Google Drive e biometria.', en: 'Offline-first Android inventory management app. Local data via Drift (SQLite), encrypted backups, Google Drive sync, and biometric auth.' },
-    'projects.p2.title': { pt: 'Missing Persons Search Application', en: 'Missing Persons Search Application' },
-    'projects.p2.desc': { pt: 'Plataforma full-stack de apoio a operações de busca. Integração com APIs de LLMs, dashboards em tempo real e geração automática de PDFs.', en: 'Full-stack platform supporting search operations. Integrates LLM APIs, real-time dashboards, and automated PDF generation.' },
+    'projects.p1.title': { pt: 'Aplicação de Busca de Pessoas desaparecidas', en: 'Missing Persons Search Application' },
+    'projects.p1.desc': { pt: 'Aplicação full-stack mission-critical para automatização de processos de emergência. Sistema processa dados estruturados de pessoas desaparecidas, com geração de prompts dinâmicos através da integração de dados contextuais, integra APIs de IA (LLMs) para análise e previsão, e produz relatórios operacionais automatizados com geração de PDF e distribuição por email. Interface multi-etapas, algoritmos de avaliação de risco, dashboard em tempo real, sistema de análise comportamental baseado em dados históricos.', en: 'Full-stack mission-critical application to automate emergency processes. Processes structured missing-person data, generates dynamic prompts from contextual data, integrates AI (LLMs) APIs for analysis and prediction, and produces automated operational reports (PDF/email). Multi-step interface, risk assessment algorithms, real-time dashboard and behavior analysis based on historical data.' },
+    'projects.p2.title': { pt: 'Plataforma Distribuída de Avaliação para Professores e Alunos', en: 'Distributed Assessment Platform for Teachers and Students' },
+    'projects.p2.desc': { pt: 'Plataforma com gestão de sessões para dois tipos de perfis: professores e alunos, permitindo criar perguntas e submeter respostas para avaliação em ambiente académico. Utiliza arquitetura distribuída com RMI para comunicação entre cliente e servidor, garantindo escalabilidade e robustez. Inclui persistência de dados com SQLite e interface gráfica intuitiva com JavaFX.', en: 'Platform with session management for two types of profiles: teachers and students, allowing question creation and response submission for academic assessment. Uses distributed architecture with RMI for client-server communication, ensuring scalability and robustness. Includes data persistence with SQLite and intuitive graphical interface with JavaFX.' },
     'projects.p2b.title': { pt: 'Registo Fotográfico Georreferenciado', en: 'Georeferenced Photo Capture' },
     'projects.p2b.desc': { pt: 'Aplicação mobile para captação de fotos com marca de água automática (GPS, direção, data/hora, logótipo), ideal para documentação de campo com partilha imediata.', en: 'Mobile app for capturing photos with automatic watermark (GPS, heading, timestamp, logo), ideal for field documentation with immediate sharing.' },
-    'projects.p3.title': { pt: 'Teacher and Student Evaluation Platform', en: 'Teacher and Student Evaluation Platform' },
-    'projects.p3.desc': { pt: 'Aplicação cliente-servidor (Java, RMI) para processos de avaliação, com autenticação, controlo de acessos e base de dados SQLite.', en: 'Client-server application (Java, RMI) for evaluation processes, with authentication, access control, and SQLite database.' },
+    'projects.p3.title': { pt: 'Sugestão de Prendas Personalizadas com IA', en: 'AI-Powered Personalized Gift Suggestions' },
+    'projects.p3.desc': { pt: 'Aplicação com sistema de criação e gestão de utilizadores, dispondo de um dashboard com navegação intuitiva, para registo de Enjoyers (pessoas a presentear) e, com base nas suas informações, gostos e parâmetros, a IA aprende e sugere prendas personalizadas de qualquer tipo, com maior probabilidade de agradar, tendo em consideração a ocasião, complementando com uma mensagem digna para acompanhar o presente.', en: 'Application with user creation and management system, featuring an intuitive dashboard for registering Enjoyers (people to gift) and, based on their information, preferences and parameters, AI learns and suggests personalized gifts of any kind, with higher likelihood of pleasing, considering the occasion, complemented with a worthy message to accompany the gift.' },
     'projects.p3b.title': { pt: 'Tracking e Gestão de Utilizadores', en: 'Tracking and User Management' },
     'projects.p3b.desc': { pt: 'Aplicação com login, registo de percursos, estatísticas e exportação (CSV, JSON). Sincronização em tempo real com base de dados Firebase.', en: 'App with login, route recording, statistics and export (CSV, JSON). Real-time sync with Firebase backend.' },
     'projects.p4.title': { pt: 'Jogo Educativo Escolar', en: 'Educational School Game' },
     'projects.p4.desc': { pt: 'Jogo para incentivar ao estudo crianças do 1º ao 4º ciclo, com interface simples e bloqueio do dispositivo até cumprimento de desafios. Configurável via painel de Admin.', en: 'Game to encourage studying for children in primary school, with a simple interface and device lock until challenges are completed. Configurable via an Admin panel.' },
     'about.title': { pt: 'Sobre Mim', en: 'About Me' },
-    'about.desc': { pt: 'Finalista de Engenharia Informática pelo ISEC com experiência prática em desenvolvimento de software moderno (React, TypeScript, Java, Python). Trago 15 anos de experiência profissional, disciplina e grande compromisso com a aprendizagem contínua. Motivado por resolver problemas reais com software fiável.', en: 'Computer Engineering graduate from ISEC with hands-on experience in modern software development (React, TypeScript, Java, Python). I bring 15 years of professional experience, discipline, and a strong commitment to continuous learning. Motivated by solving real problems through reliable software.' },
+    'about.kicker': { pt: 'A minha história', en: 'My story' },
+    'about.lead': { pt: 'O meu percurso no software não foi tradicional. Passei mais de uma década na GNR — primeiro como patrulheiro, depois em operações de combate a incêndios. Trabalhar em ambientes exigentes e de alto risco moldou a forma como penso sobre fiabilidade, disciplina e resultados.', en: "My path into software wasn't traditional. I spent over a decade in the GNR — first as a patrol officer, then in firefighting operations. Working in demanding, high-stakes environments shaped how I think about reliability, discipline, and results." },
+    'about.mid': { pt: 'Em 2020, ainda no ativo, transitei para um novo papel: construir as ferramentas digitais que faltavam às nossas equipas de terreno. Dashboards SIG, aplicações mobile, workflows de emergência com IA — ferramentas com consequências operacionais reais e utilizadores reais que dependiam delas todos os dias.', en: 'In 2020, while still in service, I transitioned to a new role: building the digital tools our field teams were missing. GIS dashboards, mobile apps, AI-powered emergency workflows — tools with real operational consequences and real users depending on them every day.' },
+    'about.close': { pt: 'Em 2023 matriculei-me no ISEC para formalizar a minha prática de engenharia. Sou agora Full-stack Developer Intern na divisão ASD/SpaceForce da Critical Software, a trabalhar em software de comunicações para missões satélite. Os standards são exigentes, e tenho intenção de os cumprir todos.', en: "In 2023 I enrolled at ISEC to formalize my engineering practice. I'm now a Full-stack Developer Intern at Critical Software's ASD/SpaceForce division, working on satellite mission communications software. The standards are exacting, and I intend to meet every one of them." },
+    'about.fact1.label': { pt: 'GNR · 12+ anos', en: 'GNR · 12+ years' },
+    'about.fact1.desc': { pt: 'Serviço público, disciplina e liderança', en: 'Public service, discipline and leadership' },
+    'about.fact2.label': { pt: 'Autodidata → ISEC', en: 'Self-taught → ISEC' },
+    'about.fact2.desc': { pt: 'Licenciatura formal em Eng. Informática', en: 'Formal Computer Engineering degree' },
+    'about.fact3.label': { pt: 'Critical Software', en: 'Critical Software' },
+    'about.fact3.desc': { pt: 'ASD / SpaceForce — missões satélite', en: 'ASD / SpaceForce — satellite missions' },
+    'about.fact4.label': { pt: 'Coimbra, Portugal', en: 'Coimbra, Portugal' },
+    'about.fact4.desc': { pt: 'Disponível para remoto e presencial', en: 'Open to remote and on-site' },
+    'about.values.kicker': { pt: 'O que valorizo', en: 'What I value' },
+    'about.val1': { pt: 'Impacto real', en: 'Real-world impact' },
+    'about.val2': { pt: 'Profundidade técnica', en: 'Technical depth' },
+    'about.val3': { pt: 'Entrega ágil', en: 'Fast delivery' },
+    'about.val4': { pt: 'Equipa em primeiro', en: 'Team-first mindset' },
+    'about.val5': { pt: 'Aprendizagem contínua', en: 'Continuous learning' },
+    'about.val6': { pt: 'IA com propósito', en: 'AI with purpose' },
     'distinctions.title': { pt: 'Distinções Profissionais', en: 'Professional Distinctions' },
     'distinctions.m1.title': { pt: 'Medalha de D. Nuno Álvares Pereira - Mérito', en: 'D. Nuno Álvares Pereira Medal - Merit' },
     'distinctions.m1.desc': { pt: 'A mais alta distinção da GNR, atribuída por atos de bravura, dedicação e mérito excecional.', en: 'The highest distinction of the GNR, awarded for acts of bravery, dedication and exceptional merit.' },
@@ -85,19 +220,21 @@ const translations = {
     'education.period': { pt: '2023 - Presente', en: '2023 - Present' },
     'education.degree': { pt: 'Licenciatura em Eng. Informática - Ramo de Dev', en: "Bachelor's in Computer Engineering - Development track" },
     'education.institution': { pt: 'Instituto Superior de Engenharia de Coimbra (ISEC)', en: 'Instituto Superior de Engenharia de Coimbra (ISEC)' },
-    'exp.p1.period': { pt: 'Fev 2026 - Jul 2026', en: 'Feb 2026 - Jul 2026' },
-    'exp.p1.title': { pt: 'Estagiário de Engenharia de Software', en: 'Software Engineering Intern' },
-    'exp.p1.org': { pt: 'Critical Software', en: 'Critical Software' },
-    'exp.p1.desc': { pt: 'Contribuí para o desenvolvimento do Lighthouse, plataforma de Ground Segment para missões espaciais. Trabalhei com visualização de telemetria em tempo real, REST APIs e WebSockets.', en: 'Contributed to the development of Lighthouse, a Ground Segment platform for space missions. Worked on real-time telemetry visualization, REST APIs, and WebSockets.' },
-    'exp.p2.period': { pt: 'Nov 2022 - Presente', en: 'Nov 2022 - Present' },
-    'exp.p2.title': { pt: 'Especialista GIS & Modelação 3D Freelance', en: 'Freelance GIS Specialist & 3D Modeling' },
-    'exp.p2.org': { pt: 'Fiverr, Upwork', en: 'Fiverr, Upwork' },
-    'exp.p2.desc': { pt: 'Desenho e entrega de soluções GIS e aplicações orientadas a dados para contextos de missão crítica.', en: 'Designed and delivered GIS solutions and data-driven applications in mission-critical contexts.' },
-    'exp.p3.period': { pt: 'Out 2011 - Fev 2026', en: 'Oct 2011 - Feb 2026' },
-    'exp.p3.title': { pt: 'Técnico de Operações e Analista GIS / Militar', en: 'Military & GIS Analyst and Operations Technician' },
-    'exp.p3.org': { pt: 'GNR (Guarda Nacional Republicana) / UEPS', en: 'GNR (National Republican Guard) / UEPS' },
-    'exp.p3.desc': { pt: 'Apoio a operações de busca por pessoas desaparecidas e resposta a catástrofes usando drones e Sistemas de Informação Geográfica (GIS).', en: 'Supported missing persons search and disaster response operations through the use of drones and Geographic Information Systems (GIS).' },
-    'footer.copy': { pt: '© 2024 Rui Casaca. Construído com Tailwind CSS e Lucide Icons.', en: '© 2024 Rui Casaca. Built with Tailwind CSS and Lucide Icons.' },
+    'exp.critical.period': { pt: 'Atual', en: 'Current' },
+    'exp.critical.title': { pt: 'Full-stack Developer Intern', en: 'Full-stack Developer Intern' },
+    'exp.critical.org': { pt: 'Critical Software - ASD / SpaceForce, Coimbra', en: 'Critical Software - ASD / SpaceForce, Coimbra' },
+    'exp.critical.desc': { pt: 'Full-stack Developer Intern no pelotão ASD / SpaceForce, a contribuir para software relacionado com comunicações de missão satélite, incluindo envio de telecomandos e leitura de telemetrias, em contexto de engenharia focado em qualidade e robustez.', en: 'Full-stack Developer Intern in the ASD / SpaceForce team, contributing to software for satellite mission communications, including telecommand dispatch and telemetry reading, within a quality-focused engineering environment.' },
+    'exp.p1.period': { pt: 'Jul 2020 - Presente', en: 'Jul 2020 - Present' },
+    'exp.p1.title': { pt: 'Analista, Desenvolvedor de Software e Inovação', en: 'Analyst, Software Developer and Innovation' },
+    'exp.p1.org': { pt: 'GNR - Unidade de Emergência de Proteção e Socorro (UEPS)', en: 'GNR - Emergency Protection and Rescue Unit (UEPS)' },
+    'exp.p1.desc': { pt: 'Desenvolvimento de software mobile/desktop, integração de LLMs, automatização de processos e gestão de plataformas georreferenciadas (ArcGIS Pro/QGIS). Criação de mais de 8 dashboards, apoio a mais de 10 operações nacionais e a uma operação internacional em Leão, Espanha, com acompanhamento diário de mais de 48 equipas a nível nacional durante todo o ano.', en: 'Mobile and desktop software development, LLM integration, process automation and georeferenced platform management (ArcGIS Pro/QGIS). Delivered 8+ dashboards, supported 10+ national operations and one international operation in Leon, Spain, and helped monitor 48+ field teams nationwide every day of the year.' },
+    'exp.p2.period': { pt: 'Mai 2019 - Jul 2020', en: 'May 2019 - Jul 2020' },
+    'exp.p2.title': { pt: 'Operacional de combate a incêndios', en: 'Firefighting Operator' },
+    'exp.p2.org': { pt: 'GNR - UEPS', en: 'GNR - UEPS' },
+    'exp.p3.period': { pt: 'Out 2011 - Mar 2019', en: 'Oct 2011 - Mar 2019' },
+    'exp.p3.title': { pt: 'Patrulheiro', en: 'Patrolman' },
+    'exp.p3.org': { pt: 'Guarda Nacional Republicana (GNR)', en: 'National Republican Guard (GNR)' },
+    'footer.copy': { pt: '© 2026 Rui Casaca. Portfólio profissional construído com HTML, Tailwind CSS e JavaScript.', en: '© 2026 Rui Casaca. Professional portfolio built with HTML, Tailwind CSS and JavaScript.' },
     'control.theme': { pt: 'Alternar tema (Dark/Light)', en: 'Toggle theme (Dark/Light)' },
     'control.lang': { pt: 'Alternar idioma (PT/EN)', en: 'Toggle language (PT/EN)' },
     'download.title': { pt: 'Download do meu CV em PDF', en: 'Download my CV (PDF)' },
@@ -105,6 +242,7 @@ const translations = {
     'cv.download.pt': { pt: 'Descarregar CV — Português', en: 'Download CV — Portuguese' },
     'cv.download.en': { pt: 'Descarregar CV — English', en: 'Download CV — English' },
     // Tech badge translations
+    'tech.javascript': { pt: 'JavaScript', en: 'JavaScript' },
     'tech.cpp': { pt: 'C/C++', en: 'C/C++' },
     'tech.csharp': { pt: 'C#', en: 'C#' },
     'tech.java': { pt: 'Java', en: 'Java' },
@@ -316,14 +454,15 @@ function setLanguage(lang) {
 }
 
 function toggleLanguage() {
-    const current = localStorage.getItem('site_lang') || 'pt';
+    const current = localStorage.getItem('site_lang') || 'en';
     const next = current === 'pt' ? 'en' : 'pt';
+    cancelTypewriter();
     setLanguage(next);
 }
 
 // Optional helper to explicitly refresh the lang-code display from current storage
 function refreshLangToggle() {
-    const current = localStorage.getItem('site_lang') || 'pt';
+    const current = localStorage.getItem('site_lang') || 'en';
     const langCodeEl = document.getElementById('lang-code');
     if (langCodeEl) langCodeEl.textContent = (current === 'pt') ? 'EN' : 'PT';
 }
@@ -344,7 +483,7 @@ function setTheme(theme) {
 }
 
 function toggleTheme() {
-    const current = localStorage.getItem('site_theme') || (document.body.classList.contains('light') ? 'light' : 'dark');
+    const current = localStorage.getItem('site_theme') || (document.body.classList.contains('dark') ? 'dark' : 'light');
     const next = current === 'light' ? 'dark' : 'light';
     setTheme(next);
 }
@@ -447,14 +586,357 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // apply saved theme
-    const savedTheme = localStorage.getItem('site_theme') || 'dark';
+    const savedTheme = localStorage.getItem('site_theme') || 'light';
     setTheme(savedTheme);
 
     // apply saved language
-    const savedLang = localStorage.getItem('site_lang') || 'pt';
+    const savedLang = localStorage.getItem('site_lang') || 'en';
     applyTranslations(savedLang);
     // re-create icons after translations in case we added icon placeholders
     lucide.createIcons();
     // ensure the visible code next to the globe is correct
     refreshLangToggle();
+
+    // initialize scroll reveal after translations and icons are ready
+    initScrollAnimations();
+
+    // new animation systems
+    initScrollProgress();
+    initHeroLetters();
+    initTypewriter();
+    initBackgroundCanvas();
+    initCursorGlow();
+    initMagneticButtons();
+    initHeroParallax();
+    initBackToTop();
+    initCounters();
+    init3DTilt();
 });
+
+/* ============================================================
+   REDESIGN: ANIMAÇÕES MODERNAS
+   ============================================================ */
+
+/* ===== SCROLL PROGRESS BAR ===== */
+function initScrollProgress() {
+    const bar = document.getElementById('scroll-progress');
+    if (!bar) return;
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        bar.style.width = pct.toFixed(2) + '%';
+    }, { passive: true });
+}
+
+/* ===== HERO LETTER ANIMATION ===== */
+function initHeroLetters() {
+    const letters = document.querySelectorAll('.hl');
+    if (!letters.length) return;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+        letters.forEach(function(l) { l.style.opacity = '1'; });
+        return;
+    }
+    requestAnimationFrame(function() {
+        letters.forEach(function(l) { l.classList.add('in'); });
+    });
+}
+
+/* ===== TYPEWRITER EFFECT ===== */
+var _twTimeout = null;
+
+function cancelTypewriter() {
+    if (_twTimeout) { clearTimeout(_twTimeout); _twTimeout = null; }
+}
+
+function initTypewriter() {
+    var el = document.getElementById('hero-typed');
+    if (!el) return;
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    var text = el.textContent.trim();
+    el.textContent = '';
+    var i = 0;
+
+    function type() {
+        if (i < text.length) {
+            el.textContent += text.charAt(i);
+            i++;
+            _twTimeout = setTimeout(type, 24);
+        } else {
+            _twTimeout = null;
+        }
+    }
+    _twTimeout = setTimeout(type, 950);
+}
+
+/* ===== CANVAS DE PÁGINA INTEIRA — REDE DE PARTÍCULAS REATIVA AO RATO ===== */
+function initBackgroundCanvas() {
+    var canvas = document.getElementById('bg-canvas');
+    if (!canvas) return;
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) { canvas.style.display = 'none'; return; }
+
+    var ctx = canvas.getContext('2d');
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var W = 0, H = 0;
+    var particles = [];
+    var mouse = { x: -9999, y: -9999, active: false };
+
+    function targetCount() {
+        // Densidade proporcional à área, com limites sensatos
+        var area = window.innerWidth * window.innerHeight;
+        return Math.max(40, Math.min(110, Math.round(area / 17000)));
+    }
+
+    function makeParticle() {
+        return {
+            x: Math.random() * W,
+            y: Math.random() * H,
+            vx: (Math.random() - 0.5) * 0.32,
+            vy: (Math.random() - 0.5) * 0.32,
+            r: Math.random() * 1.7 + 0.6
+        };
+    }
+
+    function resize() {
+        W = window.innerWidth;
+        H = window.innerHeight;
+        canvas.width = W * dpr;
+        canvas.height = H * dpr;
+        canvas.style.width = W + 'px';
+        canvas.style.height = H + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        var want = targetCount();
+        while (particles.length < want) particles.push(makeParticle());
+        if (particles.length > want) particles.length = want;
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    window.addEventListener('mousemove', function(e) {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+        mouse.active = true;
+    }, { passive: true });
+    window.addEventListener('mouseout', function() { mouse.active = false; });
+
+    function isDark() { return document.body.classList.contains('dark'); }
+
+    var connectDist = 130;
+    var mouseDist = 170;
+
+    function draw() {
+        ctx.clearRect(0, 0, W, H);
+        var rgb = isDark() ? '103,232,249' : '3,102,214';
+        var dotA = isDark() ? 0.45 : 0.30;
+        var lineA = isDark() ? 0.13 : 0.09;
+
+        var i, j, p, q, dx, dy, dist;
+
+        // Ligações entre partículas
+        for (i = 0; i < particles.length; i++) {
+            p = particles[i];
+            for (j = i + 1; j < particles.length; j++) {
+                q = particles[j];
+                dx = p.x - q.x; dy = p.y - q.y;
+                dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < connectDist) {
+                    ctx.strokeStyle = 'rgba(' + rgb + ',' + (lineA * (1 - dist / connectDist)).toFixed(3) + ')';
+                    ctx.lineWidth = 0.6;
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(q.x, q.y);
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // Ligações ao cursor + ligeira atração (constelação interativa)
+        if (mouse.active) {
+            for (i = 0; i < particles.length; i++) {
+                p = particles[i];
+                dx = p.x - mouse.x; dy = p.y - mouse.y;
+                dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < mouseDist) {
+                    var fade = 1 - dist / mouseDist;
+                    ctx.strokeStyle = 'rgba(' + rgb + ',' + (0.22 * fade).toFixed(3) + ')';
+                    ctx.lineWidth = 0.8;
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(mouse.x, mouse.y);
+                    ctx.stroke();
+                    // empurrão muito subtil para fora do cursor
+                    p.vx += (dx / dist) * 0.012 * fade;
+                    p.vy += (dy / dist) * 0.012 * fade;
+                }
+            }
+        }
+
+        // Desenhar e mover partículas
+        for (i = 0; i < particles.length; i++) {
+            p = particles[i];
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(' + rgb + ',' + dotA + ')';
+            ctx.fill();
+
+            p.x += p.vx;
+            p.y += p.vy;
+            // Amortecer para a velocidade não disparar com a atração
+            p.vx *= 0.992;
+            p.vy *= 0.992;
+            if (Math.abs(p.vx) < 0.08) p.vx += (Math.random() - 0.5) * 0.02;
+            if (Math.abs(p.vy) < 0.08) p.vy += (Math.random() - 0.5) * 0.02;
+
+            if (p.x < -20) p.x = W + 20;
+            if (p.x > W + 20) p.x = -20;
+            if (p.y < -20) p.y = H + 20;
+            if (p.y > H + 20) p.y = -20;
+        }
+        requestAnimationFrame(draw);
+    }
+    draw();
+}
+
+/* ===== SPOTLIGHT QUE SEGUE O CURSOR ===== */
+function initCursorGlow() {
+    var glow = document.getElementById('cursor-glow');
+    if (!glow) return;
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) { glow.style.display = 'none'; return; }
+    if (window.matchMedia('(hover: none)').matches) { glow.style.display = 'none'; return; }
+
+    var tx = window.innerWidth / 2, ty = window.innerHeight / 2;
+    var cx = tx, cy = ty;
+
+    window.addEventListener('mousemove', function(e) {
+        tx = e.clientX;
+        ty = e.clientY;
+        glow.style.opacity = '1';
+    }, { passive: true });
+    window.addEventListener('mouseout', function() { glow.style.opacity = '0'; });
+
+    function loop() {
+        cx += (tx - cx) * 0.12;
+        cy += (ty - cy) * 0.12;
+        glow.style.transform = 'translate(' + cx + 'px,' + cy + 'px) translate(-50%, -50%)';
+        requestAnimationFrame(loop);
+    }
+    loop();
+}
+
+/* ===== BOTÕES MAGNÉTICOS ===== */
+function initMagneticButtons() {
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+    if (window.matchMedia('(hover: none)').matches) return;
+
+    var buttons = document.querySelectorAll('.primary-action, .secondary-action, .control-btn');
+    buttons.forEach(function(btn) {
+        btn.addEventListener('mousemove', function(e) {
+            var rect = btn.getBoundingClientRect();
+            var mx = e.clientX - rect.left - rect.width / 2;
+            var my = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = 'translate(' + (mx * 0.25).toFixed(2) + 'px,' + (my * 0.35).toFixed(2) + 'px)';
+        }, { passive: true });
+        btn.addEventListener('mouseleave', function() {
+            btn.style.transform = '';
+        });
+    });
+}
+
+/* ===== PARALLAX 3D NO CARTÃO DO HERO ===== */
+function initHeroParallax() {
+    var frame = document.querySelector('.profile-frame');
+    var heroCard = document.querySelector('.hero-card');
+    if (!frame || !heroCard) return;
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+    if (window.matchMedia('(hover: none)').matches) return;
+
+    heroCard.addEventListener('mousemove', function(e) {
+        var rect = heroCard.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        frame.style.transform = 'perspective(900px) rotateX(' + (-y * 9).toFixed(2) + 'deg) rotateY(' + (x * 9).toFixed(2) + 'deg) translateZ(12px)';
+    }, { passive: true });
+    heroCard.addEventListener('mouseleave', function() {
+        frame.style.transform = '';
+    });
+}
+
+/* ===== BOTÃO VOLTAR AO TOPO ===== */
+function initBackToTop() {
+    var btn = document.getElementById('back-to-top');
+    if (!btn) return;
+    function toggle() {
+        if (window.scrollY > 500) btn.classList.add('is-visible');
+        else btn.classList.remove('is-visible');
+    }
+    window.addEventListener('scroll', toggle, { passive: true });
+    btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    toggle();
+}
+
+
+/* ===== COUNTER ANIMATIONS ===== */
+function initCounters() {
+    var counters = document.querySelectorAll('.impact-counter[data-target]');
+    if (!counters.length) return;
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+        counters.forEach(function(c) { c.textContent = c.getAttribute('data-target'); });
+        return;
+    }
+
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var target = parseInt(el.getAttribute('data-target'), 10);
+            var duration = 1400;
+            var start = performance.now();
+            function update(now) {
+                var elapsed = now - start;
+                var progress = Math.min(elapsed / duration, 1);
+                var eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.floor(eased * target);
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    el.textContent = target;
+                }
+            }
+            requestAnimationFrame(update);
+            observer.unobserve(el);
+        });
+    }, { threshold: 0.6 });
+
+    counters.forEach(function(c) { observer.observe(c); });
+}
+
+/* ===== 3D CARD TILT ===== */
+function init3DTilt() {
+    var cards = document.querySelectorAll('.project-card, .expertise-card');
+    if (!cards.length) return;
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    cards.forEach(function(card) {
+        card.addEventListener('mousemove', function(e) {
+            var rect = card.getBoundingClientRect();
+            var x = (e.clientX - rect.left) / rect.width - 0.5;
+            var y = (e.clientY - rect.top) / rect.height - 0.5;
+            card.style.transform = 'perspective(800px) rotateX(' + (-y * 5).toFixed(2) + 'deg) rotateY(' + (x * 5).toFixed(2) + 'deg) translateY(-4px)';
+        }, { passive: true });
+        card.addEventListener('mouseleave', function() {
+            card.style.transform = '';
+        });
+    });
+}
