@@ -113,6 +113,8 @@ const translations = {
     'hero.lead': { pt: 'Construo aplicações web, mobile e desktop para automatizar processos, integrar dados geográficos e apoiar decisões operacionais em ambientes exigentes.', en: 'I build web, mobile and desktop applications that automate processes, integrate geographic data and support operational decisions in demanding environments.' },
     'hero.cta.contact': { pt: 'Contactar', en: 'Contact' },
     'hero.cta.github': { pt: 'Ver GitHub', en: 'View GitHub' },
+    'hero.proof.gnr.value': { pt: 'GNR · 15+ Anos', en: 'GNR · 15+ Years' },
+    'hero.proof.gnr.label': { pt: 'disciplina & liderança', en: 'discipline & leadership' },
     'hero.proof.critical.value': { pt: 'Critical Software', en: 'Critical Software' },
     'hero.proof.critical.label': { pt: 'Lighthouse • Space Ground Segment', en: 'Lighthouse • Space Ground Segment' },
     'hero.proof.gis.value': { pt: 'ArcGIS / QGIS', en: 'ArcGIS / QGIS' },
