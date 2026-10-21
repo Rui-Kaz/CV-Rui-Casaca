@@ -1745,3 +1745,55 @@ body.dark .hero-name {
     .hero-card { justify-items: stretch; }
     .profile-frame { width: 100%; max-width: 18rem; margin: 0 auto; }
 }
+
+
+/* ===== CASE STUDY MEDIA / IMAGES ===== */
+.case-study-media {
+    width: 100%;
+    height: 14rem;
+    overflow: hidden;
+    position: relative;
+    background: var(--surface-soft, rgba(15, 23, 42, 0.6));
+    border-bottom: 1px solid var(--border-subtle, rgba(148, 163, 184, 0.16));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.case-study-card.featured-case .case-study-media {
+    height: 18rem;
+}
+
+.case-study-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.case-study-media.media-contain {
+    background: #f8fafc;
+    padding: 1.25rem;
+}
+
+.case-study-img.contain {
+    object-fit: contain;
+    max-height: 100%;
+    width: auto;
+    max-width: 100%;
+}
+
+.case-study-card:hover .case-study-img {
+    transform: scale(1.03);
+}
+
+body.light .case-study-media {
+    background: #f1f5f9;
+    border-color: rgba(15, 23, 42, 0.08);
+}
+
+body.light .case-study-media.media-contain {
+    background: #f8fafc;
+}

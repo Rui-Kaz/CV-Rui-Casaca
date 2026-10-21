@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en-US" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rui Casaca | Full-stack Developer</title>
-    <meta name="description" content="Portfolio and resume of Rui Casaca, Full-stack Developer focused on AI-assisted engineering, automation, GIS and operational software.">
-    
+    <meta name="description"
+        content="Portfolio and resume of Rui Casaca, Full-stack Developer focused on AI-assisted engineering, automation, GIS and operational software.">
+
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,750&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,750&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Script do Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Script do Lucide Icons (para ícones) -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <!-- CSS Personalizado -->
     <link rel="stylesheet" href="styles.css">
-    
+
     <!-- Configuração do Tailwind (para o dark mode e cores personalizadas) -->
     <script>
         tailwind.config = {
@@ -47,6 +51,7 @@
         }
     </script>
 </head>
+
 <body class="light">
 
     <!-- ===== FUNDO IMERSIVO DE PÁGINA INTEIRA ===== -->
@@ -59,17 +64,21 @@
     <div id="scroll-progress" class="scroll-progress-bar" aria-hidden="true"></div>
 
     <!-- ===== BOTÃO FLUTUANTE PARA DOWNLOAD DO CV ===== -->
-   
-    <button id="fab-download" aria-label="Download my CV (PDF)" title="Download CV (PDF)" class="fab-download" type="button">
+
+    <button id="fab-download" aria-label="Download my CV (PDF)" title="Download CV (PDF)" class="fab-download"
+        type="button">
         <i data-lucide="download" class="w-6 h-6"></i>
     </button>
 
     <!-- Menu pequeno para escolher idioma ao descarregar CV -->
-    <div id="cv-download-menu" class="cv-download-menu" role="menu" aria-hidden="true" aria-labelledby="cv-download-title">
+    <div id="cv-download-menu" class="cv-download-menu" role="menu" aria-hidden="true"
+        aria-labelledby="cv-download-title">
         <div id="cv-download-title" class="cv-download-title" data-i18n="cv.download.choose">Choose CV language</div>
         <div class="cv-download-actions">
-            <button class="cv-download-option" role="menuitem" data-lang="pt" data-i18n="cv.download.pt">Download CV - Portuguese</button>
-            <button class="cv-download-option" role="menuitem" data-lang="en" data-i18n="cv.download.en">Download CV - English</button>
+            <button class="cv-download-option" role="menuitem" data-lang="pt" data-i18n="cv.download.pt">Download CV -
+                Portuguese</button>
+            <button class="cv-download-option" role="menuitem" data-lang="en" data-i18n="cv.download.en">Download CV -
+                English</button>
         </div>
     </div>
 
@@ -86,22 +95,28 @@
 
     <!-- ===== CONTEÚDO PRINCIPAL ===== -->
     <div class="max-w-6xl mx-auto p-6 md:p-12 site-shell">
-        
+
         <!-- ===== SECÇÃO DE CABEÇALHO (HERO) ===== -->
         <header class="hero-shell">
             <div class="hero-content">
                 <div class="eyebrow">
                     <i data-lucide="map-pin" class="w-4 h-4"></i>
-                    <span data-i18n="hero.eyebrow">Santa Maria da Feira, Portugal • Remote / Hybrid / On-site</span>
+                    <span data-i18n="hero.eyebrow">Aveiro & Porto, Portugal • Remote / Hybrid / On-site</span>
                 </div>
                 <h1 class="hero-name" aria-label="Rui Casaca">
-                    <span class="hl" style="--i:0">R</span><span class="hl" style="--i:1">u</span><span class="hl" style="--i:2">i</span><span class="hs">&nbsp;</span><span class="hl" style="--i:3">C</span><span class="hl" style="--i:4">a</span><span class="hl" style="--i:5">s</span><span class="hl" style="--i:6">a</span><span class="hl" style="--i:7">c</span><span class="hl" style="--i:8">a</span>
+                    <span class="hl" style="--i:0">R</span><span class="hl" style="--i:1">u</span><span class="hl"
+                        style="--i:2">i</span><span class="hs">&nbsp;</span><span class="hl" style="--i:3">C</span><span
+                        class="hl" style="--i:4">a</span><span class="hl" style="--i:5">s</span><span class="hl"
+                        style="--i:6">a</span><span class="hl" style="--i:7">c</span><span class="hl"
+                        style="--i:8">a</span>
                 </h1>
                 <h2 class="hero-subtitle-line">
-                    <span id="hero-typed" data-i18n="hero.subtitle">Full-stack Developer | AI, Automation &amp; GIS</span><span class="typed-cursor" aria-hidden="true">|</span>
+                    <span id="hero-typed" data-i18n="hero.subtitle">Full-stack Developer | AI, Automation &amp;
+                        GIS</span><span class="typed-cursor" aria-hidden="true">|</span>
                 </h2>
                 <p class="hero-lead" data-i18n="hero.lead">
-                    I build web, mobile and desktop applications that automate processes, integrate geographic data and support operational decisions in demanding environments.
+                    I build web, mobile and desktop applications that automate processes, integrate geographic data and
+                    support operational decisions in demanding environments.
                 </p>
 
                 <div class="hero-actions" aria-label="Primary actions">
@@ -109,19 +124,32 @@
                         <i data-lucide="mail" class="w-5 h-5"></i>
                         <span data-i18n="hero.cta.contact">Contact</span>
                     </a>
-                    <a class="secondary-action" href="https://github.com/Rui-Casaca" target="_blank" rel="noopener noreferrer" title="GitHub Principal (Portfólio)">
-                        <svg class="w-5 h-5 fill-current inline-block" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                    <a class="secondary-action" href="https://github.com/Rui-Casaca" target="_blank"
+                        rel="noopener noreferrer" title="GitHub Principal (Portfólio)">
+                        <svg class="w-5 h-5 fill-current inline-block" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                        </svg>
                         <span>GitHub (Rui-Casaca)</span>
                     </a>
-                    <a class="secondary-action" href="https://github.com/Rui-Kaz" target="_blank" rel="noopener noreferrer" title="GitHub de Projetos">
-                        <svg class="w-5 h-5 fill-current inline-block" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                    <a class="secondary-action" href="https://github.com/Rui-Kaz" target="_blank"
+                        rel="noopener noreferrer" title="GitHub de Projetos">
+                        <svg class="w-5 h-5 fill-current inline-block" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                        </svg>
                         <span>GitHub (Rui-Kaz)</span>
                     </a>
-                    <a class="secondary-action" href="https://www.linkedin.com/in/rui-casaca/" target="_blank" rel="noopener noreferrer" title="Perfil LinkedIn">
-                        <svg class="w-5 h-5 fill-current inline-block" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24"/></svg>
+                    <a class="secondary-action" href="https://www.linkedin.com/in/rui-casaca/" target="_blank"
+                        rel="noopener noreferrer" title="Perfil LinkedIn">
+                        <svg class="w-5 h-5 fill-current inline-block" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24" />
+                        </svg>
                         <span>LinkedIn</span>
                     </a>
-                    <a class="secondary-action" href="https://en.fiverr.com/kazzillion?public_mode=true" target="_blank" rel="noopener noreferrer" title="Perfil Fiverr">
+                    <a class="secondary-action" href="https://en.fiverr.com/kazzillion?public_mode=true" target="_blank"
+                        rel="noopener noreferrer" title="Perfil Fiverr">
                         <i data-lucide="briefcase" class="w-5 h-5"></i>
                         <span>Fiverr</span>
                     </a>
@@ -146,7 +174,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <aside class="hero-card" aria-label="Professional summary of Rui Casaca">
                 <div class="profile-frame">
                     <img src="res/CV_photo.jpg" alt="Foto de perfil de Rui Casaca" class="profile-photo">
@@ -155,7 +183,8 @@
                 <div class="availability-card">
                     <span data-i18n="hero.card.label">Professional focus</span>
                     <strong data-i18n="hero.card.title">Software for real-world context</strong>
-                    <p data-i18n="hero.card.desc">Experience with operational systems, GIS, automation, LLMs and interfaces for field users.</p>
+                    <p data-i18n="hero.card.desc">Experience with operational systems, GIS, automation, LLMs and
+                        interfaces for field users.</p>
                 </div>
             </aside>
         </header>
@@ -200,22 +229,26 @@
                 <article class="expertise-card">
                     <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
                     <h3 data-i18n="expertise.software.title">Aplicacoes completas</h3>
-                    <p data-i18n="expertise.software.desc">Desenvolvimento web, mobile e desktop com foco em interfaces claras, dados persistentes, APIs e utilizadores reais.</p>
+                    <p data-i18n="expertise.software.desc">Desenvolvimento web, mobile e desktop com foco em interfaces
+                        claras, dados persistentes, APIs e utilizadores reais.</p>
                 </article>
                 <article class="expertise-card">
                     <i data-lucide="map" class="w-6 h-6"></i>
                     <h3 data-i18n="expertise.gis.title">GIS & operational intelligence</h3>
-                    <p data-i18n="expertise.gis.desc">Experiencia aplicada em ArcGIS, QGIS, QuickCapture, Field Maps e dashboards para acompanhamento operacional.</p>
+                    <p data-i18n="expertise.gis.desc">Experiencia aplicada em ArcGIS, QGIS, QuickCapture, Field Maps e
+                        dashboards para acompanhamento operacional.</p>
                 </article>
                 <article class="expertise-card">
                     <i data-lucide="workflow" class="w-6 h-6"></i>
                     <h3 data-i18n="expertise.automation.title">Automacao e IA</h3>
-                    <p data-i18n="expertise.automation.desc">Automatizacao de processos, geracao de relatorios, integracao com LLMs e reducao de trabalho manual repetitivo.</p>
+                    <p data-i18n="expertise.automation.desc">Automatizacao de processos, geracao de relatorios,
+                        integracao com LLMs e reducao de trabalho manual repetitivo.</p>
                 </article>
                 <article class="expertise-card">
                     <i data-lucide="sparkles" class="w-6 h-6"></i>
                     <h3 data-i18n="expertise.aiagents.title">AI-assisted engineering</h3>
-                    <p data-i18n="expertise.aiagents.desc">Uso avançado de agentes de IA, workflows assistidos e ferramentas modernas para acelerar análise, prototipagem e entrega de software.</p>
+                    <p data-i18n="expertise.aiagents.desc">Uso avançado de agentes de IA, workflows assistidos e
+                        ferramentas modernas para acelerar análise, prototipagem e entrega de software.</p>
                 </article>
             </div>
         </section>
@@ -224,21 +257,20 @@
             <div class="section-kicker" data-i18n="selected.kicker">Selected work</div>
             <div class="section-heading-row">
                 <h2 id="selected-work-title" data-i18n="selected.title">Featured case studies</h2>
-                <p data-i18n="selected.lead">A curated view of the strongest work first. The complete project archive remains available below.</p>
+                <p data-i18n="selected.lead">A curated view of the strongest work first. The complete project archive
+                    remains available below.</p>
             </div>
 
             <div class="selected-work-grid">
                 <article class="case-study-card featured-case">
-                    <div class="media-placeholder placeholder-gis" role="img" aria-label="GIS Operational Dashboard">
-                        <div class="placeholder-vis">
-                            <div class="placeholder-icon-wrap"><i data-lucide="map" class="w-8 h-8"></i></div>
-                            <div class="placeholder-tag" data-i18n="selected.gis.label">Operational GIS</div>
-                        </div>
+                    <div class="case-study-media" role="img" aria-label="GIS Operational Dashboard">
+                        <img src="res/gis2.png" alt="GIS Dashboards for field operations" class="case-study-img" loading="lazy">
                     </div>
                     <div class="case-study-content">
                         <span class="case-study-label" data-i18n="selected.gis.label">Operational GIS</span>
                         <h3 data-i18n="selected.gis.title">GIS dashboards for field operations</h3>
-                        <p data-i18n="selected.gis.desc">Designed and supported ArcGIS/QGIS workflows, dashboards and field data collection for national operations, daily monitoring and decision support.</p>
+                        <p data-i18n="selected.gis.desc">Designed and supported ArcGIS/QGIS workflows, dashboards and
+                            field data collection for national operations, daily monitoring and decision support.</p>
                         <dl class="case-study-impact">
                             <div>
                                 <dt data-i18n="selected.gis.metric1.label">Dashboards</dt>
@@ -253,16 +285,14 @@
                 </article>
 
                 <article class="case-study-card">
-                    <div class="media-placeholder placeholder-ai" role="img" aria-label="AI Missing-Person Application">
-                        <div class="placeholder-vis">
-                            <div class="placeholder-icon-wrap"><i data-lucide="brain" class="w-8 h-8"></i></div>
-                            <div class="placeholder-tag" data-i18n="selected.ai.label">AI automation</div>
-                        </div>
+                    <div class="case-study-media media-contain" role="img" aria-label="SARIA - AI Missing-Person Application">
+                        <img src="res/saria.png" alt="SARIA - Missing-person search application with AI" class="case-study-img contain" loading="lazy">
                     </div>
                     <div class="case-study-content">
                         <span class="case-study-label" data-i18n="selected.ai.label">AI automation</span>
                         <h3 data-i18n="selected.ai.title">Missing-person search application with AI</h3>
-                        <p data-i18n="selected.ai.desc">Full-stack application for emergency workflows, structured data processing, dynamic prompt generation, LLM analysis and automated operational reports.</p>
+                        <p data-i18n="selected.ai.desc">Full-stack application for emergency workflows, structured data
+                            processing, dynamic prompt generation, LLM analysis and automated operational reports.</p>
                         <dl class="case-study-impact">
                             <div>
                                 <dt data-i18n="selected.ai.metric1.label">Focus</dt>
@@ -277,7 +307,8 @@
                 </article>
 
                 <article class="case-study-card">
-                    <div class="media-placeholder placeholder-automation" role="img" aria-label="Operational Reporting Automation">
+                    <div class="media-placeholder placeholder-automation" role="img"
+                        aria-label="Operational Reporting Automation">
                         <div class="placeholder-vis">
                             <div class="placeholder-icon-wrap"><i data-lucide="zap" class="w-8 h-8"></i></div>
                             <div class="placeholder-tag" data-i18n="selected.automation.label">Process automation</div>
@@ -286,7 +317,8 @@
                     <div class="case-study-content">
                         <span class="case-study-label" data-i18n="selected.automation.label">Process automation</span>
                         <h3 data-i18n="selected.automation.title">Operational reporting automation</h3>
-                        <p data-i18n="selected.automation.desc">Automation of repetitive operational workflows and reporting tasks, turning multi-day manual work into a short, repeatable process.</p>
+                        <p data-i18n="selected.automation.desc">Automation of repetitive operational workflows and
+                            reporting tasks, turning multi-day manual work into a short, repeatable process.</p>
                         <dl class="case-study-impact">
                             <div>
                                 <dt data-i18n="selected.automation.metric1.label">Before</dt>
@@ -340,282 +372,392 @@
             <!-- ===== ABA: CURRÍCULO (CV PRINCIPAL) ===== -->
             <div id="tab-cv" class="tab-content active">
 
-            <!-- ===== SECÇÃO DE COMPETÊNCIAS ===== -->
-            <section id="competencias">
-                <h2 data-i18n="heading.skills">Technical Skills</h2>
-                <div class="competencias-grid">
-                    <!-- Linguagens de Programação -->
-                    <div class="competencias-bloco linguagens">
-                        <div class="competencias-titulo">
-                            <i data-lucide="code" class="w-5 h-5 text-brand-blue mr-2"></i>
-                            <span data-i18n="skills.languages">Programming Languages</span>
+                <!-- ===== SECÇÃO DE COMPETÊNCIAS ===== -->
+                <section id="competencias">
+                    <h2 data-i18n="heading.skills">Technical Skills</h2>
+                    <div class="competencias-grid">
+                        <!-- Linguagens de Programação -->
+                        <div class="competencias-bloco linguagens">
+                            <div class="competencias-titulo">
+                                <i data-lucide="code" class="w-5 h-5 text-brand-blue mr-2"></i>
+                                <span data-i18n="skills.languages">Programming Languages</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                <span class="tech-pill"><span data-i18n="tech.cpp">C/C++</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.csharp">C#</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.java">Java</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.kotlin">Kotlin</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.dart">Dart</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.python">Python</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.matlab">MATLAB</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.dotnet">.NET</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.javascript">JavaScript</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.htmlcss">HTML/CSS</span></span>
+                            </div>
                         </div>
-                        <div class="flex flex-wrap gap-2 mt-3">
-                            <span class="tech-pill"><span data-i18n="tech.cpp">C/C++</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.csharp">C#</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.java">Java</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.kotlin">Kotlin</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.dart">Dart</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.python">Python</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.matlab">MATLAB</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.dotnet">.NET</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.javascript">JavaScript</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.htmlcss">HTML/CSS</span></span>
+                        <!-- Frameworks (traduzível) - agora com classes consistentes com o bloco de Linguagens -->
+                        <div class="competencias-bloco frameworks">
+                            <div class="competencias-titulo">
+                                <i data-lucide="settings" class="w-5 h-5 text-brand-blue mr-2"></i>
+                                <span data-i18n="skills.frameworks">Frameworks</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                <span class="tech-pill"><span data-i18n="framework.springboot">Spring Boot</span></span>
+                                <span class="tech-pill"><span data-i18n="framework.maui">MAUI</span></span>
+                                <span class="tech-pill"><span data-i18n="framework.blazor">Blazor</span></span>
+                                <span class="tech-pill"><span data-i18n="framework.react">React</span></span>
+                                <span class="tech-pill"><span data-i18n="framework.typescript">TypeScript</span></span>
+                                <span class="tech-pill"><span data-i18n="framework.jetpack">Jetpack
+                                        Compose</span></span>
+                                <span class="tech-pill"><span data-i18n="framework.flutter">Flutter</span></span>
+                                <span class="tech-pill"><span data-i18n="framework.javafx">JavaFX</span></span>
+                            </div>
+                        </div>
+                        <div class="competencias-bloco outras">
+                            <div class="competencias-titulo">
+                                <i data-lucide="settings" class="w-5 h-5 text-brand-blue mr-2"></i>
+                                <span data-i18n="skills.others">Other Technical Skills</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                <span class="tech-pill"><span data-i18n="tech.llm">Integração LLMs</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.postgres">PostgreSQL</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.sqlite">SQLite</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.sqlserver">SQL Server</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.git">GitHub / GitLab</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.automation">Automatização de
+                                        Processos</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.firebase">Firebase</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.arcgis">ArcGIS Pro</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.qgis">QGIS</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.blender">Blender</span></span>
+                            </div>
                         </div>
                     </div>
-                    <!-- Frameworks (traduzível) - agora com classes consistentes com o bloco de Linguagens -->
-                    <div class="competencias-bloco frameworks">
-                        <div class="competencias-titulo">
-                            <i data-lucide="settings" class="w-5 h-5 text-brand-blue mr-2"></i>
-                            <span data-i18n="skills.frameworks">Frameworks</span>
-                        </div>
-                        <div class="flex flex-wrap gap-2 mt-3">
-                            <span class="tech-pill"><span data-i18n="framework.springboot">Spring Boot</span></span>
-                            <span class="tech-pill"><span data-i18n="framework.maui">MAUI</span></span>
-                            <span class="tech-pill"><span data-i18n="framework.blazor">Blazor</span></span>
-                            <span class="tech-pill"><span data-i18n="framework.react">React</span></span>
-                            <span class="tech-pill"><span data-i18n="framework.typescript">TypeScript</span></span>
-                            <span class="tech-pill"><span data-i18n="framework.jetpack">Jetpack Compose</span></span>
-                            <span class="tech-pill"><span data-i18n="framework.flutter">Flutter</span></span>
-                            <span class="tech-pill"><span data-i18n="framework.javafx">JavaFX</span></span>
-                        </div>
-                    </div>
-                    <div class="competencias-bloco outras">
-                        <div class="competencias-titulo">
-                            <i data-lucide="settings" class="w-5 h-5 text-brand-blue mr-2"></i>
-                            <span data-i18n="skills.others">Other Technical Skills</span>
-                        </div>
-                        <div class="flex flex-wrap gap-2 mt-3">
-                            <span class="tech-pill"><span data-i18n="tech.llm">Integração LLMs</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.postgres">PostgreSQL</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.sqlite">SQLite</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.sqlserver">SQL Server</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.git">GitHub / GitLab</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.automation">Automatização de Processos</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.firebase">Firebase</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.arcgis">ArcGIS Pro</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.qgis">QGIS</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.blender">Blender</span></span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            <!-- ===== SECÇÃO DE PROJETOS ===== -->
-            <section id="projetos">
-                <h2 data-i18n="heading.projects">Project Archive</h2>
-                <p class="archive-note" data-i18n="projects.archive.note">Complete repository of professional, operational and technical projects. The most representative work is highlighted above, while this section keeps the broader track record visible.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Projeto 0: HomeVault -->
-                    <div class="project-card">
-                        <div class="flex items-start justify-between">
-                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.homevault.title">HomeVault - Gestão de Inventário Offline-First</h3>
-                            <a href="https://github.com/Rui-Casaca/HomeVault" target="_blank" rel="noopener noreferrer" class="text-brand-gray-400 hover:text-brand-blue transition-colors p-1" title="Ver código no GitHub">
-                                <svg class="w-5 h-5 fill-current inline-block" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                            </a>
+                <!-- ===== SECÇÃO DE PROJETOS ===== -->
+                <section id="projetos">
+                    <h2 data-i18n="heading.projects">Project Archive</h2>
+                    <p class="archive-note" data-i18n="projects.archive.note">Complete repository of professional,
+                        operational and technical projects. The most representative work is highlighted above, while
+                        this section keeps the broader track record visible.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Projeto 0: HomeVault -->
+                        <div class="project-card">
+                            <div class="flex items-start justify-between">
+                                <h3 class="text-xl font-semibold text-brand-blue mb-2"
+                                    data-i18n="projects.homevault.title">HomeVault - Gestão de Inventário Offline-First
+                                </h3>
+                                <a href="https://github.com/Rui-Casaca/HomeVault" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-brand-gray-400 hover:text-brand-blue transition-colors p-1"
+                                    title="Ver código no GitHub">
+                                    <svg class="w-5 h-5 fill-current inline-block" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-pill"><span data-i18n="tech.flutter">Flutter</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.dart">Dart</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.sqlite">Drift / SQLite</span></span>
+                                <span class="tech-pill">Google Drive API</span>
+                                <span class="tech-pill">Biometria</span>
+                            </div>
+                            <p data-i18n="projects.homevault.desc">Aplicação Android offline-first para catalogar bens,
+                                documentos e fotos em segurança. Gestão de dados locais com Drift (SQLite), backups
+                                encriptados e sincronização com Google Drive, autenticação biométrica e scanner
+                                QR/barras.</p>
+                            <div class="mt-4 pt-3 border-t border-brand-gray-800 flex items-center justify-between">
+                                <a href="https://github.com/Rui-Casaca/HomeVault" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="inline-flex items-center gap-1.5 text-xs text-brand-blue hover:underline font-medium">
+                                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Ver no GitHub
+                                </a>
+                                <span class="text-xs text-brand-gray-500">Android • Flutter</span>
+                            </div>
                         </div>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-pill"><span data-i18n="tech.flutter">Flutter</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.dart">Dart</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.sqlite">Drift / SQLite</span></span>
-                            <span class="tech-pill">Google Drive API</span>
-                            <span class="tech-pill">Biometria</span>
+
+                        <!-- Projeto: GIS Tools -->
+                        <div class="project-card">
+                            <div class="flex items-start justify-between">
+                                <h3 class="text-xl font-semibold text-brand-blue mb-2"
+                                    data-i18n="projects.gistools.title">GIS Tools & Automação Python</h3>
+                                <a href="https://github.com/Rui-Casaca/GIS_tools" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-brand-gray-400 hover:text-brand-blue transition-colors p-1"
+                                    title="Ver código no GitHub">
+                                    <svg class="w-5 h-5 fill-current inline-block" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-pill"><span data-i18n="tech.python">Python</span></span>
+                                <span class="tech-pill">GIS</span>
+                                <span class="tech-pill"><span data-i18n="tech.automation">Automatização</span></span>
+                                <span class="tech-pill">GUI</span>
+                            </div>
+                            <p data-i18n="projects.gistools.desc">Suite de ferramentas em Python com interface gráfica
+                                para processamento ágil de dados espaciais, conversão de formatos e apoio a fluxos de
+                                informação geográfica.</p>
+                            <div class="mt-4 pt-3 border-t border-brand-gray-800 flex items-center justify-between">
+                                <a href="https://github.com/Rui-Casaca/GIS_tools" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="inline-flex items-center gap-1.5 text-xs text-brand-blue hover:underline font-medium">
+                                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Ver no GitHub
+                                </a>
+                                <span class="text-xs text-brand-gray-500">Python • Desktop</span>
+                            </div>
                         </div>
-                        <p data-i18n="projects.homevault.desc">Aplicação Android offline-first para catalogar bens, documentos e fotos em segurança. Gestão de dados locais com Drift (SQLite), backups encriptados e sincronização com Google Drive, autenticação biométrica e scanner QR/barras.</p>
-                        <div class="mt-4 pt-3 border-t border-brand-gray-800 flex items-center justify-between">
-                            <a href="https://github.com/Rui-Casaca/HomeVault" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-brand-blue hover:underline font-medium">
-                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Ver no GitHub
-                            </a>
-                            <span class="text-xs text-brand-gray-500">Android • Flutter</span>
+
+                        <!-- Projeto: MarkDown Converter -->
+                        <div class="project-card">
+                            <div class="flex items-start justify-between">
+                                <h3 class="text-xl font-semibold text-brand-blue mb-2"
+                                    data-i18n="projects.mdconv.title">MarkDown Converter (Otimizador de Tokens IA)</h3>
+                                <a href="https://github.com/Rui-Casaca/MarkDown_converter" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-brand-gray-400 hover:text-brand-blue transition-colors p-1"
+                                    title="Ver código no GitHub">
+                                    <svg class="w-5 h-5 fill-current inline-block" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-pill"><span data-i18n="tech.python">Python</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.llm">IA / LLMs</span></span>
+                                <span class="tech-pill">Document Parsing</span>
+                            </div>
+                            <p data-i18n="projects.mdconv.desc">Aplicação em Python para converter documentos Word, PDF
+                                e PowerPoint em formato MarkDown limpo, reduzindo expressivamente o consumo de tokens em
+                                modelos de IA.</p>
+                            <div class="mt-4 pt-3 border-t border-brand-gray-800 flex items-center justify-between">
+                                <a href="https://github.com/Rui-Casaca/MarkDown_converter" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="inline-flex items-center gap-1.5 text-xs text-brand-blue hover:underline font-medium">
+                                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Ver no GitHub
+                                </a>
+                                <span class="text-xs text-brand-gray-500">Python • AI Tooling</span>
+                            </div>
+                        </div>
+
+
+                        <!-- Projeto 1 -->
+                        <div class="project-card">
+                            <div class="flex items-start justify-between">
+                                <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p1.title">
+                                    Aplicação de Busca de Pessoas desaparecidas com IA</h3>
+                                <a href="https://github.com/Rui-Casaca/Missing-Peron-Prediction-App" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-brand-gray-400 hover:text-brand-blue transition-colors p-1"
+                                    title="Ver código no GitHub">
+                                    <svg class="w-5 h-5 fill-current inline-block" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-pill"><span data-i18n="tech.reactjs">React</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.node">Node.js</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.htmlcss">HTML/CSS</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.postgres">PostgreSQL</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.restapi">RESTful API</span></span>
+                            </div>
+                            <p data-i18n="projects.p1.desc">Aplicação full-stack mission-critical para automatização de
+                                processos de emergência. Sistema processa dados estruturados de pessoas desaparecidas,
+                                com geração de prompts dinâmicos através da integração de dados contextuais, integra
+                                APIs de IA (LLMs) para análise e previsão, e produz relatórios operacionais
+                                automatizados com geração de PDF e distribuição por email.
+                                Interface multi-etapas, algoritmos de avaliação de risco, dashboard em tempo real,
+                                sistema de análise comportamental baseado em
+                                dados históricos.</p>
+                        </div>
+
+                        <!-- Projeto 2 -->
+                        <div class="project-card">
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p3.title">
+                                Sugestão de Prendas Personalizadas com IA</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-pill"><span data-i18n="tech.java">Java</span></span>
+                                <span class="tech-pill"><span data-i18n="framework.javafx">JavaFX</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.llm">LLM</span></span>
+                            </div>
+                            <p data-i18n="projects.p3.desc">Aplicação com sistema de criação e gestão de utilizadores,
+                                disponde de um dashboard com navegação intuitiva, para registo de Enjoyers (pessoas a
+                                presentiar), e com base nas suas informações, gostos e parametros, a IA aprende e sugere
+                                prendas personalizadas, de qualquer tipo, com maior probabilidade de agradar, tendo em
+                                consideração a ocasião, complementando com uma mensagem digna para acompanhar o
+                                presente.</p>
+                        </div>
+
+                        <!-- Projeto 3 -->
+                        <div class="project-card">
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p2.title">
+                                Plataforma Distribuida de Avaliação para Professores e Alunos</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-pill"><span data-i18n="tech.java">Java</span></span>
+                                <span class="tech-pill"><span data-i18n="framework.javafx">JavaFX</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.rmi">RMI</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.sqlite">SQLite</span></span>
+                            </div>
+                            <p data-i18n="projects.p2.desc">Plataforma com gestão de sessões para dois tipos de perfis:
+                                professores e alunos, permitindo criar perguntas e submeter respostas para avaliação em
+                                ambiente académico. Utiliza arquitetura distribuída com RMI para comunicação entre
+                                cliente e servidor, garantindo escalabilidade e robustez. Inclui persistência de dados
+                                com SQLite e interface gráfica intuitiva com JavaFX.
+                            </p>
+                        </div>
+
+                        <!-- Projeto 4 -->
+                        <div class="project-card">
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p2b.title">
+                                Registo Fotográfico Georreferenciado</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-pill"><span data-i18n="tech.kotlin">Kotlin</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.android">Android</span></span>
+                            </div>
+                            <p data-i18n="projects.p2b.desc">Aplicação mobile para captação de fotos com marca de água
+                                automática (GPS, direção, data/hora, logótipo), ideal para documentação de campo com
+                                partilha imediata.</p>
+                        </div>
+
+                        <!-- Projeto 5 -->
+                        <div class="project-card">
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p3b.title">
+                                Tracking e Gestão de Utilizadores</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-pill"><span data-i18n="tech.kotlin">Kotlin</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.sqlite">SQLite</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.firebase">Firebase</span></span>
+                            </div>
+                            <p data-i18n="projects.p3b.desc">Aplicação com login, registo de percursos, estatísticas e
+                                exportação (CSV, JSON). Sincronização em tempo real com base de dados Firebase.</p>
+                        </div>
+
+                        <!-- Projeto 6 -->
+                        <div class="project-card">
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p4.title">Jogo
+                                Educativo Escolar</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-pill">Python</span>
+                            </div>
+                            <p data-i18n="projects.p4.desc">Jogo para incentivar ao estudo crianças do 1º ao 4º ciclo,
+                                com interface simples e bloqueio do dispositivo até cumprimento de desafios.
+                                Configurável via painel de Admin.</p>
                         </div>
                     </div>
+                </section>
 
-                    <!-- Projeto: GIS Tools -->
-                    <div class="project-card">
-                        <div class="flex items-start justify-between">
-                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.gistools.title">GIS Tools & Automação Python</h3>
-                            <a href="https://github.com/Rui-Casaca/GIS_tools" target="_blank" rel="noopener noreferrer" class="text-brand-gray-400 hover:text-brand-blue transition-colors p-1" title="Ver código no GitHub">
-                                <svg class="w-5 h-5 fill-current inline-block" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                            </a>
+                <!-- ===== SECÇÃO DE EXPERIÊNCIA ===== -->
+                <section id="experiencia">
+                    <h2 data-i18n="heading.experience">Professional Experience</h2>
+                    <!-- Usamos uma "timeline" visual -->
+                    <div class="relative border-l-4 border-brand-gray-800 space-y-10">
+
+                        <!-- Item 0: Critical Software -->
+                        <div class="relative pl-8">
+                            <div
+                                class="absolute -left-2.5 top-1 w-5 h-5 bg-brand-blue rounded-full border-4 border-brand-gray-950">
+                            </div>
+                            <span class="text-sm text-brand-gray-500" data-i18n="exp.critical.period">Fev 2026 - Jul
+                                2026</span>
+                            <h3 class="text-xl font-semibold mt-1" data-i18n="exp.critical.title">Estagiário de
+                                Engenharia de Software (ASD / SpaceForce)</h3>
+                            <p class="text-brand-blue font-medium" data-i18n="exp.critical.org">Critical Software,
+                                Coimbra</p>
+                            <p class="mt-2 text-brand-gray-300 text-sm leading-relaxed" data-i18n="exp.critical.desc">
+                                Contribuição para o desenvolvimento da plataforma de Ground Segment para missões
+                                espaciais (projeto Lighthouse). Trabalho em funcionalidades de visualização e
+                                processamento de telemetria em tempo real, integração de REST APIs e WebSockets, e
+                                contacto com normas aeroespaciais ECSS e pacotes CCSDS.</p>
                         </div>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-pill"><span data-i18n="tech.python">Python</span></span>
-                            <span class="tech-pill">GIS</span>
-                            <span class="tech-pill"><span data-i18n="tech.automation">Automatização</span></span>
-                            <span class="tech-pill">GUI</span>
+
+                        <!-- Item 0.5: Freelance GIS & 3D -->
+                        <div class="relative pl-8">
+                            <div
+                                class="absolute -left-2.5 top-1 w-5 h-5 bg-brand-gray-800 rounded-full border-4 border-brand-gray-950">
+                            </div>
+                            <span class="text-sm text-brand-gray-500" data-i18n="exp.freelance.period">Nov 2022 -
+                                Presente</span>
+                            <h3 class="text-xl font-semibold mt-1" data-i18n="exp.freelance.title">Especialista SIG &
+                                Modelação 3D Freelance</h3>
+                            <p class="text-brand-blue font-medium">
+                                <span data-i18n="exp.freelance.org">Fiverr & Upwork</span> •
+                                <a href="https://en.fiverr.com/kazzillion?public_mode=true" target="_blank"
+                                    rel="noopener noreferrer" class="underline hover:text-brand-gray-100">Perfil
+                                    Fiverr</a>
+                            </p>
+                            <p class="mt-2 text-brand-gray-300 text-sm leading-relaxed" data-i18n="exp.freelance.desc">
+                                Desenvolvimento e entrega de soluções de geoprocessamento em Python, cartografia digital
+                                e modelação 3D para clientes internacionais em contextos de missão crítica.</p>
                         </div>
-                        <p data-i18n="projects.gistools.desc">Suite de ferramentas em Python com interface gráfica para processamento ágil de dados espaciais, conversão de formatos e apoio a fluxos de informação geográfica.</p>
-                        <div class="mt-4 pt-3 border-t border-brand-gray-800 flex items-center justify-between">
-                            <a href="https://github.com/Rui-Casaca/GIS_tools" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-brand-blue hover:underline font-medium">
-                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Ver no GitHub
-                            </a>
-                            <span class="text-xs text-brand-gray-500">Python • Desktop</span>
+
+                        <!-- Item 1 -->
+                        <div class="relative pl-8">
+                            <div
+                                class="absolute -left-2.5 top-1 w-5 h-5 bg-brand-gray-800 rounded-full border-4 border-brand-gray-950">
+                            </div>
+                            <span class="text-sm text-brand-gray-500" data-i18n="exp.p1.period">Jul 2020 -
+                                Presente</span>
+                            <h3 class="text-xl font-semibold mt-1" data-i18n="exp.p1.title">Analista, Desenvolvedor de
+                                Software e Inovação</h3>
+                            <p class="text-brand-blue font-medium" data-i18n="exp.p1.org">GNR - Unidade de Emergência de
+                                Proteção e Socorro (UEPS)</p>
+                            <p class="mt-2" data-i18n="exp.p1.desc">Mobile and desktop software development, LLM
+                                integration, process automation and georeferenced platform management (ArcGIS Pro/QGIS).
+                                Delivered 8+ dashboards, supported 10+ national operations and one international
+                                operation in Leon, Spain, and helped monitor 48+ field teams nationwide every day of the
+                                year.</p>
                         </div>
-                    </div>
 
-                    <!-- Projeto: MarkDown Converter -->
-                    <div class="project-card">
-                        <div class="flex items-start justify-between">
-                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.mdconv.title">MarkDown Converter (Otimizador de Tokens IA)</h3>
-                            <a href="https://github.com/Rui-Casaca/MarkDown_converter" target="_blank" rel="noopener noreferrer" class="text-brand-gray-400 hover:text-brand-blue transition-colors p-1" title="Ver código no GitHub">
-                                <svg class="w-5 h-5 fill-current inline-block" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                            </a>
+                        <!-- Item 2 -->
+                        <div class="relative pl-8">
+                            <div
+                                class="absolute -left-2.5 top-1 w-5 h-5 bg-brand-gray-800 rounded-full border-4 border-brand-gray-950">
+                            </div>
+                            <span class="text-sm text-brand-gray-500" data-i18n="exp.p2.period">Mai 2019 - Jul
+                                2020</span>
+                            <h3 class="text-xl font-semibold mt-1" data-i18n="exp.p2.title">Operacional de combate a
+                                incêndios</h3>
+                            <p class="text-brand-blue font-medium" data-i18n="exp.p2.org">GNR - UEPS</p>
                         </div>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-pill"><span data-i18n="tech.python">Python</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.llm">IA / LLMs</span></span>
-                            <span class="tech-pill">Document Parsing</span>
+
+                        <!-- Item 3 -->
+                        <div class="relative pl-8">
+                            <div
+                                class="absolute -left-2.5 top-1 w-5 h-5 bg-brand-gray-800 rounded-full border-4 border-brand-gray-950">
+                            </div>
+                            <span class="text-sm text-brand-gray-500" data-i18n="exp.p3.period">Out 2011 - Mar
+                                2019</span>
+                            <h3 class="text-xl font-semibold mt-1" data-i18n="exp.p3.title">Patrulheiro</h3>
+                            <p class="text-brand-blue font-medium" data-i18n="exp.p3.org">Guarda Nacional Republicana
+                                (GNR)</p>
                         </div>
-                        <p data-i18n="projects.mdconv.desc">Aplicação em Python para converter documentos Word, PDF e PowerPoint em formato MarkDown limpo, reduzindo expressivamente o consumo de tokens em modelos de IA.</p>
-                        <div class="mt-4 pt-3 border-t border-brand-gray-800 flex items-center justify-between">
-                            <a href="https://github.com/Rui-Casaca/MarkDown_converter" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-brand-blue hover:underline font-medium">
-                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Ver no GitHub
-                            </a>
-                            <span class="text-xs text-brand-gray-500">Python • AI Tooling</span>
-                        </div>
-                    </div>
 
-                    
-                    <!-- Projeto 1 -->
-                    <div class="project-card">
-                        <div class="flex items-start justify-between">
-                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p1.title">Aplicação de Busca de Pessoas desaparecidas com IA</h3>
-                            <a href="https://github.com/Rui-Casaca/Missing-Peron-Prediction-App" target="_blank" rel="noopener noreferrer" class="text-brand-gray-400 hover:text-brand-blue transition-colors p-1" title="Ver código no GitHub">
-                                <svg class="w-5 h-5 fill-current inline-block" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                            </a>
-                        </div>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-pill"><span data-i18n="tech.reactjs">React</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.node">Node.js</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.htmlcss">HTML/CSS</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.postgres">PostgreSQL</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.restapi">RESTful API</span></span>
-                        </div>
-                        <p data-i18n="projects.p1.desc">Aplicação full-stack mission-critical para automatização de processos de emergência. Sistema processa dados estruturados de pessoas desaparecidas, com geração de prompts dinâmicos através da integração de dados contextuais, integra APIs de IA (LLMs) para análise e previsão, e produz relatórios operacionais automatizados com geração de PDF e distribuição por email.
-                        Interface multi-etapas, algoritmos de avaliação de risco, dashboard em tempo real, sistema de análise comportamental baseado em
-                        dados históricos.</p>
                     </div>
+                </section>
 
-                    <!-- Projeto 2 -->
-                    <div class="project-card">
-                        <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p3.title">Sugestão de Prendas Personalizadas com IA</h3>
-                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-pill"><span data-i18n="tech.java">Java</span></span>
-                            <span class="tech-pill"><span data-i18n="framework.javafx">JavaFX</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.llm">LLM</span></span>
-                        </div>
-                        <p data-i18n="projects.p3.desc">Aplicação com sistema de criação e gestão de utilizadores, disponde de um dashboard com navegação intuitiva, para registo de Enjoyers (pessoas a presentiar), e com base nas suas informações, gostos e parametros, a IA aprende e sugere prendas personalizadas, de qualquer tipo, com maior probabilidade de agradar, tendo em consideração a ocasião, complementando com uma mensagem digna para acompanhar o presente.</p>
-                    </div>
-
-                    <!-- Projeto 3 -->
-                    <div class="project-card">
-                        <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p2.title">Plataforma Distribuida de Avaliação para Professores e Alunos</h3>
-                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-pill"><span data-i18n="tech.java">Java</span></span>
-                            <span class="tech-pill"><span data-i18n="framework.javafx">JavaFX</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.rmi">RMI</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.sqlite">SQLite</span></span>
-                        </div>
-                        <p data-i18n="projects.p2.desc">Plataforma com gestão de sessões para dois tipos de perfis: professores e alunos, permitindo criar perguntas e submeter respostas para avaliação em ambiente académico. Utiliza arquitetura distribuída com RMI para comunicação entre cliente e servidor, garantindo escalabilidade e robustez. Inclui persistência de dados com SQLite e interface gráfica intuitiva com JavaFX.
-                        </p>
-                    </div>
-
-                    <!-- Projeto 4 -->
-                    <div class="project-card">
-                        <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p2b.title">Registo Fotográfico Georreferenciado</h3>
-                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-pill"><span data-i18n="tech.kotlin">Kotlin</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.android">Android</span></span>
-                        </div>
-                        <p data-i18n="projects.p2b.desc">Aplicação mobile para captação de fotos com marca de água automática (GPS, direção, data/hora, logótipo), ideal para documentação de campo com partilha imediata.</p>
-                    </div>
-
-                    <!-- Projeto 5 -->
-                    <div class="project-card">
-                        <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p3b.title">Tracking e Gestão de Utilizadores</h3>
-                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-pill"><span data-i18n="tech.kotlin">Kotlin</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.sqlite">SQLite</span></span>
-                            <span class="tech-pill"><span data-i18n="tech.firebase">Firebase</span></span>
-                        </div>
-                        <p data-i18n="projects.p3b.desc">Aplicação com login, registo de percursos, estatísticas e exportação (CSV, JSON). Sincronização em tempo real com base de dados Firebase.</p>
-                    </div>
-
-                    <!-- Projeto 6 -->
-                    <div class="project-card">
-                        <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="projects.p4.title">Jogo Educativo Escolar</h3>
-                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-pill">Python</span>
-                        </div>
-                        <p data-i18n="projects.p4.desc">Jogo para incentivar ao estudo crianças do 1º ao 4º ciclo, com interface simples e bloqueio do dispositivo até cumprimento de desafios. Configurável via painel de Admin.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ===== SECÇÃO DE EXPERIÊNCIA ===== -->
-            <section id="experiencia">
-                <h2 data-i18n="heading.experience">Professional Experience</h2>
-                <!-- Usamos uma "timeline" visual -->
-                <div class="relative border-l-4 border-brand-gray-800 space-y-10">
-
-                    <!-- Item 0: Critical Software -->
-                    <div class="relative pl-8">
-                        <div class="absolute -left-2.5 top-1 w-5 h-5 bg-brand-blue rounded-full border-4 border-brand-gray-950"></div>
-                        <span class="text-sm text-brand-gray-500" data-i18n="exp.critical.period">Fev 2026 - Jul 2026</span>
-                        <h3 class="text-xl font-semibold mt-1" data-i18n="exp.critical.title">Estagiário de Engenharia de Software (ASD / SpaceForce)</h3>
-                        <p class="text-brand-blue font-medium" data-i18n="exp.critical.org">Critical Software, Coimbra</p>
-                        <p class="mt-2 text-brand-gray-300 text-sm leading-relaxed" data-i18n="exp.critical.desc">Contribuição para o desenvolvimento da plataforma de Ground Segment para missões espaciais (projeto Lighthouse). Trabalho em funcionalidades de visualização e processamento de telemetria em tempo real, integração de REST APIs e WebSockets, e contacto com normas aeroespaciais ECSS e pacotes CCSDS.</p>
-                    </div>
-
-                    <!-- Item 0.5: Freelance GIS & 3D -->
-                    <div class="relative pl-8">
-                        <div class="absolute -left-2.5 top-1 w-5 h-5 bg-brand-gray-800 rounded-full border-4 border-brand-gray-950"></div>
-                        <span class="text-sm text-brand-gray-500" data-i18n="exp.freelance.period">Nov 2022 - Presente</span>
-                        <h3 class="text-xl font-semibold mt-1" data-i18n="exp.freelance.title">Especialista SIG & Modelação 3D Freelance</h3>
-                        <p class="text-brand-blue font-medium">
-                            <span data-i18n="exp.freelance.org">Fiverr & Upwork</span> • 
-                            <a href="https://en.fiverr.com/kazzillion?public_mode=true" target="_blank" rel="noopener noreferrer" class="underline hover:text-brand-gray-100">Perfil Fiverr</a>
-                        </p>
-                        <p class="mt-2 text-brand-gray-300 text-sm leading-relaxed" data-i18n="exp.freelance.desc">Desenvolvimento e entrega de soluções de geoprocessamento em Python, cartografia digital e modelação 3D para clientes internacionais em contextos de missão crítica.</p>
-                    </div>
-
-                    <!-- Item 1 -->
-                    <div class="relative pl-8">
-                        <div class="absolute -left-2.5 top-1 w-5 h-5 bg-brand-gray-800 rounded-full border-4 border-brand-gray-950"></div>
-                        <span class="text-sm text-brand-gray-500" data-i18n="exp.p1.period">Jul 2020 - Presente</span>
-                        <h3 class="text-xl font-semibold mt-1" data-i18n="exp.p1.title">Analista, Desenvolvedor de Software e Inovação</h3>
-                        <p class="text-brand-blue font-medium" data-i18n="exp.p1.org">GNR - Unidade de Emergência de Proteção e Socorro (UEPS)</p>
-                        <p class="mt-2" data-i18n="exp.p1.desc">Mobile and desktop software development, LLM integration, process automation and georeferenced platform management (ArcGIS Pro/QGIS). Delivered 8+ dashboards, supported 10+ national operations and one international operation in Leon, Spain, and helped monitor 48+ field teams nationwide every day of the year.</p>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div class="relative pl-8">
-                        <div class="absolute -left-2.5 top-1 w-5 h-5 bg-brand-gray-800 rounded-full border-4 border-brand-gray-950"></div>
-                        <span class="text-sm text-brand-gray-500" data-i18n="exp.p2.period">Mai 2019 - Jul 2020</span>
-                        <h3 class="text-xl font-semibold mt-1" data-i18n="exp.p2.title">Operacional de combate a incêndios</h3>
-                        <p class="text-brand-blue font-medium" data-i18n="exp.p2.org">GNR - UEPS</p>
-                    </div>
-                    
-                    <!-- Item 3 -->
-                    <div class="relative pl-8">
-                        <div class="absolute -left-2.5 top-1 w-5 h-5 bg-brand-gray-800 rounded-full border-4 border-brand-gray-950"></div>
-                        <span class="text-sm text-brand-gray-500" data-i18n="exp.p3.period">Out 2011 - Mar 2019</span>
-                        <h3 class="text-xl font-semibold mt-1" data-i18n="exp.p3.title">Patrulheiro</h3>
-                        <p class="text-brand-blue font-medium" data-i18n="exp.p3.org">Guarda Nacional Republicana (GNR)</p>
-                    </div>
-
-                </div>
-            </section>
-            
-            <!-- ===== SECÇÃO DE FORMAÇÃO ===== -->
-            <section id="formacao">
-                <h2 data-i18n="heading.education">Education</h2>
-                <div class="bg-brand-gray-900 p-6 rounded-lg shadow-lg">
+                <!-- ===== SECÇÃO DE FORMAÇÃO ===== -->
+                <section id="formacao">
+                    <h2 data-i18n="heading.education">Education</h2>
+                    <div class="bg-brand-gray-900 p-6 rounded-lg shadow-lg">
                         <span class="text-sm text-brand-gray-500" data-i18n="education.period">2023 - Presente</span>
-                    <h3 class="text-xl font-semibold mt-1" data-i18n="education.degree">Licenciatura em Eng. Informática - Ramo de Dev</h3>
-                    <p class="text-brand-blue font-medium" data-i18n="education.institution">Instituto Superior de Engenharia de Coimbra (ISEC)</p>
-                </div>
-            </section>
+                        <h3 class="text-xl font-semibold mt-1" data-i18n="education.degree">Licenciatura em Eng.
+                            Informática - Ramo de Dev</h3>
+                        <p class="text-brand-blue font-medium" data-i18n="education.institution">Instituto Superior de
+                            Engenharia de Coimbra (ISEC)</p>
+                    </div>
+                </section>
 
             </div> <!-- FIM DA ABA CV -->
 
@@ -625,44 +767,59 @@
                     <h2 data-i18n="sig.title">GIS Projects (ArcGIS)</h2>
                     <div class="grid grid-cols-1 gap-6">
                         <div class="project-card">
-                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="sig.quickcapture.title">Aplicações em QuickCapture</h3>
-                            <div class="text-brand-gray-300 text-sm leading-relaxed" data-i18n-html="sig.quickcapture.desc">
-                                <p><strong>Desenvolvimento e liderança de soluções QuickCapture, com aplicação para:</strong></p>
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="sig.quickcapture.title">
+                                Aplicações em QuickCapture</h3>
+                            <div class="text-brand-gray-300 text-sm leading-relaxed"
+                                data-i18n-html="sig.quickcapture.desc">
+                                <p><strong>Desenvolvimento e liderança de soluções QuickCapture, com aplicação
+                                        para:</strong></p>
                                 <ul class="list-disc ml-5 mt-2">
                                     <li>Registos diários e monitorização de equipas no terreno;</li>
                                     <li>Coordenação de operações e equipas de resgate;</li>
                                     <li>Busca e salvamento de pessoas;</li>
                                     <li>Gestão de recursos e logística;</li>
-                                    <li>Gestão de operações de fiscalização a nível nacional (Operação Floresta Segura);</li>
+                                    <li>Gestão de operações de fiscalização a nível nacional (Operação Floresta Segura);
+                                    </li>
                                     <li>Gestão de operações de validação dos pontos de água a nível nacional;</li>
-                                    <li>Gestão de operações e equipas helitransportadas e terrestres de combate a incêndios;</li>
-                                    <li>Operações locais em Fátima – Santarém (Operação Peregrino, Dia da Criança, Benção dos Capacetes, etc.).</li>
+                                    <li>Gestão de operações e equipas helitransportadas e terrestres de combate a
+                                        incêndios;</li>
+                                    <li>Operações locais em Fátima – Santarém (Operação Peregrino, Dia da Criança,
+                                        Benção dos Capacetes, etc.).</li>
                                 </ul>
                             </div>
                         </div>
 
                         <div class="project-card">
-                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="sig.fieldmaps.title">Aplicações em FieldMaps</h3>
-                            <div class="text-brand-gray-300 text-sm leading-relaxed" data-i18n-html="sig.fieldmaps.desc">
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="sig.fieldmaps.title">
+                                Aplicações em FieldMaps</h3>
+                            <div class="text-brand-gray-300 text-sm leading-relaxed"
+                                data-i18n-html="sig.fieldmaps.desc">
                                 <p><strong>Criação de Mapas e Formulários em ArcGIS Field Maps para:</strong></p>
                                 <ul class="list-disc ml-5 mt-2">
                                     <li>Operações de fiscalização (Operação Floresta Segura);</li>
                                     <li>Fiscalização da Rede Nacional de Postos de Vigia;</li>
-                                    <li>Verificação da Rede de Pontos de Água em articulação com GTFs dos Municípios;</li>
+                                    <li>Verificação da Rede de Pontos de Água em articulação com GTFs dos Municípios;
+                                    </li>
                                     <li>Mapas operacionais para apoio às equipas no terreno.</li>
                                 </ul>
                             </div>
                         </div>
 
                         <div class="project-card">
-                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="sig.dashboards.title">Dashboards e Experiences</h3>
-                            <div class="text-brand-gray-300 text-sm leading-relaxed" data-i18n-html="sig.dashboards.desc">
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="sig.dashboards.title">
+                                Dashboards e Experiences</h3>
+                            <div class="text-brand-gray-300 text-sm leading-relaxed"
+                                data-i18n-html="sig.dashboards.desc">
                                 <p><strong>Concexão e implementação de Dashboards e ArcGIS Experience para:</strong></p>
                                 <ul class="list-disc ml-5 mt-2">
-                                    <li>Monitorização diária em Salas de Situação da atividade em território nacional;</li>
+                                    <li>Monitorização diária em Salas de Situação da atividade em território nacional;
+                                    </li>
                                     <li>Acompanhamento de equipas de drones para busca de pessoas desaparecidas;</li>
-                                    <li>Suporte a operações internacionais e exercícios nos módulos de segurança, incêndio, matérias perigosas, estruturas colapsadas, busca e resgate de pessoas, entre outros, com várias entidades;</li>
-                                    <li>Monitorização e coordenação institucional no âmbito da Operação Floresta Segura.</li>
+                                    <li>Suporte a operações internacionais e exercícios nos módulos de segurança,
+                                        incêndio, matérias perigosas, estruturas colapsadas, busca e resgate de pessoas,
+                                        entre outros, com várias entidades;</li>
+                                    <li>Monitorização e coordenação institucional no âmbito da Operação Floresta Segura.
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -678,98 +835,144 @@
                         <!-- Minesweeper -->
                         <div class="project-card">
                             <div class="flex items-start justify-between">
-                                <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.minesweeper.title">Minesweeper</h3>
-                                <a href="https://github.com/Rui-Kaz/Minesweeper_LS" target="_blank" rel="noopener noreferrer" class="text-brand-gray-400 hover:text-brand-blue transition-colors p-1" title="Ver código no GitHub">
-                                    <svg class="w-5 h-5 fill-current inline-block" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                <h3 class="text-xl font-semibold text-brand-blue mb-2"
+                                    data-i18n="acad.minesweeper.title">Minesweeper</h3>
+                                <a href="https://github.com/Rui-Kaz/Minesweeper_LS" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-brand-gray-400 hover:text-brand-blue transition-colors p-1"
+                                    title="Ver código no GitHub">
+                                    <svg class="w-5 h-5 fill-current inline-block" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                                    </svg>
                                 </a>
                             </div>
-                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.minesweeper.period">2º semestre de 2024 • React / JavaScript</p>
+                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.minesweeper.period">2º semestre
+                                de 2024 • React / JavaScript</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="tech-pill">React</span>
                                 <span class="tech-pill">JavaScript</span>
                             </div>
-                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.minesweeper.desc">Implementação de um jogo Minesweeper com interface reativa, gestão de estado e lógica de jogo, priorizando performance e UX.</p>
+                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.minesweeper.desc">
+                                Implementação de um jogo Minesweeper com interface reativa, gestão de estado e lógica de
+                                jogo, priorizando performance e UX.</p>
                         </div>
 
                         <!-- Xadrez -->
                         <div class="project-card">
-                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.chess.title">Jogo Xadrez</h3>
-                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.chess.period">2º semestre de 2025 • Java (JavaFX) • MVC</p>
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.chess.title">Jogo
+                                Xadrez</h3>
+                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.chess.period">2º semestre de
+                                2025 • Java (JavaFX) • MVC</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="tech-pill">Java</span>
                                 <span class="tech-pill">JavaFX</span>
                             </div>
-                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.chess.desc">Desenvolvido em Java com JavaFX e arquitetura MVC — motor de regras, representação do tabuleiro, e interface responsiva.</p>
+                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.chess.desc">
+                                Desenvolvido em Java com JavaFX e arquitetura MVC — motor de regras, representação do
+                                tabuleiro, e interface responsiva.</p>
                         </div>
 
                         <!-- Caravanas -->
                         <div class="project-card">
-                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.caravanas.title">Jogo de Caravanas</h3>
-                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.caravanas.period">1º semestre de 2025 • C++ (POO)</p>
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.caravanas.title">Jogo
+                                de Caravanas</h3>
+                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.caravanas.period">1º semestre de
+                                2025 • C++ (POO)</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="tech-pill">C++</span>
                             </div>
-                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.caravanas.desc">Jogo escrito em C++ aplicando princípios de programação orientada a objetos: classes, herança e gestão de recursos.</p>
+                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.caravanas.desc">Jogo
+                                escrito em C++ aplicando princípios de programação orientada a objetos: classes, herança
+                                e gestão de recursos.</p>
                         </div>
 
                         <!-- Forum/Chat -->
                         <div class="project-card">
-                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.chat.title">Aplicação Cliente/Servidor (Fórum / Chat)</h3>
-                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.chat.period">1º semestre de 2025 • C (Sockets) • Concorrência</p>
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.chat.title">Aplicação
+                                Cliente/Servidor (Fórum / Chat)</h3>
+                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.chat.period">1º semestre de 2025
+                                • C (Sockets) • Concorrência</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="tech-pill">C</span>
                                 <span class="tech-pill">Sockets</span>
                             </div>
-                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.chat.desc">Implementação em C usando sockets para comunicação, com gestão de concorrência para múltiplos clientes e persistência simples.</p>
+                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.chat.desc">
+                                Implementação em C usando sockets para comunicação, com gestão de concorrência para
+                                múltiplos clientes e persistência simples.</p>
                         </div>
 
                         <!-- SurpriseMe -->
                         <div class="project-card">
                             <div class="flex items-start justify-between">
-                                <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.surprisme.title">SurpriseMe</h3>
-                                <a href="https://github.com/Rui-Casaca/SurpriseMe" target="_blank" rel="noopener noreferrer" class="text-brand-gray-400 hover:text-brand-blue transition-colors p-1" title="Ver código no GitHub">
-                                    <svg class="w-5 h-5 fill-current inline-block" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.surprisme.title">
+                                    SurpriseMe</h3>
+                                <a href="https://github.com/Rui-Casaca/SurpriseMe" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-brand-gray-400 hover:text-brand-blue transition-colors p-1"
+                                    title="Ver código no GitHub">
+                                    <svg class="w-5 h-5 fill-current inline-block" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                                    </svg>
                                 </a>
                             </div>
-                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.surprisme.period">2º semestre de 2025 • Java (JavaFX) • Integração LLM • Scrum</p>
-                             <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="tech-pill"><span data-i18n="tech.java">Java</span></span>
-                                    <span class="tech-pill"><span data-i18n="framework.javafx">JavaFX</span></span>
-                                    <span class="tech-pill"><span data-i18n="tech.llm">LLM</span></span>
-                                </div>
-                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.surprisme.desc">Aplicação desenvolvida em contexto de Gestão de Projetos com metodologia Scrum, UI em JavaFX e integração com LLM para funcionalidades inteligentes.</p>
+                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.surprisme.period">2º semestre de
+                                2025 • Java (JavaFX) • Integração LLM • Scrum</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-pill"><span data-i18n="tech.java">Java</span></span>
+                                <span class="tech-pill"><span data-i18n="framework.javafx">JavaFX</span></span>
+                                <span class="tech-pill"><span data-i18n="tech.llm">LLM</span></span>
+                            </div>
+                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.surprisme.desc">
+                                Aplicação desenvolvida em contexto de Gestão de Projetos com metodologia Scrum, UI em
+                                JavaFX e integração com LLM para funcionalidades inteligentes.</p>
                         </div>
 
                         <!-- SafetYSec -->
                         <div class="project-card">
-                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.safetys.title">SafetYSec</h3>
-                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.safetys.period">2º semestre de 2025 • Kotlin (Android, Jetpack Compose) • Firebase</p>
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.safetys.title">
+                                SafetYSec</h3>
+                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.safetys.period">2º semestre de
+                                2025 • Kotlin (Android, Jetpack Compose) • Firebase</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="tech-pill">Kotlin</span>
                                 <span class="tech-pill">Android</span>
                                 <span class="tech-pill">Jetpack Compose</span>
                                 <span class="tech-pill">Firebase</span>
                             </div>
-                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.safetys.desc">Aplicação Android com geofencing e leitura de sensores para monitorização de pessoas vulneráveis, perfis diferenciados (monitores/protegidos) e backend em Firebase.</p>
+                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.safetys.desc">
+                                Aplicação Android com geofencing e leitura de sensores para monitorização de pessoas
+                                vulneráveis, perfis diferenciados (monitores/protegidos) e backend em Firebase.</p>
                         </div>
 
                         <!-- Guia de Coimbra -->
                         <div class="project-card">
-                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.guide.title">Guia Turístico</h3>
-                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.guide.period">2º semestre de 2025 • Flutter (Android, Dart) • API IPMA</p>
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.guide.title">Guia
+                                Turístico</h3>
+                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.guide.period">2º semestre de
+                                2025 • Flutter (Android, Dart) • API IPMA</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="tech-pill">Dart</span>
                                 <span class="tech-pill">Android</span>
                                 <span class="tech-pill">Flutter</span>
                                 <span class="tech-pill">API IPMA</span>
                             </div>
-                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.guide.desc">Aplicação multiplataforma com API meteorológico (IPMA) para informação do tempo atual para a localidade de interesse, fornecendo de forma intuitiva informação organizada e detalhada de Monumentos, Restaurantes e Eventos numa determinada cidade, permitindo gerir os seus favoritos, mesmo offline.</p>
+                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.guide.desc">Aplicação
+                                multiplataforma com API meteorológico (IPMA) para informação do tempo atual para a
+                                localidade de interesse, fornecendo de forma intuitiva informação organizada e detalhada
+                                de Monumentos, Restaurantes e Eventos numa determinada cidade, permitindo gerir os seus
+                                favoritos, mesmo offline.</p>
                         </div>
 
                         <!-- Perguntas e Respostas -->
                         <div class="project-card">
-                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.qna.title">Aplicação de Perguntas e Respostas</h3>
-                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.qna.period">2º semestre de 2025 • Java (JavaFX), Sockets, JWT, REST, SQLite</p>
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.qna.title">Aplicação
+                                de Perguntas e Respostas</h3>
+                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.qna.period">2º semestre de 2025
+                                • Java (JavaFX), Sockets, JWT, REST, SQLite</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="tech-pill">Java</span>
                                 <span class="tech-pill">JavaFX</span>
@@ -777,13 +980,17 @@
                                 <span class="tech-pill">JWT</span>
                                 <span class="tech-pill">SQLite</span>
                             </div>
-                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.qna.desc">Plataforma para criação de perguntas pelo professor e respostas pelos alunos (estilo Kahoot); inclui autenticação JWT, comunicação via sockets e persistência com SQLite.</p>
+                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.qna.desc">Plataforma
+                                para criação de perguntas pelo professor e respostas pelos alunos (estilo Kahoot);
+                                inclui autenticação JWT, comunicação via sockets e persistência com SQLite.</p>
                         </div>
 
                         <!-- Gestão de Loja -->
                         <div class="project-card">
-                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.store.title">Aplicação de Gestão de Loja</h3>
-                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.store.period">2º semestre de 2025 • C#, ASP.NET, Blazor, MAUI, SQL, REST</p>
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.store.title">
+                                Aplicação de Gestão de Loja</h3>
+                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.store.period">2º semestre de
+                                2025 • C#, ASP.NET, Blazor, MAUI, SQL, REST</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="tech-pill">C#</span>
                                 <span class="tech-pill">ASP.NET</span>
@@ -791,13 +998,18 @@
                                 <span class="tech-pill">MAUI</span>
                                 <span class="tech-pill">SQL</span>
                             </div>
-                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.store.desc">Aplicação multi-plataforma com autenticação encriptada, perfis de utilizador para admin, fornecedores e clientes, gestão e venda de produtos e API REST para integração com frontends.</p>
+                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.store.desc">Aplicação
+                                multi-plataforma com autenticação encriptada, perfis de utilizador para admin,
+                                fornecedores e clientes, gestão e venda de produtos e API REST para integração com
+                                frontends.</p>
                         </div>
-                        
+
                         <!-- Alerta Meteorológico Android -->
                         <div class="project-card">
-                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.weather.title">Alerta Meteorológico Android</h3>
-                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.weather.period">2025 • Kotlin (Android, Jetpack Compose) • Open-Meteo API</p>
+                            <h3 class="text-xl font-semibold text-brand-blue mb-2" data-i18n="acad.weather.title">Alerta
+                                Meteorológico Android</h3>
+                            <p class="text-sm text-brand-gray-400 mb-2" data-i18n="acad.weather.period">2025 • Kotlin
+                                (Android, Jetpack Compose) • Open-Meteo API</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="tech-pill"><span data-i18n="tech.kotlin">Kotlin</span></span>
                                 <span class="tech-pill"><span data-i18n="tech.android">Android</span></span>
@@ -805,7 +1017,14 @@
                                 <span class="tech-pill"><span data-i18n="tech.geolocation">Geolocation</span></span>
                                 <span class="tech-pill"><span data-i18n="tech.notifications">Notifications</span></span>
                             </div>
-                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.weather.desc">Aplicação Android para apoio a operacionais em terreno — monitorização contínua das condições meteorológicas com base na localização do utilizador (Open-Meteo). Detecta alterações relevantes em velocidade e direção do vento, temperatura, precipitação e neve; notifica o utilizador com um resumo sintetizado tanto com antecedência configurável como no momento da mudança. O utilizador pode escolher parâmetros a monitorizar e definir limiares de alerta (ex.: +2 km/h, +5 km/h). Otimizada para eficiência energética e notificações push.</p>
+                            <p class="text-brand-gray-300 text-sm leading-relaxed" data-i18n="acad.weather.desc">
+                                Aplicação Android para apoio a operacionais em terreno — monitorização contínua das
+                                condições meteorológicas com base na localização do utilizador (Open-Meteo). Detecta
+                                alterações relevantes em velocidade e direção do vento, temperatura, precipitação e
+                                neve; notifica o utilizador com um resumo sintetizado tanto com antecedência
+                                configurável como no momento da mudança. O utilizador pode escolher parâmetros a
+                                monitorizar e definir limiares de alerta (ex.: +2 km/h, +5 km/h). Otimizada para
+                                eficiência energética e notificações push.</p>
                         </div>
                     </div>
                 </section>
@@ -818,9 +1037,18 @@
                     <h2 class="about-title" data-i18n="about.title">About Me</h2>
                     <div class="about-grid">
                         <div class="about-story">
-                            <p data-i18n="about.lead">My path into software wasn't traditional. I spent over a decade in the GNR — first as a patrol officer, then in firefighting operations. Working in demanding, high-stakes environments shaped how I think about reliability, discipline, and results.</p>
-                            <p data-i18n="about.mid">In 2020, while still in service, I transitioned to a new role: building the digital tools our field teams were missing. GIS dashboards, mobile apps, AI-powered emergency workflows — tools with real operational consequences and real users depending on them every day.</p>
-                            <p data-i18n="about.close">In 2023 I enrolled at ISEC to formalize my engineering practice. I'm now a Full-stack Developer Intern at Critical Software's ASD/SpaceForce division, working on satellite mission communications software. The standards are exacting, and I intend to meet every one of them.</p>
+                            <p data-i18n="about.lead">My path into software wasn't traditional. I spent over a decade in
+                                the GNR — first as a patrol officer, then in firefighting operations. Working in
+                                demanding, high-stakes environments shaped how I think about reliability, discipline,
+                                and results.</p>
+                            <p data-i18n="about.mid">In 2020, while still in service, I transitioned to a new role:
+                                building the digital tools our field teams were missing. GIS dashboards, mobile apps,
+                                AI-powered emergency workflows — tools with real operational consequences and real users
+                                depending on them every day.</p>
+                            <p data-i18n="about.close">In 2023 I enrolled at ISEC to formalize my engineering practice.
+                                I'm now a Full-stack Developer Intern at Critical Software's ASD/SpaceForce division,
+                                working on satellite mission communications software. The standards are exacting, and I
+                                intend to meet every one of them.</p>
                         </div>
                         <div class="about-facts">
                             <div class="about-fact-card">
@@ -848,7 +1076,8 @@
                                 <i data-lucide="map-pin" class="w-5 h-5"></i>
                                 <div>
                                     <strong data-i18n="about.fact4.label">Santa Maria da Feira, Portugal</strong>
-                                    <span data-i18n="about.fact4.desc">Disponível para Remoto, Híbrido ou Presencial</span>
+                                    <span data-i18n="about.fact4.desc">Disponível para Remoto, Híbrido ou
+                                        Presencial</span>
                                 </div>
                             </div>
                         </div>
@@ -856,12 +1085,18 @@
                     <div class="about-values">
                         <div class="section-kicker" data-i18n="about.values.kicker">What I value</div>
                         <div class="values-grid">
-                            <div class="value-item"><i data-lucide="target" class="w-4 h-4"></i><span data-i18n="about.val1">Real-world impact</span></div>
-                            <div class="value-item"><i data-lucide="layers" class="w-4 h-4"></i><span data-i18n="about.val2">Technical depth</span></div>
-                            <div class="value-item"><i data-lucide="zap" class="w-4 h-4"></i><span data-i18n="about.val3">Fast delivery</span></div>
-                            <div class="value-item"><i data-lucide="users" class="w-4 h-4"></i><span data-i18n="about.val4">Team-first mindset</span></div>
-                            <div class="value-item"><i data-lucide="book-open" class="w-4 h-4"></i><span data-i18n="about.val5">Continuous learning</span></div>
-                            <div class="value-item"><i data-lucide="cpu" class="w-4 h-4"></i><span data-i18n="about.val6">AI with purpose</span></div>
+                            <div class="value-item"><i data-lucide="target" class="w-4 h-4"></i><span
+                                    data-i18n="about.val1">Real-world impact</span></div>
+                            <div class="value-item"><i data-lucide="layers" class="w-4 h-4"></i><span
+                                    data-i18n="about.val2">Technical depth</span></div>
+                            <div class="value-item"><i data-lucide="zap" class="w-4 h-4"></i><span
+                                    data-i18n="about.val3">Fast delivery</span></div>
+                            <div class="value-item"><i data-lucide="users" class="w-4 h-4"></i><span
+                                    data-i18n="about.val4">Team-first mindset</span></div>
+                            <div class="value-item"><i data-lucide="book-open" class="w-4 h-4"></i><span
+                                    data-i18n="about.val5">Continuous learning</span></div>
+                            <div class="value-item"><i data-lucide="cpu" class="w-4 h-4"></i><span
+                                    data-i18n="about.val6">AI with purpose</span></div>
                         </div>
                     </div>
                 </section>
@@ -869,60 +1104,72 @@
 
             <!-- ===== ABA: DISTINÇÕES PROFISSIONAIS ===== -->
             <div id="tab-distincoes" class="tab-content">
-            <section id="distincoes">
-                <h2 data-i18n="distinctions.title">Professional Distinctions</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    
-                    <!-- Distinção 1 -->
-                    <div class="project-card flex flex-col">
-                        <div class="flex items-center mb-4">
-                            <i data-lucide="award" class="w-8 h-8 text-brand-blue mr-3"></i>
-                            <h3 class="text-lg font-semibold text-brand-blue">
-                                <a href="https://pt.wikipedia.org/wiki/Medalha_de_D._Nuno_%C3%81lvares_Pereira_-_M%C3%A9rito_da_Guarda_Nacional_Republicana" class="hover:underline transition-colors" title="Saiba mais sobre a Medalha de D. Nuno Álvares Pereira" data-i18n="distinctions.m1.title">
-                                    Medalha de D. Nuno Álvares Pereira - Mérito
-                                </a>
-                            </h3>
-                        </div>
-                        <p class="text-sm text-brand-gray-400 mb-2 font-medium">Guarda Nacional Republicana</p>
-                        <p class="text-brand-gray-300 text-sm leading-relaxed flex-grow" data-i18n="distinctions.m1.desc">
-                            A mais alta distinção da GNR, atribuída por atos de bravura, dedicação e mérito excecional.
-                        </p>
-                    </div>
+                <section id="distincoes">
+                    <h2 data-i18n="distinctions.title">Professional Distinctions</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                    <!-- Distinção 2 -->
-                    <div class="project-card flex flex-col">
-                        <div class="flex items-center mb-4">
-                            <i data-lucide="award" class="w-8 h-8 text-brand-blue mr-3"></i>
-                            <h3 class="text-lg font-semibold text-brand-blue">
-                                <a href="res\Medalha de Comportamento Exemplar, Grau Cobre.pdf" class="hover:underline transition-colors" title="Saiba mais sobre a Medalha Militar de Comportamento Exemplar" data-i18n="distinctions.m2.title">
-                                    Medalha Militar de Comportamento Exemplar
-                                </a>
-                            </h3>
+                        <!-- Distinção 1 -->
+                        <div class="project-card flex flex-col">
+                            <div class="flex items-center mb-4">
+                                <i data-lucide="award" class="w-8 h-8 text-brand-blue mr-3"></i>
+                                <h3 class="text-lg font-semibold text-brand-blue">
+                                    <a href="https://pt.wikipedia.org/wiki/Medalha_de_D._Nuno_%C3%81lvares_Pereira_-_M%C3%A9rito_da_Guarda_Nacional_Republicana"
+                                        class="hover:underline transition-colors"
+                                        title="Saiba mais sobre a Medalha de D. Nuno Álvares Pereira"
+                                        data-i18n="distinctions.m1.title">
+                                        Medalha de D. Nuno Álvares Pereira - Mérito
+                                    </a>
+                                </h3>
+                            </div>
+                            <p class="text-sm text-brand-gray-400 mb-2 font-medium">Guarda Nacional Republicana</p>
+                            <p class="text-brand-gray-300 text-sm leading-relaxed flex-grow"
+                                data-i18n="distinctions.m1.desc">
+                                A mais alta distinção da GNR, atribuída por atos de bravura, dedicação e mérito
+                                excecional.
+                            </p>
                         </div>
-                        <p class="text-sm text-brand-gray-400 mb-2 font-medium">Guarda Nacional Republicana</p>
-                        <p class="text-brand-gray-300 text-sm leading-relaxed flex-grow" data-i18n="distinctions.m2.desc">
-                            Reconhecimento pela conduta irrepreensível ao longo da carreira.
-                        </p>
-                    </div>
 
-                    <!-- Distinção 3 -->
-                    <div class="project-card flex flex-col">
-                        <div class="flex items-center mb-4">
-                            <i data-lucide="award" class="w-8 h-8 text-brand-blue mr-3"></i>
-                            <h3 class="text-lg font-semibold text-brand-blue">
-                                <a href="res\Medalha assiduidade.pdf" class="hover:underline transition-colors" title="Saiba mais sobre a Medalha de Assiduidade" data-i18n="distinctions.m3.title">
-                                    Medalha de Assiduidade
-                                </a>
-                            </h3>
+                        <!-- Distinção 2 -->
+                        <div class="project-card flex flex-col">
+                            <div class="flex items-center mb-4">
+                                <i data-lucide="award" class="w-8 h-8 text-brand-blue mr-3"></i>
+                                <h3 class="text-lg font-semibold text-brand-blue">
+                                    <a href="res\Medalha de Comportamento Exemplar, Grau Cobre.pdf"
+                                        class="hover:underline transition-colors"
+                                        title="Saiba mais sobre a Medalha Militar de Comportamento Exemplar"
+                                        data-i18n="distinctions.m2.title">
+                                        Medalha Militar de Comportamento Exemplar
+                                    </a>
+                                </h3>
+                            </div>
+                            <p class="text-sm text-brand-gray-400 mb-2 font-medium">Guarda Nacional Republicana</p>
+                            <p class="text-brand-gray-300 text-sm leading-relaxed flex-grow"
+                                data-i18n="distinctions.m2.desc">
+                                Reconhecimento pela conduta irrepreensível ao longo da carreira.
+                            </p>
                         </div>
-                        <p class="text-sm text-brand-gray-400 mb-2 font-medium">Guarda Nacional Republicana</p>
-                        <p class="text-brand-gray-300 text-sm leading-relaxed flex-grow" data-i18n="distinctions.m3.desc">
-                            Atribuída pela dedicação constante e presença exemplar no desempenho de funções.
-                        </p>
-                    </div>
 
-                </div>
-            </section>
+                        <!-- Distinção 3 -->
+                        <div class="project-card flex flex-col">
+                            <div class="flex items-center mb-4">
+                                <i data-lucide="award" class="w-8 h-8 text-brand-blue mr-3"></i>
+                                <h3 class="text-lg font-semibold text-brand-blue">
+                                    <a href="res\Medalha assiduidade.pdf" class="hover:underline transition-colors"
+                                        title="Saiba mais sobre a Medalha de Assiduidade"
+                                        data-i18n="distinctions.m3.title">
+                                        Medalha de Assiduidade
+                                    </a>
+                                </h3>
+                            </div>
+                            <p class="text-sm text-brand-gray-400 mb-2 font-medium">Guarda Nacional Republicana</p>
+                            <p class="text-brand-gray-300 text-sm leading-relaxed flex-grow"
+                                data-i18n="distinctions.m3.desc">
+                                Atribuída pela dedicação constante e presença exemplar no desempenho de funções.
+                            </p>
+                        </div>
+
+                    </div>
+                </section>
 
             </div> <!-- FIM DA ABA DISTINÇÕES -->
 
@@ -931,33 +1178,43 @@
         <!-- ===== RODAPÉ ===== -->
         <footer class="text-center text-brand-gray-500 mt-20 border-t border-brand-gray-800 pt-10">
             <div class="flex justify-center items-center space-x-6 mb-4">
-                 <a href="https://www.linkedin.com/in/rui-casaca/" target="_blank" rel="noopener noreferrer" 
+                <a href="https://www.linkedin.com/in/rui-casaca/" target="_blank" rel="noopener noreferrer"
                     class="text-brand-gray-500 hover:text-brand-blue transition-colors"
                     aria-label="LinkedIn de Rui Casaca" title="LinkedIn">
-                     <svg class="w-6 h-6 fill-current inline-block" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24"/></svg>
-                 </a>
-                 <a href="https://github.com/Rui-Casaca" target="_blank" rel="noopener noreferrer" 
+                    <svg class="w-6 h-6 fill-current inline-block" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24" />
+                    </svg>
+                </a>
+                <a href="https://github.com/Rui-Casaca" target="_blank" rel="noopener noreferrer"
                     class="text-brand-gray-500 hover:text-brand-blue transition-colors"
                     aria-label="GitHub Rui-Casaca (Principal)" title="GitHub (Rui-Casaca)">
-                     <svg class="w-6 h-6 fill-current inline-block" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                 </a>
-                 <a href="https://github.com/Rui-Kaz" target="_blank" rel="noopener noreferrer" 
+                    <svg class="w-6 h-6 fill-current inline-block" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                    </svg>
+                </a>
+                <a href="https://github.com/Rui-Kaz" target="_blank" rel="noopener noreferrer"
                     class="text-brand-gray-500 hover:text-brand-blue transition-colors"
                     aria-label="GitHub Rui-Kaz (Projetos)" title="GitHub (Rui-Kaz)">
-                     <svg class="w-6 h-6 fill-current inline-block" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                 </a>
-                 <a href="https://en.fiverr.com/kazzillion?public_mode=true" target="_blank" rel="noopener noreferrer" 
+                    <svg class="w-6 h-6 fill-current inline-block" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                    </svg>
+                </a>
+                <a href="https://en.fiverr.com/kazzillion?public_mode=true" target="_blank" rel="noopener noreferrer"
                     class="text-brand-gray-500 hover:text-brand-blue transition-colors"
                     aria-label="Perfil Fiverr de Rui Casaca" title="Fiverr">
-                     <i data-lucide="briefcase" class="w-6 h-6"></i>
-                 </a>
-                 <a href="mailto:rui.casaca@gmail.com" 
+                    <i data-lucide="briefcase" class="w-6 h-6"></i>
+                </a>
+                <a href="mailto:rui.casaca@gmail.com"
                     class="text-brand-gray-500 hover:text-brand-blue transition-colors"
                     aria-label="Enviar email para Rui Casaca" title="Email">
-                     <i data-lucide="mail" class="w-6 h-6"></i>
-                 </a>
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </a>
             </div>
-            <p data-i18n="footer.copy">&copy; 2026 Rui Casaca. Portfólio profissional construído com HTML, Tailwind CSS e JavaScript.</p>
+            <p data-i18n="footer.copy">&copy; 2026 Rui Casaca. Portfólio profissional construído com HTML, Tailwind CSS
+                e JavaScript.</p>
         </footer>
 
     </div>
@@ -970,4 +1227,5 @@
     <!-- Script Externo -->
     <script src="script.js"></script>
 </body>
+
 </html>
