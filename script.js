@@ -512,12 +512,10 @@ function updateThemeIcon(iconName) {
 
 /* ===== CV DOWNLOAD (PT / EN) ===== */
 function buildCvFilename(lang) {
-    // base filename used in repo
-    const base = 'CV_RuiCasaca.pdf';
     if (lang === 'en') {
-        return base.replace(/(\.pdf)$/i, '_en$1');
+        return 'CV_RuiCasaca_en.pdf';
     }
-    return base;
+    return 'CV_RuiCasaca_pt.pdf';
 }
 
 function toggleCvMenu(show) {
